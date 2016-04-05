@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="DeletePoiRecords" name="DeletePoiRecords" bindingOperationName="DeletePoiRecords" type="Request-Response" outputName="DeletePoiRecordsResponse" inputName="DeletePoiRecords" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="ff9eb7d7-e1e4-4aec-b05f-3841dd338cff" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ff9eb7d7-e1e4-4aec-b05f-3841dd338cfffileName">DeletePoiRecords</con:setting></con:settings><con:call name="Request 1" id="d976390f-b077-435b-9458-a4f5c037200f" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PoiServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pois="http://ns.hughestelematics.com/Gateway/service/PoiServiceV2_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Core/Route/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pois:DeletePoiRecords>
+         <!--Optional:-->
+         <DeletePoiRecordRequest>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <!--1 or more repetitions:-->
+               <v1:rowId>?</v1:rowId>
+               <v1:AccountId>?</v1:AccountId>
+               <v1:VIN>?</v1:VIN>
+               <v1:tcuid>?</v1:tcuid>
+               <!--Optional:-->
+               <v1:UserId>?</v1:UserId>
+            </v1:Data>
+         </DeletePoiRecordRequest>
+      </pois:DeletePoiRecords>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="DeletePoiRecords"/></con:call></con:operation>

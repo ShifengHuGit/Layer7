@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="VehicleCapabilitiesServiceV5_0SoapBinding TestSuite" id="311bf1f2-44a6-4a21-9397-035f7b65258d" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="311bf1f2-44a6-4a21-9397-035f7b65258dfileName">VehicleCapabilitiesServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="PerformanceMonitorServiceV5_0SoapBinding" type="wsdl" bindingName="{http://ns.hughestelematics.com/Gateway/service/PerformanceMonitorService}PerformanceMonitorServiceV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Layer%207/L7%20My%20files/WSDL_VW_US_1/PerformanceMonitorServiceV5_0.wsdl" id="5f14ec19-cc67-48dd-848b-63445573650d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="5f14ec19-cc67-48dd-848b-63445573650dfileName">PerformanceMonitorServiceV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\PerformanceMonitorServiceV5_0.wsdl"><con:part><con:url>file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\PerformanceMonitorServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PerformanceMonitorServiceV5_0" targetNamespace="http://ns.hughestelematics.com/Gateway/service/PerformanceMonitorService" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ns.hughestelematics.com/Gateway/service/PerformanceMonitorService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/PerformanceMonitor/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/PerformanceMonitor/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:element name="GetAverageByDateRequest" type="tns:GetAverageByDateRequestTypeV5"/>
+      <xs:element name="GetAverageByDateResponse" type="tns:GetAverageByDateResponseTypeV5"/>
+      <xs:element name="GetAverageListByDateRequest" type="tns:GetAverageListByDateRequestTypeV5"/>
+      <xs:element name="GetAverageListByDateResponse" type="tns:GetAverageListByDateResponseTypeV5"/>
+      <xs:element name="GetLastResponseTimeRequest" type="tns:GetLastResponseTimeRequestTypeV5"/>
+      <xs:element name="GetLastResponseTimeResponse" type="tns:GetLastResponseTimeResponseTypeV5"/>
+      <xs:element name="GetResponseByAccountRequest" type="tns:GetResponseByAccountRequestTypeV5"/>
+      <xs:element name="GetResponseByAccountResponse" type="tns:GetResponseByAccountResponseTypeV5"/>
+      <xs:element name="GetResponseByUserRequest" type="tns:GetResponseByUserRequestTypeV5"/>
+      <xs:element name="GetResponseByUserResponse" type="tns:GetResponseByUserResponseTypeV5"/>
+      <xs:complexType name="GetAverageByDateRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetAverageByDateReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageByDateReqDataType">
+        <xs:sequence>
+          <xs:element name="System" type="xs:string"/>
+          <xs:element name="DateFrom" type="xs:dateTime"/>
+          <xs:element name="DateTo" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="ServiceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="OperationName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageByDateResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetAverageByDateResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageByDateResponseDataType">
+        <xs:sequence>
+          <xs:element name="ResponseTime" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByUserRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetResponseByUserRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByUserRequestDataType">
+        <xs:sequence>
+          <xs:element name="System" type="xs:string"/>
+          <xs:element name="DateFrom" type="xs:dateTime"/>
+          <xs:element name="DateTo" type="xs:dateTime"/>
+          <xs:element name="ServiceName" type="xs:string"/>
+          <xs:element name="OperationName" type="xs:string"/>
+          <xs:element name="UserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByUserResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Transaction" type="tns:GetResponseByUserResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByUserResponseDataType">
+        <xs:sequence>
+          <xs:element name="TransactionID" type="xs:string"/>
+          <xs:element name="DateReceived" type="xs:string"/>
+          <xs:element name="ResponseTime" type="xs:int"/>
+          <xs:element name="Status" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByAccountRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetResponseByAccountReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByAccountReqDataType">
+        <xs:sequence>
+          <xs:element name="System" type="xs:string"/>
+          <xs:element name="DateFrom" type="xs:dateTime"/>
+          <xs:element name="DateTo" type="xs:dateTime"/>
+          <xs:element name="ServiceName" type="xs:string"/>
+          <xs:element name="OperationName" type="xs:string"/>
+          <xs:element name="AccountNumber" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByAccountResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Transaction" type="tns:GetResponseByAccountResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByAccountResponseDataType">
+        <xs:sequence>
+          <xs:element name="TransactionID" type="xs:string"/>
+          <xs:element name="DateReceived" type="xs:string"/>
+          <xs:element name="ResponseTime" type="xs:int"/>
+          <xs:element name="Status" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetLastResponseTimeRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetLastResponseTimeRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetLastResponseTimeRequestDataType">
+        <xs:sequence>
+          <xs:element name="System" type="xs:string"/>
+          <xs:element name="DateFrom" type="xs:dateTime"/>
+          <xs:element name="DateTo" type="xs:dateTime"/>
+          <xs:element name="ServiceName" type="xs:string"/>
+          <xs:element name="OperationName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetLastResponseTimeResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Transaction" type="tns:GetLastResponseTimeRespDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetLastResponseTimeRespDataType">
+        <xs:sequence>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="DateReceived" type="xs:string"/>
+          <xs:element name="ResponseTime" type="xs:int"/>
+          <xs:element name="Status" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageListByDateRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetAverageListByDateRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageListByDateRequestDataType">
+        <xs:sequence>
+          <xs:element name="System" type="xs:string"/>
+          <xs:element name="DateFrom" type="xs:dateTime"/>
+          <xs:element name="DateTo" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageListByDateResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element maxOccurs="unbounded" name="service" type="tns:service"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="service">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" name="method" type="tns:method"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="method">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="ResponseTime" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UsernameToken">
+        <xs:sequence>
+          <xs:element name="Username" type="xs:string"/>
+          <xs:element name="Password" type="xs:string"/>
+          <xs:element name="Nonce" type="xs:string"/>
+          <xs:element name="Created" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByUserRequestType">
+        <xs:sequence>
+          <xs:element name="Data" type="tns:GetResponseByUserRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PerfMonSecurity">
+        <xs:sequence>
+          <xs:element name="UsernameToken" type="tns:UsernameToken"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetLastResponseTimeResponseType">
+        <xs:sequence>
+          <xs:element name="Transaction" type="tns:GetLastResponseTimeRespDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByUserResponseType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Transaction" type="tns:GetResponseByUserResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageByDateResponseType">
+        <xs:sequence>
+          <xs:element name="Data" type="tns:GetAverageByDateResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetLastResponseTimeRequestType">
+        <xs:sequence>
+          <xs:element name="Data" type="tns:GetLastResponseTimeRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageByDateRequestType">
+        <xs:sequence>
+          <xs:element name="Data" type="tns:GetAverageByDateReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageListByDateRequestType">
+        <xs:sequence>
+          <xs:element name="Data" type="tns:GetAverageListByDateRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageListByDateResponseType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="service" type="tns:service"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByAccountResponseType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Transaction" type="tns:GetResponseByAccountResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByAccountRequestType">
+        <xs:sequence>
+          <xs:element name="Data" type="tns:GetResponseByAccountReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="Mbrace"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/Gateway/service/PerformanceMonitorService" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/PerformanceMonitor/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/PerformanceMonitor/V1"/>
+      <xs:element name="GetAverageByDate" type="tns:GetAverageByDate"/>
+      <xs:element name="GetAverageByDateResponse" type="tns:GetAverageByDateResponse"/>
+      <xs:element name="GetAverageListByDate" type="tns:GetAverageListByDate"/>
+      <xs:element name="GetAverageListByDateResponse" type="tns:GetAverageListByDateResponse"/>
+      <xs:element name="GetLastResponseTime" type="tns:GetLastResponseTime"/>
+      <xs:element name="GetLastResponseTimeResponse" type="tns:GetLastResponseTimeResponse"/>
+      <xs:element name="GetResponseByAccount" type="tns:GetResponseByAccount"/>
+      <xs:element name="GetResponseByAccountResponse" type="tns:GetResponseByAccountResponse"/>
+      <xs:element name="GetResponseByUser" type="tns:GetResponseByUser"/>
+      <xs:element name="GetResponseByUserResponse" type="tns:GetResponseByUserResponse"/>
+      <xs:complexType name="GetAverageByDate">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetAverageByDateRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageByDateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetAverageByDateResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetResponseByUserRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetResponseByUserResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetResponseByAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetResponseByAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetResponseByAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetLastResponseTime">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetLastResponseTimeRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetLastResponseTimeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetLastResponseTimeResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageListByDate">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetAverageListByDateRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAverageListByDateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetAverageListByDateResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAverageByDateResponse">
+    <wsdl:part element="tns:GetAverageByDateResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAverageByDate">
+    <wsdl:part element="tns:GetAverageByDate" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAverageListByDate">
+    <wsdl:part element="tns:GetAverageListByDate" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetLastResponseTimeResponse">
+    <wsdl:part element="tns:GetLastResponseTimeResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetResponseByAccount">
+    <wsdl:part element="tns:GetResponseByAccount" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetLastResponseTime">
+    <wsdl:part element="tns:GetLastResponseTime" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetResponseByUser">
+    <wsdl:part element="tns:GetResponseByUser" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAverageListByDateResponse">
+    <wsdl:part element="tns:GetAverageListByDateResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetResponseByAccountResponse">
+    <wsdl:part element="tns:GetResponseByAccountResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetResponseByUserResponse">
+    <wsdl:part element="tns:GetResponseByUserResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PerformanceMonitorServiceV5_0">
+    <wsdl:operation name="GetAverageByDate">
+      <wsdl:input message="tns:GetAverageByDate" name="GetAverageByDate"></wsdl:input>
+      <wsdl:output message="tns:GetAverageByDateResponse" name="GetAverageByDateResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponseByUser">
+      <wsdl:input message="tns:GetResponseByUser" name="GetResponseByUser"></wsdl:input>
+      <wsdl:output message="tns:GetResponseByUserResponse" name="GetResponseByUserResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponseByAccount">
+      <wsdl:input message="tns:GetResponseByAccount" name="GetResponseByAccount"></wsdl:input>
+      <wsdl:output message="tns:GetResponseByAccountResponse" name="GetResponseByAccountResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastResponseTime">
+      <wsdl:input message="tns:GetLastResponseTime" name="GetLastResponseTime"></wsdl:input>
+      <wsdl:output message="tns:GetLastResponseTimeResponse" name="GetLastResponseTimeResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAverageListByDate">
+      <wsdl:input message="tns:GetAverageListByDate" name="GetAverageListByDate"></wsdl:input>
+      <wsdl:output message="tns:GetAverageListByDateResponse" name="GetAverageListByDateResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PerformanceMonitorServiceV5_0SoapBinding" type="tns:PerformanceMonitorServiceV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAverageByDate">
+      <soap:operation soapAction="GetAverageByDate" style="document"/>
+      <wsdl:input name="GetAverageByDate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetAverageByDateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponseByAccount">
+      <soap:operation soapAction="GetResponseByAccount" style="document"/>
+      <wsdl:input name="GetResponseByAccount">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetResponseByAccountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponseByUser">
+      <soap:operation soapAction="GetResponseByUser" style="document"/>
+      <wsdl:input name="GetResponseByUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetResponseByUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastResponseTime">
+      <soap:operation soapAction="GetLastResponseTime" style="document"/>
+      <wsdl:input name="GetLastResponseTime">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetLastResponseTimeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAverageListByDate">
+      <soap:operation soapAction="GetAverageListByDate" style="document"/>
+      <wsdl:input name="GetAverageListByDate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetAverageListByDateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PerformanceMonitorServiceV5_0">
+    <wsdl:port binding="tns:PerformanceMonitorServiceV5_0SoapBinding" name="PerformanceMonitorService">
+      <soap:address location="https://Domain/SOAP/PerformanceMonitorServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PerformanceMonitorServiceV5_0</con:endpoint></con:endpoints></con:interface>

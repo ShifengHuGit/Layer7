@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetDULStatusWithOpenConnection" name="GetDULStatusWithOpenConnection" bindingOperationName="GetDULStatusWithOpenConnection" type="Request-Response" outputName="GetDULStatusWithOpenConnectionResponse" inputName="GetDULStatusWithOpenConnection" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="60b8aea4-0d75-4d79-b31a-7ac4afbfe7e8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="60b8aea4-0d75-4d79-b31a-7ac4afbfe7e8fileName">GetDULStatusWithOpenConnection</con:setting></con:settings><con:call name="Request 1" id="52c7d288-2c2c-4417-8c6e-426d203b19ab" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/DoorLockUnlockServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:door="http://ns.hughestelematics.com/v1.0/service/doorLockUnlockServiceV2_0" xmlns:rdl="http://xmlns.hti.com/RDLUCmd" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <door:GetDULStatusWithOpenConnection>
+         <!--Optional:-->
+         <GetRDLUStatusRequest>
+            <rdl:context>
+               <v1:SourceName>?</v1:SourceName>
+               <v1:TransactionId>?</v1:TransactionId>
+               <v1:Timestamp>?</v1:Timestamp>
+               <v1:Organization>?</v1:Organization>
+               <v1:Region>?</v1:Region>
+               <v1:ApplicationName>?</v1:ApplicationName>
+            </rdl:context>
+            <rdl:Data>
+               <!--Optional:-->
+               <rdl:RDLUEventTransactionId>?</rdl:RDLUEventTransactionId>
+               <rdl:serviceOperationCode>Door Unlock</rdl:serviceOperationCode>
+               <!--Optional:-->
+               <rdl:OEM>?</rdl:OEM>
+               <rdl:tcuId>?</rdl:tcuId>
+               <rdl:vin>?</rdl:vin>
+               <rdl:AccountId>?</rdl:AccountId>
+               <!--Optional:-->
+               <rdl:UserId>?</rdl:UserId>
+            </rdl:Data>
+         </GetRDLUStatusRequest>
+      </door:GetDULStatusWithOpenConnection>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetDULStatusWithOpenConnection"/></con:call></con:operation>

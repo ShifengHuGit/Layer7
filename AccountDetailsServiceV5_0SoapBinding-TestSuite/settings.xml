@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="AccountDetailsServiceV5_0SoapBinding TestSuite" id="4b014f55-7ad7-48aa-98a6-5159cf248686" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="4b014f55-7ad7-48aa-98a6-5159cf248686fileName">AccountDetailsServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

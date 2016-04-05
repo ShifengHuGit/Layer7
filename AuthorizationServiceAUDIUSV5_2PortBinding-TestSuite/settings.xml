@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="AuthorizationServiceAUDIUSV5_2PortBinding TestSuite" id="7f1496ab-b96a-4a32-8d0f-c8e4811ef76e" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="7f1496ab-b96a-4a32-8d0f-c8e4811ef76efileName">AuthorizationServiceAUDIUSV5_2PortBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties><con:property><con:name>AccountId</con:name><con:value>100145246</con:value></con:property></con:properties><con:reportParameters/></con:testSuite>

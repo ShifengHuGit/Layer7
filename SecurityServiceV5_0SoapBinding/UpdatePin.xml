@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="UpdatePin" name="UpdatePin" bindingOperationName="UpdatePin" type="Request-Response" outputName="UpdatePinResponse" inputName="UpdatePin" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="44ea2cc9-608f-425c-a098-6809a18fdf84" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="44ea2cc9-608f-425c-a098-6809a18fdf84fileName">UpdatePin</con:setting></con:settings><con:call name="Request 1" id="4d13d27b-c913-44fe-94f3-515af0e5138c" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/SecurityServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://ns.hughestelematics.com/v5.0/service/SecurityServiceV5_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sec:UpdatePin>
+         <!--Optional:-->
+         <UpdatePinRequestType>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:UserId>?</v1:UserId>
+               <v1:NewPin>?</v1:NewPin>
+               <v1:OldPin>?</v1:OldPin>
+               <v1:Type>?</v1:Type>
+               <!--Optional:-->
+               <v1:accountNumber>?</v1:accountNumber>
+               <!--Optional:-->
+               <v1:VIN>?</v1:VIN>
+               <!--Optional:-->
+               <v1:Email>?</v1:Email>
+            </v1:Data>
+         </UpdatePinRequestType>
+      </sec:UpdatePin>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="UpdatePin"/></con:call></con:operation>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetActiveSpeedAlertMethod TestCase" searchProperties="true" id="3e9d9118-1a26-4ac8-b3cd-d7a8ddae39d8" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="3e9d9118-1a26-4ac8-b3cd-d7a8ddae39d8fileName">GetActiveSpeedAlertMethod-TestCase</con:setting></con:settings><con:testStep type="request" name="GetActiveSpeedAlertMethod" id="31c6da72-29eb-4d41-a321-c28ae285ceba"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SpeedAlertMethodServiceV5_0SoapBinding</con:interface><con:operation>GetActiveSpeedAlertMethod</con:operation><con:request name="GetActiveSpeedAlertMethod" id="a27ecfc3-8a33-4298-8db9-1cf1877523b0" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/SpeedAlertMethodServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spe="http://ns.hughestelematics.com/v1.0/service/SpeedAlertMethodServiceV5_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/SpeedAlert/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+    <api_key>${#Project#api_key}</api_key>
+   ${#Project#SessionToken}
+</soapenv:Header>
+   <soapenv:Body>
+      <spe:GetActiveSpeedAlertMethod>
+         <!--Optional:-->
+         <SpeedAlertRequest>
+            <v1:context>
+              <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>test549846456</v11:TransactionId>
+               <v11:Timestamp>2015-03-24T22:14:02.001Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:AccountId>${#Project#AccountId}</v1:AccountId>
+               <v1:VIN>${#Project#VIN}</v1:VIN>
+               <v1:TCUID>${#Project#TCUID}</v1:TCUID>
+               <!--Optional:-->
+               <v1:UserId>${#Project#AccountId}</v1:UserId>
+               <!--Optional:-->
+               
+            </v1:Data>
+         </SpeedAlertRequest>
+      </spe:GetActiveSpeedAlertMethod>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetActiveSpeedAlertMethod" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

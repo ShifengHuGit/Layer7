@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetJobStatus TestCase" searchProperties="true" id="ed541163-743c-4323-9c44-7efec86ce4e3" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ed541163-743c-4323-9c44-7efec86ce4e3fileName">GetJobStatus-TestCase</con:setting></con:settings><con:testStep type="request" name="GetJobStatus" id="fae37312-73bb-4ccf-a29c-44fda3c4bdac"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PreTripClimatisationServiceV5_0SoapBinding</con:interface><con:operation>GetJobStatus</con:operation><con:request name="GetJobStatus" id="5ad1eb3d-ecac-4848-8fd9-00d18c64554c" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PreTripClimatisationServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pret="http://ns.hughestelematics.com/Gateway/service/PreTripClimatisationService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/PreTripClimatisation/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+    <api_key>${#Project#api_key}</api_key>
+   ${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <pret:GetJobStatus>
+         <!--Optional:-->
+         <GetJobStatusRequest>
+            <v1:context>
+                <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>test8456448946</v11:TransactionId>
+               <v11:Timestamp>2015-03-23T22:14:02.001Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:AccountId>${#Project#AccountId}</v1:AccountId>
+               <v1:TCUID>${#Project#TCUID}</v1:TCUID>
+               <v1:VIN>${#Project#VIN}</v1:VIN>
+               <v1:EventTransId>test549846456</v1:EventTransId>
+               <v1:requestType>stopRpc</v1:requestType>
+            </v1:Data>
+         </GetJobStatusRequest>
+      </pret:GetJobStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetJobStatus" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

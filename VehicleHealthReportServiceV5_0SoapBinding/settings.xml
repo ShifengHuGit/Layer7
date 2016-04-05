@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="VehicleHealthReportServiceV5_0SoapBinding" type="wsdl" bindingName="{http://ns.hughestelematics.com/Gateway/service/vehicleHealthReportService}VehicleHealthReportServiceV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Layer%207/L7%20My%20files/WSDL_VW_US_1/VehicleHealthReportServiceV5_0.wsdl" id="7174a3ad-e19c-4203-a8a2-3384f96b3708" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="7174a3ad-e19c-4203-a8a2-3384f96b3708fileName">VehicleHealthReportServiceV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\VehicleHealthReportServiceV5_0.wsdl"><con:part><con:url>file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\VehicleHealthReportServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="VehicleHealthReportServiceV5_0" targetNamespace="http://ns.hughestelematics.com/Gateway/service/vehicleHealthReportService" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ns.hughestelematics.com/Gateway/service/vehicleHealthReportService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/VehicleHealthReport/V5" xmlns="http://xmlns.hughestelematics.com/Gateway/VehicleHealthReport/V5" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/VehicleHealthReport/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/VehicleHealthReport/V1"/>
+      <xs:element name="CreateVHRAlertResponse" type="ns1:CreateVHRAlertResponseTypeV50"/>
+      <xs:element name="GetActiveVHRAlertsResponse" type="ns1:GetActiveVHRAlertsResponseTypeV50"/>
+      <xs:element name="SubmitVHRResponse" type="ns1:SubmitVHRResponseTypeV50"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/VehicleHealthReport/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/AlertPreference/V1" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1" xmlns:ns4="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/VehicleHealthReport/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/AlertPreference/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:element name="CreateVHRAlertRequest" type="tns:CreateVHRAlertRequestType"/>
+      <xs:element name="CreateVHRAlertRequestV50" type="tns:CreateVHRAlertRequestTypeV50"/>
+      <xs:element name="CreateVHRAlertResponse" type="tns:CreateVHRAlertResponseType"/>
+      <xs:element name="CreateVHRAlertResponseV50" type="tns:CreateVHRAlertResponseTypeV50"/>
+      <xs:element name="GetActiveVHRAlertsRequest" type="tns:GetActiveVHRAlertsRequestType"/>
+      <xs:element name="GetActiveVHRAlertsRequestV50" type="tns:GetActiveVHRAlertsRequestTypeV50"/>
+      <xs:element name="GetActiveVHRAlertsResponse" type="tns:GetActiveVHRAlertsResponseType"/>
+      <xs:element name="GetActiveVHRAlertsResponseV50" type="tns:GetActiveVHRAlertsResponseTypeV50"/>
+      <xs:element name="SubmitVHRRequest" type="tns:SubmitVHRRequestType"/>
+      <xs:element name="SubmitVHRRequestV50" type="tns:SubmitVHRRequestTypeV50"/>
+      <xs:element name="SubmitVHRResponse" type="tns:SubmitVHRResponseType"/>
+      <xs:element name="SubmitVHRResponseV50" type="tns:SubmitVHRResponseTypeV50"/>
+      <xs:complexType name="SubmitVHRRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:SubmitVHRRequestInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SubmitVHRRequestInputDataAreaType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="enabled" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="alertRequestType" type="tns:AlertRequestTypeType"/>
+          <xs:element minOccurs="0" name="alertPreference" type="ns2:alertPreference"/>
+          <xs:element minOccurs="0" name="schedule" type="ns3:Schedule"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SubmitVHRResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns4:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetActiveVHRAlertsRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetActiveVHRAlertsInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetActiveVHRAlertsInputDataAreaType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="alertRequestType" type="tns:AlertRequestTypeType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetActiveVHRAlertsResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetActiveVHRAlertsRecordsType"/>
+          <xs:element name="Response" type="ns4:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetActiveVHRAlertsRecordsType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="GetActiveVHRAlertsData" type="tns:VHRAlertDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VHRAlertDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AliasName" type="xs:string"/>
+          <xs:element minOccurs="0" name="alertPreference" type="ns2:alertPreference"/>
+          <xs:element name="enabled" type="xs:boolean"/>
+          <xs:element name="deleted" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+          <xs:element name="alertRequestType" type="tns:AlertRequestTypeType"/>
+          <xs:element minOccurs="0" name="schedule" type="ns3:Schedule"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateVHRAlertRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:CreateVHRAlertInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateVHRAlertInputDataAreaType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="alertPreference" type="ns2:alertPreference"/>
+          <xs:element name="alertRequestType" type="tns:AlertRequestTypeType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateVHRAlertResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns4:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SubmitVHRResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns4:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SubmitVHRRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:SubmitVHRRequestInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetActiveVHRAlertsRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetActiveVHRAlertsInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetActiveVHRAlertsResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetActiveVHRAlertsRecordsType"/>
+          <xs:element name="Response" type="ns4:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateVHRAlertRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:CreateVHRAlertInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateVHRAlertResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns4:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="AlertRequestTypeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Onetime"/>
+          <xs:enumeration value="Periodic"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Schedule">
+        <xs:sequence>
+          <xs:element name="ScheduleType" type="tns:ScheduleTypeT"/>
+          <xs:element minOccurs="0" name="DailySchedule" type="tns:DailyScheduleT"/>
+          <xs:element minOccurs="0" name="WeeklySchedule" type="tns:WeeklyScheduleT"/>
+          <xs:element minOccurs="0" name="MonthlySchedule" type="tns:MonthlyScheduleT"/>
+          <xs:element minOccurs="0" name="SingleSchedule" type="tns:SingleScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DailyScheduleT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DayInterval" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" name="DaySchedule" type="tns:DayScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DayScheduleT">
+        <xs:sequence>
+          <xs:element default="0" name="DayOfWeek" type="xs:int"/>
+          <xs:element name="MinutesFromMidnight" type="xs:int"/>
+          <xs:element name="Duration" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WeeklyScheduleT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WeekInterval" type="xs:int"/>
+          <xs:element name="WeekSchedule" type="tns:WeekScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WeekScheduleT">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="DaySchedule" type="tns:DayScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MonthlyScheduleT">
+        <xs:sequence>
+          <xs:element name="DayOfMonth" type="xs:int"/>
+          <xs:element minOccurs="0" name="monthInterval" type="xs:int"/>
+          <xs:element minOccurs="0" name="MinutesFromMidnight" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SingleScheduleT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DayInterval" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" name="DaySchedule" type="tns:DayScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ScheduleTypeT">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="none"/>
+          <xs:enumeration value="daily"/>
+          <xs:enumeration value="weekly"/>
+          <xs:enumeration value="monthly"/>
+          <xs:enumeration value="single"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="Mbrace"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/AlertPreference/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/AlertPreference/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="alertPreference">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="alertByEmail" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="emails" nillable="true" type="tns:preferenceType"/>
+          <xs:element minOccurs="0" name="alertBySms" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="smsTns" nillable="true" type="tns:preferenceType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="preferenceType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="emailOrSmsTn" type="xs:string"/>
+          <xs:element minOccurs="0" name="enable" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="aliasName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/Gateway/service/vehicleHealthReportService" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/VehicleHealthReport/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/VehicleHealthReport/V5" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/VehicleHealthReport/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/VehicleHealthReport/V5"/>
+      <xs:element name="CreateVHRAlert" type="tns:CreateVHRAlert"/>
+      <xs:element name="CreateVHRAlertResponse" type="tns:CreateVHRAlertResponse"/>
+      <xs:element name="GetActiveVHRAlerts" type="tns:GetActiveVHRAlerts"/>
+      <xs:element name="GetActiveVHRAlertsResponse" type="tns:GetActiveVHRAlertsResponse"/>
+      <xs:element name="SubmitVHRRequest" type="tns:SubmitVHRRequest"/>
+      <xs:element name="SubmitVHRRequestResponse" type="tns:SubmitVHRRequestResponse"/>
+      <xs:complexType name="SubmitVHRRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SubmitVHRRequest" type="ns1:SubmitVHRRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SubmitVHRRequestResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:SubmitVHRResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetActiveVHRAlerts">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetActiveVHRAlerts" type="ns1:GetActiveVHRAlertsRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetActiveVHRAlertsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:GetActiveVHRAlertsResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateVHRAlert">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreateVHRAlert" type="ns1:CreateVHRAlertRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateVHRAlertResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:CreateVHRAlertResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateVHRAlert">
+    <wsdl:part element="tns:CreateVHRAlert" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SubmitVHRRequest">
+    <wsdl:part element="tns:SubmitVHRRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SubmitVHRRequestResponse">
+    <wsdl:part element="tns:SubmitVHRRequestResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetActiveVHRAlerts">
+    <wsdl:part element="tns:GetActiveVHRAlerts" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetActiveVHRAlertsResponse">
+    <wsdl:part element="tns:GetActiveVHRAlertsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateVHRAlertResponse">
+    <wsdl:part element="tns:CreateVHRAlertResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="VehicleHealthReportServiceV5_0">
+    <wsdl:operation name="SubmitVHRRequest">
+      <wsdl:input message="tns:SubmitVHRRequest" name="SubmitVHRRequest"></wsdl:input>
+      <wsdl:output message="tns:SubmitVHRRequestResponse" name="SubmitVHRRequestResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveVHRAlerts">
+      <wsdl:input message="tns:GetActiveVHRAlerts" name="GetActiveVHRAlerts"></wsdl:input>
+      <wsdl:output message="tns:GetActiveVHRAlertsResponse" name="GetActiveVHRAlertsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVHRAlert">
+      <wsdl:input message="tns:CreateVHRAlert" name="CreateVHRAlert"></wsdl:input>
+      <wsdl:output message="tns:CreateVHRAlertResponse" name="CreateVHRAlertResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VehicleHealthReportServiceV5_0SoapBinding" type="tns:VehicleHealthReportServiceV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetActiveVHRAlerts">
+      <soap:operation soapAction="GetActiveVHRAlerts" style="document"/>
+      <wsdl:input name="GetActiveVHRAlerts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetActiveVHRAlertsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitVHRRequest">
+      <soap:operation soapAction="SubmitVHRRequest" style="document"/>
+      <wsdl:input name="SubmitVHRRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SubmitVHRRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVHRAlert">
+      <soap:operation soapAction="CreateVHRAlert" style="document"/>
+      <wsdl:input name="CreateVHRAlert">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CreateVHRAlertResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VehicleHealthReportServiceV5_0">
+    <wsdl:port binding="tns:VehicleHealthReportServiceV5_0SoapBinding" name="VehicleHealthReportServicePort">
+      <soap:address location="https://Domain/SOAP/VehicleHealthReportServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VehicleHealthReportServiceV5_0</con:endpoint></con:endpoints></con:interface>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="PerformanceMonitorServiceV5_0SoapBinding TestSuite" id="2aee02ea-8e7d-44f5-a35e-35d069b383f9" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="2aee02ea-8e7d-44f5-a35e-35d069b383f9fileName">PerformanceMonitorServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetPoiSubmitStatus TestCase" searchProperties="true" id="294a0d39-1e44-4882-a0f0-0f5a3fef90cd" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="294a0d39-1e44-4882-a0f0-0f5a3fef90cdfileName">GetPoiSubmitStatus-TestCase</con:setting></con:settings><con:testStep type="request" name="GetPoiSubmitStatus" id="3a0562c7-e21c-47b8-a797-5f5a1a50f9a5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PoiServiceV5_0SoapBinding</con:interface><con:operation>GetPoiSubmitStatus</con:operation><con:request name="GetPoiSubmitStatus" id="cee02a3b-626f-4f1d-baeb-679014297096" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PoiServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pois="http://ns.hughestelematics.com/Gateway/service/PoiServiceV2_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Core/Route/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+   ${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <pois:GetPoiSubmitStatus>
+         <!--Optional:-->
+         <GetPoiSubmitStatusRequest>
+            <v1:context>
+              <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>anjitest545946</v11:TransactionId>
+               <v11:Timestamp>2015-03-12T13:03:35.432Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:EventTransactionId>anjitest789454656</v1:EventTransactionId>
+            </v1:Data>
+         </GetPoiSubmitStatusRequest>
+      </pois:GetPoiSubmitStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetPoiSubmitStatus" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

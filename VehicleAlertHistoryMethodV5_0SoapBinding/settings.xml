@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="VehicleAlertHistoryMethodV5_0SoapBinding" type="wsdl" bindingName="{http://ns.hughestelematics.com/v1.0/service/vehicleAlertHistoryMethod}VehicleAlertHistoryMethodV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Layer%207/L7%20My%20files/WSDL_VW_US_1/VehicleAlertHistoryServiceV5_0.wsdl" id="23fc016a-b62e-4f29-b7c7-552c531fefd6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="23fc016a-b62e-4f29-b7c7-552c531fefd6fileName">VehicleAlertHistoryMethodV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\VehicleAlertHistoryServiceV5_0.wsdl"><con:part><con:url>file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\VehicleAlertHistoryServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="VehicleAlertHistoryMethodV5_0" targetNamespace="http://ns.hughestelematics.com/v1.0/service/vehicleAlertHistoryMethod" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ns.hughestelematics.com/v1.0/service/vehicleAlertHistoryMethod" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="Mbrace"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/AlertHistory/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://ns.hughestelematics.com/v1.0/domain/alertNotificationMethod" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/AlertHistory/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://ns.hughestelematics.com/v1.0/domain/alertNotificationMethod"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:element name="AlertHistoryV50" type="tns:AlertHistoryV50"/>
+      <xs:element name="GetVehicleAlertHistory" type="tns:GetVehicleAlertHistoryType"/>
+      <xs:element name="GetVehicleAlertHistoryV50" type="tns:GetVehicleAlertHistoryTypeV50"/>
+      <xs:element name="UnattendedAlertsCountRequestV50" type="tns:UnattendedAlertsCountRequestTypeV50"/>
+      <xs:element name="UnattendedAlertsCountResponseV50" type="tns:UnattendedAlertsCountResponseTypeV50"/>
+      <xs:complexType name="GetVehicleAlertHistoryTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:InputAlertHistoryDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputAlertHistoryDataType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="AlertType" type="ns2:AlertType"/>
+          <xs:element minOccurs="0" name="numberOfDays" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlertHistory">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="alerts" nillable="true" type="tns:AlertInfo"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="speedAlerts" nillable="true" type="tns:SpeedAlertInfo"/>
+          <xs:element name="response" type="tns:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlertInfo">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="alertType" type="ns2:AlertType"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+          <xs:element minOccurs="0" name="date" type="xs:date"/>
+          <xs:element name="triggerType" type="xs:string"/>
+          <xs:element minOccurs="0" name="read" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SpeedAlertInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actualMaxSpeed" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="alertType" type="ns2:AlertType"/>
+          <xs:element minOccurs="0" name="date" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="durationMilliseconds" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="latitude" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="longitude" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="setSpeed" type="xs:int"/>
+          <xs:element minOccurs="0" name="triggerType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnattendedAlertsCountRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:UnattendedAlertsCountDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnattendedAlertsCountDataType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnattendedAlertsCountResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:UnattendedAlertsCountResultDataType"/>
+          <xs:element name="Response" type="ns3:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnattendedAlertsCountResultDataType">
+        <xs:sequence>
+          <xs:element name="UnattendedAlertsCount" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleAlertHistoryType">
+        <xs:sequence>
+          <xs:element name="header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InputAlertHistoryDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlertHistoryV50">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="alerts" nillable="true" type="tns:AlertInfo"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="speedAlerts" nillable="true" type="tns:SpeedAlertInfo"/>
+          <xs:element name="response" type="tns:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlertNotificationRequest">
+        <xs:sequence>
+          <xs:element name="vin" type="xs:long"/>
+          <xs:element name="alertType" type="ns2:AlertType"/>
+          <xs:element name="fenceId" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/v1.0/service/vehicleAlertHistoryMethod" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/AlertHistory/V1" xmlns:ns2="http://ns.hughestelematics.com/v1.0/domain/alertHistoryMethod" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/AlertHistory/V1"/>
+      <xs:import namespace="http://ns.hughestelematics.com/v1.0/domain/alertHistoryMethod"/>
+      <xs:element name="GetAlertHistory" type="tns:GetAlertHistory"/>
+      <xs:element name="GetAlertHistoryResponse" type="tns:GetAlertHistoryResponse"/>
+      <xs:element name="GetUnattendedAlertsCount" type="tns:GetUnattendedAlertsCount"/>
+      <xs:element name="GetUnattendedAlertsCountJsonV50" type="tns:GetUnattendedAlertsCountJsonV50"/>
+      <xs:element name="GetUnattendedAlertsCountJsonV50Response" type="tns:GetUnattendedAlertsCountJsonV50Response"/>
+      <xs:element name="GetUnattendedAlertsCountResponse" type="tns:GetUnattendedAlertsCountResponse"/>
+      <xs:complexType name="GetAlertHistory">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="request" type="ns1:GetVehicleAlertHistoryTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAlertHistoryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:AlertHistory"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUnattendedAlertsCount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="request" type="ns1:UnattendedAlertsCountRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUnattendedAlertsCountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:UnattendedAlertsCount"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUnattendedAlertsCountJsonV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="request" type="ns1:UnattendedAlertsCountRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUnattendedAlertsCountJsonV50Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:UnattendedAlertsCount"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ns.hughestelematics.com/v1.0/domain/alertNotificationMethod" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://ns.hughestelematics.com/v1.0/domain/alertNotificationMethod" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element name="responseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestDataType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="TcuID" type="xs:string"/>
+          <xs:element name="Vin" type="xs:string"/>
+          <xs:element name="StartDate" type="xs:date"/>
+          <xs:element minOccurs="0" name="EndDate" type="xs:date"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetCurfewAlertViolationHistoryResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="Data" type="tns:CurfewResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CurfewResponseDataType">
+        <xs:sequence>
+          <xs:element name="CurfewAlertViolations" type="tns:CurfewAlertViolationsType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CurfewAlertViolationsType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="CurfewAlert" type="tns:ViolationInfoType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ViolationInfoType">
+        <xs:sequence>
+          <xs:element name="alertId" type="xs:string"/>
+          <xs:element name="actualMaxSpeed" type="xs:string"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="date" type="xs:string"/>
+          <xs:element name="latitude" type="xs:string"/>
+          <xs:element name="longitude" type="xs:string"/>
+          <xs:element name="setSpeed" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SpeedResponseDataType">
+        <xs:sequence>
+          <xs:element name="SpeedAlertViolations" type="tns:SpeedAlertViolationsType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SpeedAlertViolationsType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SpeedAlert" type="tns:ViolationInfoType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetGeofenceAlertViolationHistoryRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:RequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetValetAlertViolationHistoryResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="Data" type="tns:ValetResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValetResponseDataType">
+        <xs:sequence>
+          <xs:element name="ValetAlertViolations" type="tns:ValetAlertViolationsType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValetAlertViolationsType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="ValetAlert" type="tns:ViolationInfoType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetSpeedAlertViolationHistoryRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:RequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlertNotificationMethodRequestDataTypeV50">
+        <xs:sequence>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="alertType" type="tns:AlertType"/>
+          <xs:element name="fenceId" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeofenceAlertViolationsType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="GeofenceAlert" type="tns:ViolationInfoType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetCurfewAlertViolationHistoryRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:RequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlertNotificationMethodResponseDataTypeV50">
+        <xs:sequence>
+          <xs:element name="smsNotificationFlag" type="xs:string"/>
+          <xs:element name="emailNotificationFlag" type="xs:string"/>
+          <xs:element name="alertName" type="xs:string"/>
+          <xs:element name="firstName" type="xs:string"/>
+          <xs:element name="lastName" type="xs:string"/>
+          <xs:element name="email" type="xs:string"/>
+          <xs:element name="phoneNumber" type="xs:string"/>
+          <xs:element name="response" type="tns:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetValetAlertViolationHistoryRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:RequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeofenceResponseDataType">
+        <xs:sequence>
+          <xs:element name="GeofenceAlertViolations" type="tns:GeofenceAlertViolationsType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeofenceAlertType">
+        <xs:sequence>
+          <xs:element name="alertId" type="xs:string"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="date" type="xs:string"/>
+          <xs:element name="latitude" type="xs:string"/>
+          <xs:element name="longitude" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetCurfewAlertViolationHistoryResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element minOccurs="0" name="Data" type="tns:CurfewResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlertNotificationMethodRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:AlertNotificationMethodRequestDataTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlertNotificationMethodResponse">
+        <xs:sequence>
+          <xs:element name="smsNotificationFlag" type="xs:string"/>
+          <xs:element name="emailNotificationFlag" type="xs:string"/>
+          <xs:element name="alertName" type="xs:string"/>
+          <xs:element name="firstName" type="xs:string"/>
+          <xs:element name="lastName" type="xs:string"/>
+          <xs:element name="email" type="xs:string"/>
+          <xs:element name="phoneNumber" type="xs:string"/>
+          <xs:element name="response" type="tns:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetSpeedAlertViolationHistoryResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="Data" type="tns:SpeedResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetGeofenceAlertViolationHistoryRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:RequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetSpeedAlertViolationHistoryRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:RequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlertNotificationMethodRequest">
+        <xs:sequence>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="alertType" type="tns:AlertType"/>
+          <xs:element name="fenceId" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetCurfewAlertViolationHistoryRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:RequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetGeofenceAlertViolationHistoryResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element minOccurs="0" name="Data" type="tns:GeofenceResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlertNotificationMethodResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="Data" type="tns:AlertNotificationMethodResponseDataTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetGeofenceAlertViolationHistoryResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="Data" type="tns:GeofenceResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetValetAlertViolationHistoryRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:RequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetValetAlertViolationHistoryResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element minOccurs="0" name="Data" type="tns:ValetResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetSpeedAlertViolationHistoryResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element minOccurs="0" name="Data" type="tns:SpeedResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="AlertType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="geofenceAlert"/>
+          <xs:enumeration value="speedAlert"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/v1.0/domain/alertHistoryMethod" xmlns="http://ns.hughestelematics.com/v1.0/domain/alertHistoryMethod" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/AlertHistory/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/AlertHistory/V1"/>
+      <xs:element name="AlertHistory" type="ns1:AlertHistory"/>
+      <xs:element name="UnattendedAlertsCount" type="ns1:UnattendedAlertsCountResponseTypeV50"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUnattendedAlertsCountJsonV50">
+    <wsdl:part element="tns:GetUnattendedAlertsCountJsonV50" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetUnattendedAlertsCountResponse">
+    <wsdl:part element="tns:GetUnattendedAlertsCountResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetUnattendedAlertsCount">
+    <wsdl:part element="tns:GetUnattendedAlertsCount" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAlertHistory">
+    <wsdl:part element="tns:GetAlertHistory" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetUnattendedAlertsCountJsonV50Response">
+    <wsdl:part element="tns:GetUnattendedAlertsCountJsonV50Response" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAlertHistoryResponse">
+    <wsdl:part element="tns:GetAlertHistoryResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="VehicleAlertHistoryMethodV5_0">
+    <wsdl:operation name="GetAlertHistory">
+      <wsdl:input message="tns:GetAlertHistory" name="GetAlertHistory"></wsdl:input>
+      <wsdl:output message="tns:GetAlertHistoryResponse" name="GetAlertHistoryResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnattendedAlertsCount">
+      <wsdl:input message="tns:GetUnattendedAlertsCount" name="GetUnattendedAlertsCount"></wsdl:input>
+      <wsdl:output message="tns:GetUnattendedAlertsCountResponse" name="GetUnattendedAlertsCountResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnattendedAlertsCountJsonV50">
+      <wsdl:input message="tns:GetUnattendedAlertsCountJsonV50" name="GetUnattendedAlertsCountJsonV50"></wsdl:input>
+      <wsdl:output message="tns:GetUnattendedAlertsCountJsonV50Response" name="GetUnattendedAlertsCountJsonV50Response"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VehicleAlertHistoryMethodV5_0SoapBinding" type="tns:VehicleAlertHistoryMethodV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAlertHistory">
+      <soap:operation soapAction="GetAlertHistory" style="document"/>
+      <wsdl:input name="GetAlertHistory">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetAlertHistoryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnattendedAlertsCount">
+      <soap:operation soapAction="GetUnattendedAlertsCount" style="document"/>
+      <wsdl:input name="GetUnattendedAlertsCount">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetUnattendedAlertsCountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnattendedAlertsCountJsonV50">
+      <soap:operation soapAction="GetUnattendedAlertsCount" style="document"/>
+      <wsdl:input name="GetUnattendedAlertsCountJsonV50">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetUnattendedAlertsCountJsonV50Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VehicleAlertHistoryMethodV5_0">
+    <wsdl:port binding="tns:VehicleAlertHistoryMethodV5_0SoapBinding" name="VehicleAlertHistoryServicePort">
+      <soap:address location="https://Domain/SOAP/VehicleAlertHistoryServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VehicleAlertHistoryServiceV5_0</con:endpoint></con:endpoints></con:interface>

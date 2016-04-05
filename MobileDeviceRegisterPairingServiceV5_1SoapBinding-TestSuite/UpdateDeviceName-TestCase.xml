@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="UpdateDeviceName TestCase" searchProperties="true" id="09a09481-f877-42ed-a404-7e3b793d0a50" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="09a09481-f877-42ed-a404-7e3b793d0a50fileName">UpdateDeviceName-TestCase</con:setting></con:settings><con:testStep type="request" name="UpdateDeviceName" id="60d3af9b-3e2d-46c4-bbe5-dc5e931f8dd1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MobileDeviceRegisterPairingServiceV5_1SoapBinding</con:interface><con:operation>UpdateDeviceName</con:operation><con:request name="UpdateDeviceName" id="44cbda53-10e5-4416-9336-e0c5bb787b80" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://Domain/SOAP/MobileDeviceRegisterPairingServiceV5_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/service/MobileDevicePairing/V1" xmlns:v5="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V5_1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:UpdateDeviceName>
+         <!--Optional:-->
+         <v5:UpdateDeviceNameRequest>
+            <v11:context>
+               <v12:SourceName>?</v12:SourceName>
+               <v12:TransactionId>?</v12:TransactionId>
+               <v12:Timestamp>?</v12:Timestamp>
+               <v12:Organization>?</v12:Organization>
+               <v12:Region>?</v12:Region>
+               <v12:ApplicationName>?</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:userId>?</v11:userId>
+               <v11:deviceDetailsList>
+                  <!--1 or more repetitions:-->
+                  <v11:deviceDetails>
+                     <v11:deviceName>?</v11:deviceName>
+                     <v11:pairingTimestamp>?</v11:pairingTimestamp>
+                     <v11:uniqueDeviceId>?</v11:uniqueDeviceId>
+                  </v11:deviceDetails>
+               </v11:deviceDetailsList>
+            </v11:Data>
+         </v5:UpdateDeviceNameRequest>
+      </v1:UpdateDeviceName>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig action="UpdateDeviceName" mustUnderstand="NONE" version="200508"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

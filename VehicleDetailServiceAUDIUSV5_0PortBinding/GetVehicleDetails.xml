@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetVehicleDetails" name="GetVehicleDetails" bindingOperationName="GetVehicleDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="a9c09375-1b7b-420f-a438-88b4fc964127" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="a9c09375-1b7b-420f-a438-88b4fc964127fileName">GetVehicleDetails</con:setting></con:settings><con:call name="Request 1" id="b969b418-8038-4078-a6f7-3c9d2c2bb1de" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>REPLACE_WITH_ACTUAL_URL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/service/AUDIUS_VehicleDetailServiceV5_0/V1" xmlns:v11="http://xmlns.vzt.com/APIGateway/AUDIUS_VehicleDetails/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:GetVehicleDetails>
+         <!--Optional:-->
+         <GetVehicleDetailsRequest>
+            <v11:Data>
+               <v11:AccountID>?</v11:AccountID>
+            </v11:Data>
+         </GetVehicleDetailsRequest>
+      </v1:GetVehicleDetails>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetVehicleDetails"/></con:call></con:operation>

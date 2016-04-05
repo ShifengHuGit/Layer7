@@ -1,0 +1,4 @@
+GetRecentVehicleStatusData-TestCase.xml
+GetRecentVehicleStatusDataWithTranID-TestCase.xml
+GetUnifiedVehicleStatusData-TestCase.xml
+GetVehicleStatusReport-TestCase.xml

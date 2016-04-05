@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="DoorLockUnlockServiceV5_0SoapBinding TestSuite" id="bade5057-a4dc-4f08-b981-78c518f860ba" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="bade5057-a4dc-4f08-b981-78c518f860bafileName">DoorLockUnlockServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

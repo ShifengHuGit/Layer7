@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="MobileDeviceRegisterPairingServiceV5_1SoapBinding" type="wsdl" bindingName="{http://xmlns.hughestelematics.com/Gateway/service/MobileDevicePairing/V1}MobileDeviceRegisterPairingServiceV5_1SoapBinding" soapVersion="1_1" anonymous="optional" definition="../AUDI US_API Gateway_15.05/WSDL/MobileDeviceRegisterPairingServiceV5_1.wsdl" id="2c199c25-f9b3-4f26-8b40-faeea8f7f04a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="2c199c25-f9b3-4f26-8b40-faeea8f7f04afileName">MobileDeviceRegisterPairingServiceV5_1SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:/C:/Users/rvishnu/Desktop/Audi/AUDI%20US_API%20Gateway_15.05/WSDL/MobileDeviceRegisterPairingServiceV5_1.wsdl"><con:part><con:url>file:/C:/Users/rvishnu/Desktop/Audi/AUDI%20US_API%20Gateway_15.05/WSDL/MobileDeviceRegisterPairingServiceV5_1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="MobileDeviceRegisterPairingServiceV5_1" targetNamespace="http://xmlns.hughestelematics.com/Gateway/service/MobileDevicePairing/V1" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/service/MobileDevicePairing/V1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/service/MobileDevicePairing/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V5_1" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V5_1" xmlns:ns4="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V1" xmlns:ns5="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V5_1" xmlns:ns6="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V5_1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V5_1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V5_1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1"/>
+      <xs:element name="Registration" type="tns:Registration"/>
+      <xs:element name="RegistrationResponse" type="tns:RegistrationResponse"/>
+      <xs:element name="UnpairingV2" type="tns:UnpairingV2"/>
+      <xs:element name="UnpairingV2Response" type="tns:UnpairingV2Response"/>
+      <xs:element name="UpdateDeviceName" type="tns:UpdateDeviceName"/>
+      <xs:element name="UpdateDeviceNameResponse" type="tns:UpdateDeviceNameResponse"/>
+      <xs:element name="ValidateRegistration" type="tns:ValidateRegistration"/>
+      <xs:element name="ValidateRegistrationResponse" type="tns:ValidateRegistrationResponse"/>
+      <xs:element name="getPairedDevices" type="tns:getPairedDevices"/>
+      <xs:element name="getPairedDevicesResponse" type="tns:getPairedDevicesResponse"/>
+      <xs:element name="getPairedDevicesV2" type="tns:getPairedDevicesV2"/>
+      <xs:element name="getPairedDevicesV2Response" type="tns:getPairedDevicesV2Response"/>
+      <xs:complexType name="Registration">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:RegistrationRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RegistrationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns3:RegistrationResponseV5"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPairedDevicesV2">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns5:getPaiedDeviceListRequestV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPairedDevicesV2Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns3:getPairedDevicesResponseV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnpairingV2">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns3:UnpairingRequestV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnpairingV2Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns3:UnpairingResponseV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPairedDevices">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns5:getPaiedDeviceListRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPairedDevicesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns3:getPairedDevicesResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateDeviceName">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns3:UpdateDeviceNameRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateDeviceNameResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns3:UpdateDeviceNameResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateRegistration">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns5:PairingRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateRegistrationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns5:PairingResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V5_1" xmlns="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V5_1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V1"/>
+      <xs:element name="RegistrationRequest" type="ns1:RegistrationRequestTypeV5_1"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:complexType name="RegistrationRequestTypeV5_1">
+        <xs:sequence>
+          <xs:element form="qualified" name="context" type="ns1:BusinessContext"/>
+          <xs:element form="qualified" name="Data" type="tns:RegistrationRequestDataTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RegistrationRequestDataTypeV2">
+        <xs:sequence>
+          <xs:element form="qualified" name="UserId" type="xs:string"/>
+          <xs:element form="qualified" name="CommunicationToken" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RegistrationResponseTypeV5">
+        <xs:sequence>
+          <xs:element form="qualified" name="context" type="ns1:BusinessContext"/>
+          <xs:element form="qualified" name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RegistrationResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" name="Header" type="ns1:MessageHeader"/>
+          <xs:element form="qualified" name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RegistrationRequestType">
+        <xs:sequence>
+          <xs:element form="qualified" name="Header" type="ns1:MessageHeader"/>
+          <xs:element form="qualified" name="DataArea" type="tns:RegistrationRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RegistrationRequestDataType">
+        <xs:sequence>
+          <xs:element form="qualified" name="userId" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="email" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="phone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RegistrationRequestTypeV5">
+        <xs:sequence>
+          <xs:element form="qualified" name="context" type="ns1:BusinessContext"/>
+          <xs:element form="qualified" name="Data" type="tns:RegistrationRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RegistrationRequestDataTypeV5">
+        <xs:sequence>
+          <xs:element form="qualified" name="userId" type="xs:string"/>
+          <xs:element form="qualified" name="NotificationPreference" type="tns:NotificationPreferenceType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="NotificationPreferenceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EMAIL"/>
+          <xs:enumeration value="SMS"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V5_1" xmlns="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V5_1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V1" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1"/>
+      <xs:element name="RegistrationResponseV5" type="ns1:RegistrationResponseTypeV5"/>
+      <xs:element name="UnpairingRequestV2" type="ns3:UnPairingRequestTypeV2V5"/>
+      <xs:element name="UnpairingResponseV2" type="ns3:UnPairingResponseTypeV2V5"/>
+      <xs:element name="UpdateDeviceNameRequest" type="ns3:UpdateDeviceNameRequestTypeV5"/>
+      <xs:element name="UpdateDeviceNameResponse" type="ns3:UpdateDeviceNameResponseTypeV5"/>
+      <xs:element name="getPairedDevicesResponse" type="ns2:PairedDeviceListResponseTypeV5"/>
+      <xs:element name="getPairedDevicesResponseV2" type="ns2:PairedDeviceListResponseTypeV2V5"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:complexType name="UnPairingRequestTypeV2V5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:UnPairingRequestDataTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnPairingRequestDataTypeV2">
+        <xs:sequence>
+          <xs:element name="userId" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" name="unPairDeviceDetails" type="tns:unPairDeviceDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="unPairDeviceDetails">
+        <xs:sequence>
+          <xs:element name="deviceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="pairingTime" type="xs:dateTime"/>
+          <xs:element name="uniqueDeviceId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnPairingResponseTypeV2V5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateDeviceNameRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:UpdateDeviceNameDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateDeviceNameDataType">
+        <xs:sequence>
+          <xs:element name="userId" type="xs:string"/>
+          <xs:element name="deviceDetailsList" type="tns:DeviceDetailsList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeviceDetailsList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="deviceDetails" type="tns:deviceDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deviceDetails">
+        <xs:sequence>
+          <xs:element name="deviceName" type="xs:string"/>
+          <xs:element name="pairingTimestamp" type="xs:dateTime"/>
+          <xs:element name="uniqueDeviceId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateDeviceNameResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingRequestTypeV51">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:PairingRequestDataTypeV51"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingRequestDataTypeV51">
+        <xs:sequence>
+          <xs:element name="UserID" type="xs:string"/>
+          <xs:element name="RegistrationCode" type="xs:string"/>
+          <xs:element name="DeviceName" type="xs:string"/>
+          <xs:element name="CSR" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingResponseTypeV51">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+          <xs:element minOccurs="0" name="Data" type="tns:PairingResponseDataTypeV51"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingResponseDataTypeV51">
+        <xs:sequence>
+          <xs:element name="DeviceName" type="xs:string"/>
+          <xs:element name="UniqueDeviceID" type="xs:long"/>
+          <xs:element minOccurs="0" name="Cert" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingResponseDataType">
+        <xs:sequence>
+          <xs:element name="HTDID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="DataArea" type="tns:PairingRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingRequestDataType">
+        <xs:sequence>
+          <xs:element name="userId" type="xs:string"/>
+          <xs:element name="pin" type="xs:string"/>
+          <xs:element name="registrationCode" type="xs:string"/>
+          <xs:element name="deviceName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnPairingRequestDataType">
+        <xs:sequence>
+          <xs:element name="userId" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" name="deviceNames" type="xs:string"/>
+          <xs:element minOccurs="0" name="pairingTime" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnPairingRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="DataArea" type="tns:UnPairingRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+          <xs:element minOccurs="0" name="DataArea" type="tns:PairingResponseDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnPairingResponseTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnPairingRequestTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="DataArea" type="tns:UnPairingRequestDataTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UnPairingRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:UnPairingRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateDeviceNameResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="Data" type="tns:PairingRequestDataTypeV5"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingRequestDataTypeV5">
+        <xs:sequence>
+          <xs:element name="userId" type="xs:string"/>
+          <xs:element name="registrationCode" type="xs:string"/>
+          <xs:element name="deviceName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+          <xs:element minOccurs="0" name="Data" type="tns:PairingResponseDataTypeV5"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairingResponseDataTypeV5">
+        <xs:sequence>
+          <xs:element name="deviceName" type="xs:string"/>
+          <xs:element name="uniqueDeviceId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateDeviceNameRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="DataArea" type="tns:UpdateDeviceNameDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V5_1" xmlns="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V5_1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1"/>
+      <xs:element name="PairingRequest" type="ns2:PairingRequestTypeV51"/>
+      <xs:element name="PairingResponse" type="ns2:PairingResponseTypeV51"/>
+      <xs:element name="getPaiedDeviceListRequest" type="ns1:PairedDeviceListRequestTypeV5"/>
+      <xs:element name="getPaiedDeviceListRequestV2" type="ns1:PairedDeviceListRequestTypeV2V5"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:complexType name="PairedDeviceListRequestTypeV2V5">
+        <xs:sequence>
+          <xs:element form="qualified" name="context" type="ns1:BusinessContext"/>
+          <xs:element form="qualified" name="Data" type="tns:PairedDeviceListRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceListRequestDataType">
+        <xs:sequence>
+          <xs:element form="qualified" name="userId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceListResponseTypeV2V5">
+        <xs:sequence>
+          <xs:element form="qualified" name="context" type="ns1:BusinessContext"/>
+          <xs:element form="qualified" minOccurs="0" name="Data" type="tns:PairedDeviceListResponseDataTypeV2"/>
+          <xs:element form="qualified" name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceListResponseDataTypeV2">
+        <xs:sequence>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="PairedDeviceListV2" type="tns:PairedDeviceList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceList">
+        <xs:sequence>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="PairedDevice" type="tns:PairedDeviceV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceV2">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="deviceName" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="pairingStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="pairingEmailPhone" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="pairingTime" type="xs:dateTime"/>
+          <xs:element form="qualified" minOccurs="0" name="lastUpdatedTime" type="xs:dateTime"/>
+          <xs:element form="qualified" minOccurs="0" name="uniqueDeviceId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceListRequestTypeV5">
+        <xs:sequence>
+          <xs:element form="qualified" name="context" type="ns1:BusinessContext"/>
+          <xs:element form="qualified" name="Data" type="tns:PairedDeviceListRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceListResponseTypeV5">
+        <xs:sequence>
+          <xs:element form="qualified" name="context" type="ns1:BusinessContext"/>
+          <xs:element form="qualified" name="Response" type="ns2:ResponseType"/>
+          <xs:element form="qualified" minOccurs="0" name="Data" type="tns:PairedDeviceListResponseDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceListResponseDataType">
+        <xs:sequence>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="PairedDeviceList" type="tns:PairedDevice"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDevice">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="deviceName" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="accountInformationId" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="registrationCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="pairingStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="pairingEmailPhone" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="pairingMethod" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="pairingTime" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceListResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element form="qualified" name="Response" type="ns2:ResponseType"/>
+          <xs:element form="qualified" minOccurs="0" name="DataArea" type="tns:PairedDeviceListResponseDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceListRequestType">
+        <xs:sequence>
+          <xs:element form="qualified" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element form="qualified" name="userId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceListRequestTypeV2">
+        <xs:sequence>
+          <xs:element form="qualified" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element form="qualified" name="userId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PairedDeviceListResponseTypeV2">
+        <xs:sequence>
+          <xs:element form="qualified" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element form="qualified" minOccurs="0" name="DataArea" type="tns:PairedDeviceListResponseDataTypeV2"/>
+          <xs:element form="qualified" name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseType2">
+        <xs:sequence>
+          <xs:element form="qualified" name="Tracing" type="ns1:TracingType"/>
+          <xs:element form="qualified" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="MBRACE"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="TracingType">
+        <xs:sequence>
+          <xs:element name="TraceID" type="xs:string"/>
+          <xs:element name="TraceTimestamp" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PhoneType">
+        <xs:sequence>
+          <xs:element name="Number" type="xs:string"/>
+          <xs:element name="PrimaryContactIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContactType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Phones" type="tns:PhoneListType"/>
+          <xs:element maxOccurs="unbounded" name="Emails" type="tns:EmailListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PhoneListType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Phone" type="tns:PhoneType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmailListType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Email" type="tns:EmailType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmailType">
+        <xs:sequence>
+          <xs:element name="Address" type="xs:string"/>
+          <xs:element name="PrimaryContactIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmailWithTokenType">
+        <xs:sequence>
+          <xs:element name="Address" type="xs:string"/>
+          <xs:element minOccurs="0" name="CommunicationToken" type="xs:string"/>
+          <xs:element name="PrimaryContactIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmailWithTokenListType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Email" type="tns:EmailWithTokenType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContactWithTokenType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Phones" type="tns:PhoneWithTokenListType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Emails" type="tns:EmailWithTokenListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PhoneWithTokenListType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Phone" type="tns:PhoneWithTokenType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PhoneWithTokenType">
+        <xs:sequence>
+          <xs:element name="Number" type="xs:string"/>
+          <xs:element minOccurs="0" name="CommunicationToken" type="xs:string"/>
+          <xs:element name="PrimaryContactIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="UnpairingV2Response">
+    <wsdl:part element="tns:UnpairingV2Response" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RegistrationResponse">
+    <wsdl:part element="tns:RegistrationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceNameResponse">
+    <wsdl:part element="tns:UpdateDeviceNameResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPairedDevices">
+    <wsdl:part element="tns:getPairedDevices" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPairedDevicesResponse">
+    <wsdl:part element="tns:getPairedDevicesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPairedDevicesV2Response">
+    <wsdl:part element="tns:getPairedDevicesV2Response" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceName">
+    <wsdl:part element="tns:UpdateDeviceName" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UnpairingV2">
+    <wsdl:part element="tns:UnpairingV2" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ValidateRegistrationResponse">
+    <wsdl:part element="tns:ValidateRegistrationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ValidateRegistration">
+    <wsdl:part element="tns:ValidateRegistration" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Registration">
+    <wsdl:part element="tns:Registration" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPairedDevicesV2">
+    <wsdl:part element="tns:getPairedDevicesV2" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MobileDeviceRegisterPairingServiceV5_1">
+    <wsdl:operation name="Registration">
+      <wsdl:input message="tns:Registration" name="Registration"></wsdl:input>
+      <wsdl:output message="tns:RegistrationResponse" name="RegistrationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPairedDevicesV2">
+      <wsdl:input message="tns:getPairedDevicesV2" name="getPairedDevicesV2"></wsdl:input>
+      <wsdl:output message="tns:getPairedDevicesV2Response" name="getPairedDevicesV2Response"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnpairingV2">
+      <wsdl:input message="tns:UnpairingV2" name="UnpairingV2"></wsdl:input>
+      <wsdl:output message="tns:UnpairingV2Response" name="UnpairingV2Response"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPairedDevices">
+      <wsdl:input message="tns:getPairedDevices" name="getPairedDevices"></wsdl:input>
+      <wsdl:output message="tns:getPairedDevicesResponse" name="getPairedDevicesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceName">
+      <wsdl:input message="tns:UpdateDeviceName" name="UpdateDeviceName"></wsdl:input>
+      <wsdl:output message="tns:UpdateDeviceNameResponse" name="UpdateDeviceNameResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRegistration">
+      <wsdl:input message="tns:ValidateRegistration" name="ValidateRegistration"></wsdl:input>
+      <wsdl:output message="tns:ValidateRegistrationResponse" name="ValidateRegistrationResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MobileDeviceRegisterPairingServiceV5_1SoapBinding" type="tns:MobileDeviceRegisterPairingServiceV5_1">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Registration">
+      <soap:operation soapAction="Registration" style="document"/>
+      <wsdl:input name="Registration">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RegistrationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPairedDevicesV2">
+      <soap:operation soapAction="getPairedDevicesV2" style="document"/>
+      <wsdl:input name="getPairedDevicesV2">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPairedDevicesV2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnpairingV2">
+      <soap:operation soapAction="UnpairingV2" style="document"/>
+      <wsdl:input name="UnpairingV2">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UnpairingV2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPairedDevices">
+      <soap:operation soapAction="getPairedDevices" style="document"/>
+      <wsdl:input name="getPairedDevices">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPairedDevicesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceName">
+      <soap:operation soapAction="UpdateDeviceName" style="document"/>
+      <wsdl:input name="UpdateDeviceName">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateDeviceNameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRegistration">
+      <soap:operation soapAction="ValidateRegistration" style="document"/>
+      <wsdl:input name="ValidateRegistration">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ValidateRegistrationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MobileDeviceRegisterPairingServiceV5_1">
+    <wsdl:port binding="tns:MobileDeviceRegisterPairingServiceV5_1SoapBinding" name="MobileDeviceRegisterPairingServicePort">
+      <soap:address location="https://Domain/SOAP/MobileDeviceRegisterPairingServiceV5_1"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:documentation>Copyright (c) 2013 Verizon. All Rights Reserved.</wsdl:documentation>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://Domain/SOAP/MobileDeviceRegisterPairingServiceV5_1</con:endpoint></con:endpoints></con:interface>

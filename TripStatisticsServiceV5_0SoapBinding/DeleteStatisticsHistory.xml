@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="DeleteStatisticsHistory" name="DeleteStatisticsHistory" bindingOperationName="DeleteStatisticsHistory" type="Request-Response" outputName="DeleteStatisticsHistoryResponse" inputName="DeleteStatisticsHistory" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="24e90a57-8010-479d-9ee0-c59b3a688738" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="24e90a57-8010-479d-9ee0-c59b3a688738fileName">DeleteStatisticsHistory</con:setting></con:settings><con:call name="Request 1" id="fc8d501a-5cb7-4308-975c-ad919b4da0da" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/TripStatisticsServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trip="http://ns.hughestelematics.com/Gateway/service/TripStatisticsService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/TripStatistics/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trip:DeleteStatisticsHistory>
+         <!--Optional:-->
+         <TripStatisDetails>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:AccountId>?</v1:AccountId>
+               <v1:TCUID>?</v1:TCUID>
+               <v1:VIN>?</v1:VIN>
+               <v1:TripType>LastTrip</v1:TripType>
+            </v1:Data>
+         </TripStatisDetails>
+      </trip:DeleteStatisticsHistory>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="DeleteStatisticsHistory"/></con:call></con:operation>

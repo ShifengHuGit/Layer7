@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BatteryChargingServiceV5_0SoapBinding" type="wsdl" bindingName="{http://ns.hughestelematics.com/Gateway/service/BatteryChargingServiceV5_0}BatteryChargingServiceV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="../AUDI US_API Gateway_15.05/WSDL/BatteryChargingServiceV5_0.wsdl" id="3ac3ec40-80d0-47af-b049-ed44ecb7819f" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="3ac3ec40-80d0-47af-b049-ed44ecb7819ffileName">BatteryChargingServiceV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:/C:/Users/rvishnu/Desktop/Audi/AUDI%20US_API%20Gateway_15.05/WSDL/BatteryChargingServiceV5_0.wsdl"><con:part><con:url>file:/C:/Users/rvishnu/Desktop/Audi/AUDI%20US_API%20Gateway_15.05/WSDL/BatteryChargingServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BatteryChargingServiceV5_0" targetNamespace="http://ns.hughestelematics.com/Gateway/service/BatteryChargingServiceV5_0" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ns.hughestelematics.com/Gateway/service/BatteryChargingServiceV5_0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseType2">
+        <xs:sequence>
+          <xs:element form="qualified" name="Tracing" type="ns1:TracingType"/>
+          <xs:element form="qualified" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="MBRACE"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="TracingType">
+        <xs:sequence>
+          <xs:element name="TraceID" type="xs:string"/>
+          <xs:element name="TraceTimestamp" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PhoneType">
+        <xs:sequence>
+          <xs:element name="Number" type="xs:string"/>
+          <xs:element name="PrimaryContactIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContactType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Phones" type="tns:PhoneListType"/>
+          <xs:element maxOccurs="unbounded" name="Emails" type="tns:EmailListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PhoneListType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Phone" type="tns:PhoneType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmailListType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Email" type="tns:EmailType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmailType">
+        <xs:sequence>
+          <xs:element name="Address" type="xs:string"/>
+          <xs:element name="PrimaryContactIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmailWithTokenType">
+        <xs:sequence>
+          <xs:element name="Address" type="xs:string"/>
+          <xs:element minOccurs="0" name="CommunicationToken" type="xs:string"/>
+          <xs:element name="PrimaryContactIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmailWithTokenListType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Email" type="tns:EmailWithTokenType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContactWithTokenType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Phones" type="tns:PhoneWithTokenListType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Emails" type="tns:EmailWithTokenListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PhoneWithTokenListType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Phone" type="tns:PhoneWithTokenType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PhoneWithTokenType">
+        <xs:sequence>
+          <xs:element name="Number" type="xs:string"/>
+          <xs:element minOccurs="0" name="CommunicationToken" type="xs:string"/>
+          <xs:element name="PrimaryContactIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/BatteryCharging/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/BatteryCharging/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:element name="BatteryChargingDetailsRequest" type="tns:BatteryChargingDetailsRequestType"/>
+      <xs:element name="BatteryChargingDetailsRequestV50" type="tns:BatteryChargingDetailsRequestTypeV50"/>
+      <xs:element name="BatteryChargingDetailsResponse" nillable="true" type="xs:anyType"/>
+      <xs:element name="BatteryChargingDetailsResponseV50" type="tns:BatteryChargingDetailsResponseTypeV50"/>
+      <xs:element name="BatteryChargingJobResponse" type="tns:BatteryChargingResponseTypeV50"/>
+      <xs:element name="BatteryChargingRequest" type="tns:BatteryChargingRequestType"/>
+      <xs:element name="BatteryChargingRequestV50" type="tns:BatteryChargingRequestTypeV50"/>
+      <xs:element name="BatteryChargingResponse" type="tns:BatteryChargingResponseType"/>
+      <xs:element name="BatteryChargingResponseV50" type="tns:BatteryChargingResponseTypeV50"/>
+      <xs:element name="GetJobStatusRequest" type="tns:GetJobStatusRequestType"/>
+      <xs:element name="GetJobStatusRequestV50" type="tns:GetJobStatusRequestTypeV50"/>
+      <xs:element name="GetJobStatusRespons" type="tns:GetJobStatusResponseTypeV50"/>
+      <xs:element name="GetJobStatusResponse" type="tns:GetJobStatusResponseType"/>
+      <xs:element name="GetJobStatusResponseV50" type="tns:GetJobStatusResponseTypeV50"/>
+      <xs:element name="GetMaxCurrentRequest" type="tns:GetMaxCurrentRequestType"/>
+      <xs:element name="GetMaxCurrentRequestV50" type="tns:GetMaxCurrentRequestTypeV50"/>
+      <xs:element name="GetMaxCurrentResponse" nillable="true" type="xs:anyType"/>
+      <xs:element name="GetMaxCurrentResponseV50" type="tns:GetMaxCurrentResponseTypeV50"/>
+      <xs:complexType name="GetMaxCurrentRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetMaxCurrentReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMaxCurrentReqDataType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMaxCurrentResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetMaxCurrentResDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMaxCurrentResDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chargeMaxCurrent" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BatteryChargingRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:BatteryChargingReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BatteryChargingReqDataType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="requestType" type="tns:RBCRequestType"/>
+          <xs:element minOccurs="0" name="chargeMaxCurrent" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BatteryChargingResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetJobStatusReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusReqDataType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="EventTransId" type="xs:string"/>
+          <xs:element name="requestType" type="tns:RBCRequestType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetJobStatusResDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusResDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChargingState" type="tns:BatteryChargeStateType"/>
+          <xs:element minOccurs="0" name="ChargingPlugLockState" type="tns:PlugLockStateType"/>
+          <xs:element minOccurs="0" name="chargeMaxCurrent" type="xs:int"/>
+          <xs:element minOccurs="0" name="ResponseStatusCode" type="tns:ResponseStatusCodeType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BatteryChargingDetailsRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:BatteryChargingDetailsReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BatteryChargingDetailsReqDataType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BatteryChargingDetailsResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:BatteryChargingDetailsResDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BatteryChargingDetailsResDataType">
+        <xs:sequence>
+          <xs:element name="PlugConnectionState" type="tns:PlugConnectionStateType"/>
+          <xs:element name="ExtPowerSupplyState" type="tns:ExtPowerSupplyStateType"/>
+          <xs:element name="BatteryChargeState" type="tns:BatteryChargeStateType"/>
+          <xs:element name="TriggerSource" type="tns:TriggerSourceType"/>
+          <xs:element name="BatteryConditionState" type="tns:BatteryConditionStateType"/>
+          <xs:element name="BatteryChargeMode" type="tns:BatteryChargeModeType"/>
+          <xs:element name="EnergyFlowState" type="tns:EnergyFlowStateType"/>
+          <xs:element name="PlugLockState" type="tns:PlugLockStateType"/>
+          <xs:element name="CruisingRange" type="xs:string"/>
+          <xs:element name="RemainingChargingTime" type="xs:string"/>
+          <xs:element name="StateOfCharge" type="xs:string"/>
+          <xs:element name="ChargingMaxCurrentAmp" type="xs:string"/>
+          <xs:element name="ChargingStateReportTimeStamp" type="xs:dateTime"/>
+          <xs:element name="BatteryStateReportTimeStamp" type="xs:dateTime"/>
+          <xs:element name="ChargingSettingsReportTimeStamp" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BatteryChargingDetailsRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:BatteryChargingDetailsReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BatteryChargingRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:BatteryChargingReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMaxCurrentRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetMaxCurrentReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetJobStatusReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetJobStatusResDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMaxCurrentResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetMaxCurrentResDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BatteryChargingResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BatteryChargingDetailsResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:BatteryChargingDetailsResDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="RBCRequestType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="startRbc"/>
+          <xs:enumeration value="stopRbc"/>
+          <xs:enumeration value="setRbc"/>
+          <xs:enumeration value="unlockChargePlug"/>
+          <xs:enumeration value="getBatteryState"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="BatteryChargeStateType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="off"/>
+          <xs:enumeration value="charging"/>
+          <xs:enumeration value="unsupported"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PlugLockStateType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="unlocked"/>
+          <xs:enumeration value="locked"/>
+          <xs:enumeration value="unsupported"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ResponseStatusCodeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ChangeSettingsOK"/>
+          <xs:enumeration value="SettingsChanged"/>
+          <xs:enumeration value="StatusRequestOK"/>
+          <xs:enumeration value="ChargingStarted"/>
+          <xs:enumeration value="ChargingStopped"/>
+          <xs:enumeration value="StartChargingOK"/>
+          <xs:enumeration value="StopChargingOK"/>
+          <xs:enumeration value="UnlockChargePlugOK"/>
+          <xs:enumeration value="ChargePlugConnect"/>
+          <xs:enumeration value="ChargePlugLock"/>
+          <xs:enumeration value="ChargePlugDisconnect"/>
+          <xs:enumeration value="ChargePlugUnlock"/>
+          <xs:enumeration value="ChargePlugPowerAvailable"/>
+          <xs:enumeration value="ChargePlugPowerUnavailable"/>
+          <xs:enumeration value="StartClimaOK"/>
+          <xs:enumeration value="StopClimaOK"/>
+          <xs:enumeration value="ClimaStarted"/>
+          <xs:enumeration value="ClimaStopped"/>
+          <xs:enumeration value="ClimaAbortedNoPower"/>
+          <xs:enumeration value="StartWindowHeatingOK"/>
+          <xs:enumeration value="StopWindowHeatingOK"/>
+          <xs:enumeration value="ChangeTimerProfileOK"/>
+          <xs:enumeration value="TimerProfileChanged"/>
+          <xs:enumeration value="StartChargingFailedClamp15"/>
+          <xs:enumeration value="StartChargingFailed"/>
+          <xs:enumeration value="StartChargingFailedLMError"/>
+          <xs:enumeration value="StartChargingFailedLMErrorHV"/>
+          <xs:enumeration value="StartChargingFailedGearP"/>
+          <xs:enumeration value="StartChargingFailedChargePlug"/>
+          <xs:enumeration value="StartChargingFailedNoPower"/>
+          <xs:enumeration value="StartChargingFailedSynchError"/>
+          <xs:enumeration value="StopChargingFailed"/>
+          <xs:enumeration value="StopChargingFailedClamp15"/>
+          <xs:enumeration value="StopChargingFailedLMError"/>
+          <xs:enumeration value="StopChargingFailedSynchError"/>
+          <xs:enumeration value="UnlockChargePlugFailed"/>
+          <xs:enumeration value="UnlockChargePlugFailedClamp15"/>
+          <xs:enumeration value="UnlockChargePlugFailedLMError"/>
+          <xs:enumeration value="UnlockChargePlugFailedSynchError"/>
+          <xs:enumeration value="ChangeSettingsFailed"/>
+          <xs:enumeration value="ChangeSettingsFailedLMError"/>
+          <xs:enumeration value="ChangeSettingsFailedSynchError"/>
+          <xs:enumeration value="ChargePlugAutolockError"/>
+          <xs:enumeration value="ChargingAbortedLM"/>
+          <xs:enumeration value="StatusRequestFailed"/>
+          <xs:enumeration value="StartClimaFailed"/>
+          <xs:enumeration value="StartClimaFailedClamp15"/>
+          <xs:enumeration value="StartClimaFailedLMError"/>
+          <xs:enumeration value="StartClimaFailedLMErrorHV"/>
+          <xs:enumeration value="StartClimaFailedGearP"/>
+          <xs:enumeration value="StartClimaFailedChargePlug"/>
+          <xs:enumeration value="StartClimaFailedNoPower"/>
+          <xs:enumeration value="StartClimaFailedSynchError"/>
+          <xs:enumeration value="StopClimaFailed"/>
+          <xs:enumeration value="StopClimaFailedClamp15"/>
+          <xs:enumeration value="StopClimaFailedLMError"/>
+          <xs:enumeration value="StopClimaFailedSynchError"/>
+          <xs:enumeration value="ClimaAbortedLM"/>
+          <xs:enumeration value="ClimaAbortedLMErrorHV"/>
+          <xs:enumeration value="ClimaAbortedClimaError"/>
+          <xs:enumeration value="ClimaAbortedLMChargingPrioPowerReduction"/>
+          <xs:enumeration value="ClimaAbortedLMLowSOC"/>
+          <xs:enumeration value="ClimaAbortedBodyShell"/>
+          <xs:enumeration value="ClimaAbortedClamp15"/>
+          <xs:enumeration value="StartWindowHeatingFailed"/>
+          <xs:enumeration value="StartWindowHeatingFailedClamp15"/>
+          <xs:enumeration value="StartWindowHeatingFailedLMError"/>
+          <xs:enumeration value="StopWindowHeatingFailed"/>
+          <xs:enumeration value="StopWindowHeatingFailedClamp15"/>
+          <xs:enumeration value="StopWindowHeatingFailedLMError"/>
+          <xs:enumeration value="ChangeTimerProfileFailed"/>
+          <xs:enumeration value="ChangeTimerProfileFailedLMError"/>
+          <xs:enumeration value="opFailed"/>
+          <xs:enumeration value="timedout"/>
+          <xs:enumeration value="ChargingAbortedPlugUnlocked"/>
+          <xs:enumeration value="ChargingAbortedErrorControlDevice"/>
+          <xs:enumeration value="ChargingAbortedNoPowerSupply"/>
+          <xs:enumeration value="ChargingAbortedErrorHV"/>
+          <xs:enumeration value="ClimaFailedAbortedAuxHeaterLimitReached"/>
+          <xs:enumeration value="ClimaFailedAbortedAuxHeaterNoFuel"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PlugConnectionStateType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="connected"/>
+          <xs:enumeration value="disconnected"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="unsupported"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ExtPowerSupplyStateType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="unavailable"/>
+          <xs:enumeration value="available"/>
+          <xs:enumeration value="error"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TriggerSourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="unknown"/>
+          <xs:enumeration value="vehicle"/>
+          <xs:enumeration value="remote"/>
+          <xs:enumeration value="departureTimer"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="BatteryConditionStateType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="off"/>
+          <xs:enumeration value="cooling"/>
+          <xs:enumeration value="heating"/>
+          <xs:enumeration value="error"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="BatteryChargeModeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="AC"/>
+          <xs:enumeration value="DC"/>
+          <xs:enumeration value="error"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="EnergyFlowStateType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="off"/>
+          <xs:enumeration value="on"/>
+          <xs:enumeration value="error"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/Gateway/service/BatteryChargingServiceV5_0" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/BatteryCharging/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/BatteryCharging/V1"/>
+      <xs:element name="GetBatteryChargingDetails" type="tns:GetBatteryChargingDetails"/>
+      <xs:element name="GetBatteryChargingDetailsResponse" type="tns:GetBatteryChargingDetailsResponse"/>
+      <xs:element name="GetJobStatus" type="tns:GetJobStatus"/>
+      <xs:element name="GetJobStatusResponse" type="tns:GetJobStatusResponse"/>
+      <xs:element name="GetMaxCurrent" type="tns:GetMaxCurrent"/>
+      <xs:element name="GetMaxCurrentResponse" type="tns:GetMaxCurrentResponse"/>
+      <xs:element name="InvokeBatteryChargingJob" type="tns:InvokeBatteryChargingJob"/>
+      <xs:element name="InvokeBatteryChargingJobResponse" type="tns:InvokeBatteryChargingJobResponse"/>
+      <xs:complexType name="GetMaxCurrent">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetMaxCurrentRequest" type="ns1:GetMaxCurrentRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMaxCurrentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetMaxCurrentResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InvokeBatteryChargingJob">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="invokeBatteryChargingJobRequest" type="ns1:BatteryChargingRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InvokeBatteryChargingJobResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:BatteryChargingJobResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetJobStatusRequest" type="ns1:GetJobStatusRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:GetJobStatusRespons"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetBatteryChargingDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QueryBatteryCharging" type="ns1:BatteryChargingDetailsRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetBatteryChargingDetailsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:BatteryChargingDetailsResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="InvokeBatteryChargingJobResponse">
+    <wsdl:part element="tns:InvokeBatteryChargingJobResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetBatteryChargingDetails">
+    <wsdl:part element="tns:GetBatteryChargingDetails" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetJobStatus">
+    <wsdl:part element="tns:GetJobStatus" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvokeBatteryChargingJob">
+    <wsdl:part element="tns:InvokeBatteryChargingJob" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetMaxCurrentResponse">
+    <wsdl:part element="tns:GetMaxCurrentResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetBatteryChargingDetailsResponse">
+    <wsdl:part element="tns:GetBatteryChargingDetailsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetMaxCurrent">
+    <wsdl:part element="tns:GetMaxCurrent" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetJobStatusResponse">
+    <wsdl:part element="tns:GetJobStatusResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BatteryChargingServiceV5_0">
+    <wsdl:operation name="GetMaxCurrent">
+      <wsdl:input message="tns:GetMaxCurrent" name="GetMaxCurrent"></wsdl:input>
+      <wsdl:output message="tns:GetMaxCurrentResponse" name="GetMaxCurrentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvokeBatteryChargingJob">
+      <wsdl:input message="tns:InvokeBatteryChargingJob" name="InvokeBatteryChargingJob"></wsdl:input>
+      <wsdl:output message="tns:InvokeBatteryChargingJobResponse" name="InvokeBatteryChargingJobResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatus">
+      <wsdl:input message="tns:GetJobStatus" name="GetJobStatus"></wsdl:input>
+      <wsdl:output message="tns:GetJobStatusResponse" name="GetJobStatusResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBatteryChargingDetails">
+      <wsdl:input message="tns:GetBatteryChargingDetails" name="GetBatteryChargingDetails"></wsdl:input>
+      <wsdl:output message="tns:GetBatteryChargingDetailsResponse" name="GetBatteryChargingDetailsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BatteryChargingServiceV5_0SoapBinding" type="tns:BatteryChargingServiceV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetMaxCurrent">
+      <soap:operation soapAction="GetMaxCurrent" style="document"/>
+      <wsdl:input name="GetMaxCurrent">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetMaxCurrentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatus">
+      <soap:operation soapAction="GetJobStatus" style="document"/>
+      <wsdl:input name="GetJobStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetJobStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvokeBatteryChargingJob">
+      <soap:operation soapAction="InvokeBatteryChargingJob" style="document"/>
+      <wsdl:input name="InvokeBatteryChargingJob">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="InvokeBatteryChargingJobResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBatteryChargingDetails">
+      <soap:operation soapAction="GetBatteryChargingDetails" style="document"/>
+      <wsdl:input name="GetBatteryChargingDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetBatteryChargingDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BatteryChargingServiceV5_0">
+    <wsdl:port binding="tns:BatteryChargingServiceV5_0SoapBinding" name="BatteryChargingServicePort">
+      <soap:address location="https://Domain/SOAP/BatteryChargingServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/BatteryChargingServiceV5_0</con:endpoint><con:endpoint>https://Domain/SOAP/BatteryChargingServiceV5_0</con:endpoint></con:endpoints></con:interface>

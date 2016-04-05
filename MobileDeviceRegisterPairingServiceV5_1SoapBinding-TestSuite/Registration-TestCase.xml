@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Registration TestCase" searchProperties="true" id="1a17e785-c4a4-4efa-85a3-b35fb36e67dc" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="1a17e785-c4a4-4efa-85a3-b35fb36e67dcfileName">Registration-TestCase</con:setting></con:settings><con:testStep type="request" name="Registration" id="741e8a6c-1e7b-4ae9-9389-550193c1c320"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MobileDeviceRegisterPairingServiceV5_1SoapBinding</con:interface><con:operation>Registration</con:operation><con:request name="Registration" id="53984e73-5256-4e66-af65-2a8b6fdf4b7b" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://Domain/SOAP/MobileDeviceRegisterPairingServiceV5_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/service/MobileDevicePairing/V1" xmlns:v5="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V5_1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/MobileDeviceRegistration/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:Registration>
+         <!--Optional:-->
+         <v5:RegistrationRequest>
+            <v11:context>
+               <v12:SourceName>?</v12:SourceName>
+               <v12:TransactionId>?</v12:TransactionId>
+               <v12:Timestamp>?</v12:Timestamp>
+               <v12:Organization>?</v12:Organization>
+               <v12:Region>?</v12:Region>
+               <v12:ApplicationName>?</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:UserId>?</v11:UserId>
+               <v11:CommunicationToken>?</v11:CommunicationToken>
+            </v11:Data>
+         </v5:RegistrationRequest>
+      </v1:Registration>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="Registration" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

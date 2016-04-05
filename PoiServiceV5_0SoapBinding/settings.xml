@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="PoiServiceV5_0SoapBinding" type="wsdl" bindingName="{http://ns.hughestelematics.com/Gateway/service/PoiServiceV2_0}PoiServiceV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Layer%207/L7%20My%20files/WSDL_VW_US_1/PoiServiceV5_0.wsdl" id="dfd8a02e-41ef-4774-a2e6-48b532e2c7f3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="dfd8a02e-41ef-4774-a2e6-48b532e2c7f3fileName">PoiServiceV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\PoiServiceV5_0.wsdl"><con:part><con:url>file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\PoiServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PoiServiceV5_0" targetNamespace="http://ns.hughestelematics.com/Gateway/service/PoiServiceV2_0" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ns.hughestelematics.com/Gateway/service/PoiServiceV2_0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/poi/V1" xmlns="http://xmlns.hughestelematics.com/Gateway/poi/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Core/Route/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/Route/V1"/>
+      <xs:element name="DeletePoiRecordResponse" type="ns1:DeletePoiRecordResponseTypeV50"/>
+      <xs:element name="PoiRecordsResponseV2" type="ns1:PoiRecordsResponseTypeV50"/>
+      <xs:element name="PoiSubmitAckResponseV2" type="ns1:PoiSubmitResponseTypeV50"/>
+      <xs:element name="PoiSubmitStatusResponse" type="ns1:PoiSubmitStatusResponseTypeV50"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Core/Route/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Core/Route/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:element name="AccountId" type="xs:string"/>
+      <xs:element name="DeletePoiRecordRequest" type="tns:DeletePoiRecordRequestType"/>
+      <xs:element name="DeletePoiRecordRequestV50" type="tns:DeletePoiRecordRequestTypeV50"/>
+      <xs:element name="DeletePoiRecordResponse" type="tns:DeletePoiRecordResponseType"/>
+      <xs:element name="DeletePoiRecordResponseV50" type="tns:DeletePoiRecordResponseTypeV50"/>
+      <xs:element name="GetPoiRecordsRequest" type="tns:GetPoiRecordsRequestType"/>
+      <xs:element name="GetPoiRecordsRequestV50" type="tns:GetPoiRecordsRequestTypeV50"/>
+      <xs:element name="GetPoiSubmitStatus" type="tns:GetPoiSubmitStatusType"/>
+      <xs:element name="GetPoiSubmitStatusV50" type="tns:GetPoiSubmitStatusTypeV50"/>
+      <xs:element name="POI" type="tns:POIDetail"/>
+      <xs:element name="POIV2" type="tns:POIDetailV2"/>
+      <xs:element name="PoiRecordsResponse" type="tns:PoiRecordsResponseType"/>
+      <xs:element name="PoiRecordsResponseV2" type="tns:PoiRecordsResponseTypeV2"/>
+      <xs:element name="PoiRecordsResponseV50" type="tns:PoiRecordsResponseTypeV50"/>
+      <xs:element name="PoiSubmitRequest" type="tns:PoiSubmitRequestType"/>
+      <xs:element name="PoiSubmitRequestV2" type="tns:PoiSubmitRequestTypeV2"/>
+      <xs:element name="PoiSubmitResponse" type="tns:PoiSubmitResponseType"/>
+      <xs:element name="PoiSubmitStatusResponse" type="tns:PoiSubmitStatusResponseType"/>
+      <xs:element name="PoiSubmitStatusResponseV50" type="tns:PoiSubmitStatusResponseTypeV50"/>
+      <xs:element name="Route" type="tns:ListOfPOI"/>
+      <xs:element name="RouteV2" type="tns:ListOfPOIV2"/>
+      <xs:element name="UserId" type="xs:string"/>
+      <xs:element name="VIN" type="xs:string"/>
+      <xs:element name="tcuid" type="xs:string"/>
+      <xs:complexType name="PoiSubmitRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:InputPoiSubmitDataTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputPoiSubmitDataTypeV2">
+        <xs:sequence>
+          <xs:element name="RouteV2" type="tns:ListOfPOIV2"/>
+          <xs:element name="WebSite" type="xs:string"/>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="tcuid" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="RouteID" type="xs:string"/>
+          <xs:element default="SAVEANDSEND" name="OperationType" type="tns:OperationT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListOfPOIV2">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="POIV2" type="tns:POIDetailV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="POIDetailV2">
+        <xs:sequence>
+          <xs:element name="POIName" type="xs:string"/>
+          <xs:element name="Latitude" type="xs:double"/>
+          <xs:element name="Longitude" type="xs:double"/>
+          <xs:element minOccurs="0" name="POIAddress" type="tns:POIAddressType"/>
+          <xs:element default="SinglePointOfInterest" name="POIType" type="tns:POIType"/>
+          <xs:element default="false" name="immediateDestination" type="xs:boolean"/>
+          <xs:element name="UserID" type="xs:integer"/>
+          <xs:element default="NoCategory" name="vipCategory" type="tns:VIPCategoryType"/>
+          <xs:element minOccurs="0" name="poiDBRowId" type="xs:string"/>
+          <xs:element minOccurs="0" name="ExternalPoiID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="POIAddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StreetNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="StreetName" type="xs:string"/>
+          <xs:element minOccurs="0" name="City" type="xs:string"/>
+          <xs:element minOccurs="0" name="State" type="xs:string"/>
+          <xs:element minOccurs="0" name="ZipCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="Country" type="xs:string"/>
+          <xs:element minOccurs="0" name="PhoneNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiSubmitResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeletePoiRecordRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:DeletePoiRecordRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeletePoiRecordRequestDataType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="rowId" type="xs:string"/>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="tcuid" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeletePoiRecordResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPoiRecordsRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:PoiRecordsRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiRecordsRequestDataType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="tcuid" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiRecordsResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:PoiRecordsV2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiRecordsV2">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Pois" type="tns:POIRecordsTypeV2"/>
+          <xs:element minOccurs="0" name="latestFreeRnsPpositions" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="POIRecordsTypeV2">
+        <xs:sequence>
+          <xs:element name="POIName" type="xs:string"/>
+          <xs:element name="Latitude" type="xs:double"/>
+          <xs:element name="Longitude" type="xs:double"/>
+          <xs:element minOccurs="0" name="POIAddress" type="tns:POIAddressType"/>
+          <xs:element default="SinglePointOfInterest" name="POIType" type="tns:POIType"/>
+          <xs:element default="false" name="immediateDestination" type="xs:boolean"/>
+          <xs:element name="UserID" type="xs:integer"/>
+          <xs:element default="NoCategory" name="vipCategory" type="tns:VIPCategoryType"/>
+          <xs:element minOccurs="0" name="poiSendDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="poiStatusDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="poiDBRowId" type="xs:string"/>
+          <xs:element minOccurs="0" name="poiStatus" type="xs:string"/>
+          <xs:element minOccurs="0" name="freeRnsPpositions" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+          <xs:element minOccurs="0" name="ExternalPoiID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPoiSubmitStatusTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:InputPoiSubmitStatusDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputPoiSubmitStatusDataType">
+        <xs:sequence>
+          <xs:element name="EventTransactionId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiSubmitStatusResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:ResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseDataType">
+        <xs:sequence>
+          <xs:element name="poiTOSResponseCode" type="tns:ResponseCodeType"/>
+          <xs:element minOccurs="0" name="poiID" type="xs:integer"/>
+          <xs:element minOccurs="0" name="freeRNSPositions" type="xs:int"/>
+          <xs:element minOccurs="0" name="poiDBRowId" type="xs:string"/>
+          <xs:element minOccurs="0" name="poiStatus" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="POIDetail">
+        <xs:sequence>
+          <xs:element name="POIName" type="xs:string"/>
+          <xs:element name="Latitude" type="xs:double"/>
+          <xs:element name="Longitude" type="xs:double"/>
+          <xs:element minOccurs="0" name="POIAddress" type="tns:POIAddressType"/>
+          <xs:element default="SinglePointOfInterest" name="POIType" type="tns:POIType"/>
+          <xs:element default="false" name="immediateDestination" type="xs:boolean"/>
+          <xs:element name="UserID" type="xs:integer"/>
+          <xs:element default="NoCategory" name="vipCategory" type="tns:VIPCategoryType"/>
+          <xs:element minOccurs="0" name="poiDBRowId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiSubmitResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPoiRecordsRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:PoiRecordsRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiSubmitRequestTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InputPoiSubmitDataTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeletePoiRecordResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiRecordsResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:PoiRecords"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiRecords">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Pois" type="tns:POIRecordsType"/>
+          <xs:element minOccurs="0" name="latestFreeRnsPpositions" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="POIRecordsType">
+        <xs:sequence>
+          <xs:element name="POIName" type="xs:string"/>
+          <xs:element name="Latitude" type="xs:double"/>
+          <xs:element name="Longitude" type="xs:double"/>
+          <xs:element minOccurs="0" name="POIAddress" type="tns:POIAddressType"/>
+          <xs:element default="SinglePointOfInterest" name="POIType" type="tns:POIType"/>
+          <xs:element default="false" name="immediateDestination" type="xs:boolean"/>
+          <xs:element name="UserID" type="xs:integer"/>
+          <xs:element default="NoCategory" name="vipCategory" type="tns:VIPCategoryType"/>
+          <xs:element minOccurs="0" name="poiSendDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="poiStatusDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="poiDBRowId" type="xs:string"/>
+          <xs:element minOccurs="0" name="poiStatus" type="xs:string"/>
+          <xs:element minOccurs="0" name="freeRnsPpositions" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPoiSubmitStatusType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InputPoiSubmitStatusDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiRecordsResponseTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:PoiRecordsV2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiSubmitStatusResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:ResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiSubmitRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InputPoiSubmitDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputPoiSubmitDataType">
+        <xs:sequence>
+          <xs:element name="Route" type="tns:ListOfPOI"/>
+          <xs:element name="WebSite" type="xs:string"/>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="tcuid" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="RouteID" type="xs:string"/>
+          <xs:element default="SAVEANDSEND" name="OperationType" type="tns:OperationT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListOfPOI">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="POI" type="tns:POIDetail"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeletePoiRecordRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:DeletePoiRecordRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="POIType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="RouteHeaderInformation"/>
+          <xs:enumeration value="RouteStopover"/>
+          <xs:enumeration value="RouteVia"/>
+          <xs:enumeration value="SinglePointOfInterest"/>
+          <xs:enumeration value="RouteMainDestination"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="VIPCategoryType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Business"/>
+          <xs:enumeration value="Infrastructure"/>
+          <xs:enumeration value="Misc"/>
+          <xs:enumeration value="NoCategory"/>
+          <xs:enumeration value="Private"/>
+          <xs:enumeration value="Recreation"/>
+          <xs:enumeration value="Restaurant"/>
+          <xs:enumeration value="Shopping"/>
+          <xs:enumeration value="Sightseeing"/>
+          <xs:enumeration value="Sport"/>
+          <xs:enumeration value="GovCom_09"/>
+          <xs:enumeration value="Vehicle_01"/>
+          <xs:enumeration value="Traffic_02"/>
+          <xs:enumeration value="SciCul_0C"/>
+          <xs:enumeration value="FinIns_06"/>
+          <xs:enumeration value="Tourism_05"/>
+          <xs:enumeration value="SpoEnt_0D"/>
+          <xs:enumeration value="Lodging_03"/>
+          <xs:enumeration value="Rest_04"/>
+          <xs:enumeration value="MarSho_08"/>
+          <xs:enumeration value="Medical_0B"/>
+          <xs:enumeration value="Life_0A"/>
+          <xs:enumeration value="ComRes_07"/>
+          <xs:enumeration value="NoCat_00"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OperationT">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SAVEONLY"/>
+          <xs:enumeration value="SAVEANDSEND"/>
+          <xs:enumeration value="SEND"/>
+          <xs:enumeration value="RESEND"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ResponseCodeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="poiUnknown"/>
+          <xs:enumeration value="poiSuccess"/>
+          <xs:enumeration value="poiFailed"/>
+          <xs:enumeration value="poiNotCapable"/>
+          <xs:enumeration value="poiDownloadFailed"/>
+          <xs:enumeration value="poiQueueFailed"/>
+          <xs:enumeration value="poiNotAuthorized"/>
+          <xs:enumeration value="pendingForTransmission"/>
+          <xs:enumeration value="poiInTransmission"/>
+          <xs:enumeration value="receivedByRadio"/>
+          <xs:enumeration value="errorDuringTransmission"/>
+          <xs:enumeration value="wrongPoiFormat"/>
+          <xs:enumeration value="transmissionCanceled"/>
+          <xs:enumeration value="transmissionTimeout"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="Mbrace"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/Gateway/service/PoiServiceV2_0" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Core/Route/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/poi/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/Route/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/poi/V1"/>
+      <xs:element name="DeletePoiRecords" type="tns:DeletePoiRecords"/>
+      <xs:element name="DeletePoiRecordsResponse" type="tns:DeletePoiRecordsResponse"/>
+      <xs:element name="GetPoiRecords" type="tns:GetPoiRecords"/>
+      <xs:element name="GetPoiRecordsResponse" type="tns:GetPoiRecordsResponse"/>
+      <xs:element name="GetPoiSubmitStatus" type="tns:GetPoiSubmitStatus"/>
+      <xs:element name="GetPoiSubmitStatusResponse" type="tns:GetPoiSubmitStatusResponse"/>
+      <xs:element name="GetPoiSubmitStatusWithOpenConnection" type="tns:GetPoiSubmitStatusWithOpenConnection"/>
+      <xs:element name="GetPoiSubmitStatusWithOpenConnectionResponse" type="tns:GetPoiSubmitStatusWithOpenConnectionResponse"/>
+      <xs:element name="PoiSubmit" type="tns:PoiSubmit"/>
+      <xs:element name="PoiSubmitResponse" type="tns:PoiSubmitResponse"/>
+      <xs:complexType name="PoiSubmit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PoiSubmitRequest" type="ns1:PoiSubmitRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PoiSubmitResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:PoiSubmitAckResponseV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeletePoiRecords">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeletePoiRecordRequest" type="ns1:DeletePoiRecordRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeletePoiRecordsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:DeletePoiRecordResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPoiRecords">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetPoiRecordsRequest" type="ns1:GetPoiRecordsRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPoiRecordsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:PoiRecordsResponseV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPoiSubmitStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetPoiSubmitStatusRequest" type="ns1:GetPoiSubmitStatusTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPoiSubmitStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:PoiSubmitStatusResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPoiSubmitStatusWithOpenConnection">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetPoiSubmitStatusRequest" type="ns1:GetPoiSubmitStatusTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPoiSubmitStatusWithOpenConnectionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:PoiSubmitStatusResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPoiSubmitStatusWithOpenConnectionResponse">
+    <wsdl:part element="tns:GetPoiSubmitStatusWithOpenConnectionResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeletePoiRecordsResponse">
+    <wsdl:part element="tns:DeletePoiRecordsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeletePoiRecords">
+    <wsdl:part element="tns:DeletePoiRecords" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetPoiSubmitStatus">
+    <wsdl:part element="tns:GetPoiSubmitStatus" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetPoiRecordsResponse">
+    <wsdl:part element="tns:GetPoiRecordsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetPoiSubmitStatusWithOpenConnection">
+    <wsdl:part element="tns:GetPoiSubmitStatusWithOpenConnection" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetPoiSubmitStatusResponse">
+    <wsdl:part element="tns:GetPoiSubmitStatusResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PoiSubmit">
+    <wsdl:part element="tns:PoiSubmit" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PoiSubmitResponse">
+    <wsdl:part element="tns:PoiSubmitResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetPoiRecords">
+    <wsdl:part element="tns:GetPoiRecords" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PoiServiceV5_0">
+    <wsdl:operation name="PoiSubmit">
+      <wsdl:input message="tns:PoiSubmit" name="PoiSubmit"></wsdl:input>
+      <wsdl:output message="tns:PoiSubmitResponse" name="PoiSubmitResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePoiRecords">
+      <wsdl:input message="tns:DeletePoiRecords" name="DeletePoiRecords"></wsdl:input>
+      <wsdl:output message="tns:DeletePoiRecordsResponse" name="DeletePoiRecordsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoiRecords">
+      <wsdl:input message="tns:GetPoiRecords" name="GetPoiRecords"></wsdl:input>
+      <wsdl:output message="tns:GetPoiRecordsResponse" name="GetPoiRecordsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoiSubmitStatus">
+      <wsdl:input message="tns:GetPoiSubmitStatus" name="GetPoiSubmitStatus"></wsdl:input>
+      <wsdl:output message="tns:GetPoiSubmitStatusResponse" name="GetPoiSubmitStatusResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoiSubmitStatusWithOpenConnection">
+      <wsdl:input message="tns:GetPoiSubmitStatusWithOpenConnection" name="GetPoiSubmitStatusWithOpenConnection"></wsdl:input>
+      <wsdl:output message="tns:GetPoiSubmitStatusWithOpenConnectionResponse" name="GetPoiSubmitStatusWithOpenConnectionResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PoiServiceV5_0SoapBinding" type="tns:PoiServiceV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PoiSubmit">
+      <soap:operation soapAction="PoiSubmit" style="document"/>
+      <wsdl:input name="PoiSubmit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PoiSubmitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePoiRecords">
+      <soap:operation soapAction="DeletePoiRecords" style="document"/>
+      <wsdl:input name="DeletePoiRecords">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeletePoiRecordsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoiRecords">
+      <soap:operation soapAction="GetPoiRecords" style="document"/>
+      <wsdl:input name="GetPoiRecords">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetPoiRecordsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoiSubmitStatus">
+      <soap:operation soapAction="GetPoiSubmitStatus" style="document"/>
+      <wsdl:input name="GetPoiSubmitStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetPoiSubmitStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoiSubmitStatusWithOpenConnection">
+      <soap:operation soapAction="GetPoiSubmitStatusWithOpenConnection" style="document"/>
+      <wsdl:input name="GetPoiSubmitStatusWithOpenConnection">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetPoiSubmitStatusWithOpenConnectionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PoiServiceV5_0">
+    <wsdl:port binding="tns:PoiServiceV5_0SoapBinding" name="PoiServicePortV2_0">
+      <soap:address location="https://Domain/SOAP/PoiServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PoiServiceV5_0</con:endpoint></con:endpoints></con:interface>

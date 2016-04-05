@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="PoiSearchServiceV5_0SoapBinding TestSuite" id="8ae2a342-2ab3-4fb2-bf86-fd8320437136" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="8ae2a342-2ab3-4fb2-bf86-fd8320437136fileName">PoiSearchServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

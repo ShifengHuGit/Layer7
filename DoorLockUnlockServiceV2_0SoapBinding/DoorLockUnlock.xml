@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="DoorLockUnlock" name="DoorLockUnlock" bindingOperationName="DoorLockUnlock" type="Request-Response" outputName="DoorLockUnlockResponse" inputName="DoorLockUnlock" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="57f6c50c-f6aa-47b7-a9d2-9f53d49f463b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="57f6c50c-f6aa-47b7-a9d2-9f53d49f463bfileName">DoorLockUnlock</con:setting></con:settings><con:call name="Request 1" id="866114bc-17d1-4ce9-89a6-7e42c9a82e61" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://atletcgw03i.hughestelematics.net:8080/HTIWebGateway/EnterpriseGatewayServices/DoorLockUnlockServiceV2_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:door="http://ns.hughestelematics.com/v1.0/service/doorLockUnlockServiceV2_0" xmlns:rdl="http://xmlns.hti.com/RDLUCmd" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <door:DoorLockUnlock>
+         <!--Optional:-->
+         <arg0>
+            <rdl:Header>
+               <v1:SourceName>?</v1:SourceName>
+               <!--Optional:-->
+               <v1:TargetName>?</v1:TargetName>
+               <v1:TransactionId>?</v1:TransactionId>
+               <v1:Timestamp>?</v1:Timestamp>
+               <!--Optional:-->
+               <v1:Organization>?</v1:Organization>
+               <!--Optional:-->
+               <v1:Region>?</v1:Region>
+               <!--Optional:-->
+               <v1:ApplicationName>?</v1:ApplicationName>
+            </rdl:Header>
+            <rdl:Data>
+               <rdl:tcuId>?</rdl:tcuId>
+               <rdl:tcuType>?</rdl:tcuType>
+               <rdl:vin>?</rdl:vin>
+               <rdl:AccountId>?</rdl:AccountId>
+               <!--Optional:-->
+               <rdl:UserId>?</rdl:UserId>
+               <rdl:doorTypeParam>Door Unlock</rdl:doorTypeParam>
+               <!--Optional:-->
+               <rdl:mode>?</rdl:mode>
+               <!--Optional:-->
+               <rdl:timeToUnlock>?</rdl:timeToUnlock>
+               <!--Optional:-->
+               <rdl:courtesyCallFlag>N</rdl:courtesyCallFlag>
+            </rdl:Data>
+         </arg0>
+      </door:DoorLockUnlock>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="DoorLockUnlock"/></con:call></con:operation>

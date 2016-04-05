@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="MisuseProtectionServiceV5_0SoapBinding TestSuite" id="489abcef-da70-4465-a0e8-c3d7e9ee9847" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="489abcef-da70-4465-a0e8-c3d7e9ee9847fileName">MisuseProtectionServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

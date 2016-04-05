@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="QueryConnectedVehicleHistory TestCase" searchProperties="true" id="1aafb94f-c420-4987-b405-626885856cca" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="1aafb94f-c420-4987-b405-626885856ccafileName">QueryConnectedVehicleHistory-TestCase</con:setting></con:settings><con:testStep type="request" name="QueryConnectedVehicleHistory" id="b65c730e-29b7-4649-848e-7ba69e2299ac"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ConnectedVehicleHistoryServiceV5_0SoapBinding</con:interface><con:operation>QueryConnectedVehicleHistory</con:operation><con:request name="QueryConnectedVehicleHistory" id="07590394-56b6-498c-afd7-d6cb0bc144af" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/ConnectedVehicleHistoryServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://ns.hughestelematics.com/Gateway/service/ConnectedVehicleHistoryService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+    <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+   ${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <con:QueryConnectedVehicleHistory>
+         <!--Optional:-->
+         <QueryConnectedVehicleHistory>
+            <context>
+               <v1:SourceName>WEB</v1:SourceName>
+               <v1:TransactionId>test45641</v1:TransactionId>
+               <v1:Timestamp>2015-03-04T22:14:02.001Z</v1:Timestamp>
+               <v1:Organization>${#Project#Organization}</v1:Organization>
+               <v1:Region>US</v1:Region>
+               <v1:ApplicationName>CWP</v1:ApplicationName>
+            </context>
+            <Data>
+               <AccountID>${#Project#AccountId}</AccountID>
+               <!--Optional:-->
+               <SortColumn></SortColumn>
+               <!--Optional:-->
+               <SortOrder></SortOrder>
+            </Data>
+         </QueryConnectedVehicleHistory>
+      </con:QueryConnectedVehicleHistory>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="QueryConnectedVehicleHistory" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

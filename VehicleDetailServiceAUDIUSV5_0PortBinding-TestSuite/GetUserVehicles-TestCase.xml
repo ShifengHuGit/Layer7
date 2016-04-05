@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetUserVehicles TestCase" searchProperties="true" id="b1505e5d-3389-49a8-9013-4559406a0f7e" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="b1505e5d-3389-49a8-9013-4559406a0f7efileName">GetUserVehicles-TestCase</con:setting></con:settings><con:testStep type="request" name="GetUserVehicles" id="211d4fa3-2ef4-44c1-80f4-1a682674b5b2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>VehicleDetailServiceAUDIUSV5_0PortBinding</con:interface><con:operation>GetUserVehicles</con:operation><con:request name="GetUserVehicles" id="b1bc75c6-8bef-4a62-953c-f0df93a24ded" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/AUDIUS_VehicleDetailServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/service/AUDIUS_VehicleDetailServiceV5_0/V1" xmlns:v11="http://xmlns.vzt.com/APIGateway/AUDIUS_VehicleDetails/V1">
+   <soapenv:Header>
+       <api_key>${#Project#api_key}</api_key>
+       ${#Project#SessionToken}
+    </soapenv:Header>
+   <soapenv:Body>
+      <v1:GetUserVehicles>
+         <!--Optional:-->
+         <GetUserVehiclesRequest>
+            <v11:Data>
+               <v11:UserId>${#Project#AccountId}</v11:UserId>
+               <!--Optional:-->
+               <v11:OperationType>VehDetails</v11:OperationType>
+            </v11:Data>
+         </GetUserVehiclesRequest>
+      </v1:GetUserVehicles>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetUserVehicles" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

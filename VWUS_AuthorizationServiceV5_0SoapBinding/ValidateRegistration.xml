@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="ValidateRegistration" name="ValidateRegistration" bindingOperationName="ValidateRegistration" type="Request-Response" outputName="ValidateRegistrationResponse" inputName="ValidateRegistration" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="00bf01ad-21a1-4a82-88e9-5243e46e01e5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="00bf01ad-21a1-4a82-88e9-5243e46e01e5fileName">ValidateRegistration</con:setting></con:settings><con:call name="Request 1" id="01cf3e37-ea3e-4f99-9c58-9cfbc382f623" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VWUS_AuthorizationServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/VWUS_AuthorizationServiceV5_0/V1_0" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:ValidateRegistration>
+         <!--Optional:-->
+         <v1:PairingRequest>
+            <v11:Data>
+               <v11:userId>?</v11:userId>
+               <v11:registrationCode>?</v11:registrationCode>
+               <v11:deviceName>?</v11:deviceName>
+               <v11:csr>?</v11:csr>
+            </v11:Data>
+         </v1:PairingRequest>
+      </v1:ValidateRegistration>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="ValidateRegistration"/></con:call></con:operation>

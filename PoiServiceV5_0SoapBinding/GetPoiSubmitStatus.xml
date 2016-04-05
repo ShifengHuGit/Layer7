@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetPoiSubmitStatus" name="GetPoiSubmitStatus" bindingOperationName="GetPoiSubmitStatus" type="Request-Response" outputName="GetPoiSubmitStatusResponse" inputName="GetPoiSubmitStatus" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="a8a7d963-d324-4763-8dd7-5cc5587ed4bf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="a8a7d963-d324-4763-8dd7-5cc5587ed4bffileName">GetPoiSubmitStatus</con:setting></con:settings><con:call name="Request 1" id="d7c13a0e-73c6-45c2-9da3-91b97aa5ad72" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PoiServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pois="http://ns.hughestelematics.com/Gateway/service/PoiServiceV2_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Core/Route/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pois:GetPoiSubmitStatus>
+         <!--Optional:-->
+         <GetPoiSubmitStatusRequest>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:EventTransactionId>?</v1:EventTransactionId>
+            </v1:Data>
+         </GetPoiSubmitStatusRequest>
+      </pois:GetPoiSubmitStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetPoiSubmitStatus"/></con:call></con:operation>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetPoiSubmitStatusWithOpenConnection" name="GetPoiSubmitStatusWithOpenConnection" bindingOperationName="GetPoiSubmitStatusWithOpenConnection" type="Request-Response" outputName="GetPoiSubmitStatusWithOpenConnectionResponse" inputName="GetPoiSubmitStatusWithOpenConnection" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="afba3651-927d-4e41-b3f5-009e23895db2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="afba3651-927d-4e41-b3f5-009e23895db2fileName">GetPoiSubmitStatusWithOpenConnection</con:setting></con:settings><con:call name="Request 1" id="54b8b045-8746-4b97-b728-8b23afdb910b" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PoiServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pois="http://ns.hughestelematics.com/Gateway/service/PoiServiceV2_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Core/Route/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pois:GetPoiSubmitStatusWithOpenConnection>
+         <!--Optional:-->
+         <GetPoiSubmitStatusRequest>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:EventTransactionId>?</v1:EventTransactionId>
+            </v1:Data>
+         </GetPoiSubmitStatusRequest>
+      </pois:GetPoiSubmitStatusWithOpenConnection>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetPoiSubmitStatusWithOpenConnection"/></con:call></con:operation>

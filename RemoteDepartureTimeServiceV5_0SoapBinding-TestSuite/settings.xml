@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="RemoteDepartureTimeServiceV5_0SoapBinding TestSuite" id="253a4884-23b1-4f68-989b-6a56148ea18b" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="253a4884-23b1-4f68-989b-6a56148ea18bfileName">RemoteDepartureTimeServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

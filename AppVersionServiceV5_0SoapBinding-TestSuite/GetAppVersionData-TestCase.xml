@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetAppVersionData TestCase" searchProperties="true" id="04db20da-d938-410b-96d2-f21d87ab9690" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="04db20da-d938-410b-96d2-f21d87ab9690fileName">GetAppVersionData-TestCase</con:setting></con:settings><con:testStep type="request" name="GetAppVersionData" id="3110cfd8-6763-4f70-b7f2-bcb0b182ce2a"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AppVersionServiceV5_0SoapBinding</con:interface><con:operation>GetAppVersionData</con:operation><con:request name="GetAppVersionData" id="7462f255-0f65-47e0-9b08-a0c5f915b01d" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/AppVersionServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v5="http://xmlns.hughestelematics.com/Gateway/service/AppVersionV5_0/V5" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/AppVersion/V1">
+   <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+   </soapenv:Header>
+   <soapenv:Body>
+      <v5:GetAppVersionData>
+         <!--Optional:-->
+         <GetAppVersionDataRequest>
+            <v1:context>
+               <v1:SourceName>WEB</v1:SourceName>
+               <v1:TransactionId>abc123414</v1:TransactionId>
+               <v1:Timestamp>2015-04-17T07:45:02.001Z</v1:Timestamp>
+               <v1:Organization>Audi</v1:Organization>
+               <v1:Region>US</v1:Region>
+               <v1:ApplicationName>CWP</v1:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:applicationName>carnet</v1:applicationName>
+               <v1:applicationSystem>iOS</v1:applicationSystem>
+            </v1:Data>
+         </GetAppVersionDataRequest>
+      </v5:GetAppVersionData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetAppVersionData" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

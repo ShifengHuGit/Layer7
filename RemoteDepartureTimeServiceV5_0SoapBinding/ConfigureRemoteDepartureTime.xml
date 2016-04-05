@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="ConfigureRemoteDepartureTime" name="ConfigureRemoteDepartureTime" bindingOperationName="ConfigureRemoteDepartureTime" type="Request-Response" outputName="ConfigureRemoteDepartureTimeResponse" inputName="ConfigureRemoteDepartureTime" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="831806fa-e194-427a-bc1b-d3a35c16ce22" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="831806fa-e194-427a-bc1b-d3a35c16ce22fileName">ConfigureRemoteDepartureTime</con:setting></con:settings><con:call name="Request 1" id="51c53cdb-9320-48c9-9cc0-be4cffbc95a6" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/RemoteDepartureTimeServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rem="http://ns.hughestelematics.com/Gateway/service/RemoteDepartureTimeServiceV2_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Core/DepartureTime/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rem:ConfigureRemoteDepartureTime>
+         <!--Optional:-->
+         <ConfigureRemoteDepartureTimeRequest>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:accountId>?</v1:accountId>
+               <v1:vin>?</v1:vin>
+               <v1:tcuId>?</v1:tcuId>
+               <!--Optional:-->
+               <v1:userId>?</v1:userId>
+               <!--Zero or more repetitions:-->
+               <v1:departureProfile>
+                  <v1:nightTariff>
+                     <v1:startTime>?</v1:startTime>
+                     <v1:endTime>?</v1:endTime>
+                  </v1:nightTariff>
+                  <v1:operation>
+                     <v1:charge>?</v1:charge>
+                     <v1:climate>?</v1:climate>
+                     <v1:windowHeating>?</v1:windowHeating>
+                     <v1:nightTariffFlag>?</v1:nightTariffFlag>
+                  </v1:operation>
+                  <v1:chargeMaxCurrent>?</v1:chargeMaxCurrent>
+                  <!--Optional:-->
+                  <v1:profileID>?</v1:profileID>
+                  <v1:profileName>?</v1:profileName>
+                  <v1:targetChargeLevel>?</v1:targetChargeLevel>
+                  <v1:ProfileOperation>?</v1:ProfileOperation>
+               </v1:departureProfile>
+               <v1:TimerOperation>?</v1:TimerOperation>
+               <!--Zero or more repetitions:-->
+               <v1:departureTimer>
+                  <v1:timerExpiredStatus>?</v1:timerExpiredStatus>
+                  <v1:timerProgrammedStatus>?</v1:timerProgrammedStatus>
+                  <v1:timerID>?</v1:timerID>
+                  <v1:timerType>?</v1:timerType>
+                  <v1:singleTimer>
+                     <v1:departureTime>?</v1:departureTime>
+                     <v1:startTime>?</v1:startTime>
+                     <v1:timeZone>?</v1:timeZone>
+                  </v1:singleTimer>
+                  <v1:cyclicTimer>
+                     <v1:weekdayBitMask>?</v1:weekdayBitMask>
+                     <v1:startTime>?</v1:startTime>
+                     <v1:timeZone>?</v1:timeZone>
+                  </v1:cyclicTimer>
+                  <!--Optional:-->
+                  <v1:profileID>?</v1:profileID>
+               </v1:departureTimer>
+            </v1:Data>
+         </ConfigureRemoteDepartureTimeRequest>
+      </rem:ConfigureRemoteDepartureTime>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="ConfigureRemoteDepartureTime"/></con:call></con:operation>

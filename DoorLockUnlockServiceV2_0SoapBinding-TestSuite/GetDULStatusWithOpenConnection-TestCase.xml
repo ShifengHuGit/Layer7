@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetDULStatusWithOpenConnection TestCase" searchProperties="true" id="74304f65-5063-419b-8e8a-9f7dae02e78b" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="74304f65-5063-419b-8e8a-9f7dae02e78bfileName">GetDULStatusWithOpenConnection-TestCase</con:setting></con:settings><con:testStep type="request" name="GetDULStatusWithOpenConnection" id="6d785cd3-f809-4a79-89a4-1946b6786744"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DoorLockUnlockServiceV2_0SoapBinding</con:interface><con:operation>GetDULStatusWithOpenConnection</con:operation><con:request name="GetDULStatusWithOpenConnection" id="e24a908b-1905-4cb6-b3ea-325eaf476136" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://atletcgw03i.hughestelematics.net:8080/HTIWebGateway/EnterpriseGatewayServices/DoorLockUnlockServiceV2_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:door="http://ns.hughestelematics.com/v1.0/service/doorLockUnlockServiceV2_0" xmlns:rdl="http://xmlns.hti.com/RDLUCmd" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <door:GetDULStatusWithOpenConnection>
+         <!--Optional:-->
+         <arg0>
+            <rdl:Header>
+               <v1:SourceName>?</v1:SourceName>
+               <!--Optional:-->
+               <v1:TargetName>?</v1:TargetName>
+               <v1:TransactionId>?</v1:TransactionId>
+               <v1:Timestamp>?</v1:Timestamp>
+               <!--Optional:-->
+               <v1:Organization>?</v1:Organization>
+               <!--Optional:-->
+               <v1:Region>?</v1:Region>
+               <!--Optional:-->
+               <v1:ApplicationName>?</v1:ApplicationName>
+            </rdl:Header>
+            <rdl:Data>
+               <!--Optional:-->
+               <rdl:RDLUEventTransactionId>?</rdl:RDLUEventTransactionId>
+               <rdl:serviceOperationCode>Door Unlock</rdl:serviceOperationCode>
+               <!--Optional:-->
+               <rdl:OEM>?</rdl:OEM>
+               <rdl:tcuId>?</rdl:tcuId>
+               <rdl:vin>?</rdl:vin>
+               <rdl:AccountId>?</rdl:AccountId>
+               <!--Optional:-->
+               <rdl:UserId>?</rdl:UserId>
+            </rdl:Data>
+         </arg0>
+      </door:GetDULStatusWithOpenConnection>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig action="GetDULStatusWithOpenConnection" mustUnderstand="NONE" version="200508"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

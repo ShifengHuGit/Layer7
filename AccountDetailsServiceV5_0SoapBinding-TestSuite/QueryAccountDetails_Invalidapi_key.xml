@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="QueryAccountDetails_Invalidapi_key" searchProperties="true" id="bb14b333-e646-4e76-aeef-cc1c21810af2" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="bb14b333-e646-4e76-aeef-cc1c21810af2fileName">QueryAccountDetails_Invalidapi_key</con:setting></con:settings><con:testStep type="datasource" name="DataSource" id="c05d8818-fdfd-436f-a35d-e20247ce96c0"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file/><worksheet/><cell>A1</cell><ignoreEmpty>false</ignoreEmpty></con:configuration></con:dataSource><con:property>SourceName</con:property><con:property>TransactionId</con:property><con:property>Timestamp</con:property><con:property>Organization</con:property><con:property>Region</con:property><con:property>ApplicationName</con:property><con:property>VIN</con:property><con:property>OEM</con:property><con:property>AccountID</con:property><con:property>DealerType</con:property><con:property>DealerCode</con:property><con:property>PIN</con:property><con:property>MSISDN</con:property><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="request" name="QueryAccountDetails" id="4204c9e1-c31a-43a8-8e99-3913db778dd4"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AccountDetailsServiceV5_0SoapBinding</con:interface><con:operation>QueryAccountDetails</con:operation><con:request name="QueryAccountDetails" id="974761c4-aef5-4697-bb1e-4f6e04125af6" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/AccountDetailsServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://ns.hughestelematics.com/Gateway/service/AccountDetailsService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Core/Account/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+     <api_key>${#Project#api_key}</api_key> 
+   ${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <acc:QueryAccountDetails>
+         <!--Optional:-->
+         <QueryAccountDetails>
+            <v1:context>
+               <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>anji464etwses</v11:TransactionId>
+               <v11:Timestamp>2015-05-06T13:02:22.929Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <!--Optional:-->
+               <v1:VIN>${#Project#VIN}</v1:VIN>
+               <!--Optional:-->
+               <v1:OEM>VW</v1:OEM>
+               <!--Optional:-->
+               <v1:AccountID>${#Project#AccountId}</v1:AccountID>
+               <!--Optional:-->
+               
+               <!--Optional:-->
+               
+               <!--Optional:-->
+               
+               <!--Optional:-->
+               
+            </v1:Data>
+         </QueryAccountDetails>
+      </acc:QueryAccountDetails>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" name="Contains" id="8d4f8569-6a65-4373-a6cd-5c320fa981a6"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XQuery Match" id="d5e01c4b-7e7e-4144-9e99-89bcf4b8faab" name="XQuery Match"><con:configuration/></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="QueryAccountDetails" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="fe369571-1d8b-44b1-af7d-791e2f010ef7"><con:settings/><con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>QueryAccountDetails</targetStep></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

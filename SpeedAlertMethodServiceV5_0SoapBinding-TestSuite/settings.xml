@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="SpeedAlertMethodServiceV5_0SoapBinding TestSuite" id="854859fe-83ce-4669-84b4-b01462cc199e" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="854859fe-83ce-4669-84b4-b01462cc199efileName">SpeedAlertMethodServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

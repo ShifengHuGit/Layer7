@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="InvokeFlashLightsSync" name="InvokeFlashLightsSync" bindingOperationName="InvokeFlashLightsSync" type="Request-Response" outputName="InvokeFlashLightsSyncResponse" inputName="InvokeFlashLightsSync" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="c66cf587-9287-4baa-bf6d-d3454fed57f5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="c66cf587-9287-4baa-bf6d-d3454fed57f5fileName">InvokeFlashLightsSync</con:setting></con:settings><con:call name="Request 1" id="2106174e-8902-4fd8-aa4c-b4e501ea7f85" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/HonkAndFlashServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hon="http://ns.hughestelematics.com/v1.0/service/honkAndFlashService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/FlashLights/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hon:InvokeFlashLightsSync>
+         <!--Optional:-->
+         <InvokeFlashLights>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:InvokeFlashLightsCommand>
+                  <v1:flashTime>?</v1:flashTime>
+                  <!--Optional:-->
+                  <v1:serviceDuration>?</v1:serviceDuration>
+                  <!--Optional:-->
+                  <v1:serviceOperationCode>HonkAndFlash</v1:serviceOperationCode>
+               </v1:InvokeFlashLightsCommand>
+               <v1:EmailId>?</v1:EmailId>
+               <v1:AccountId>?</v1:AccountId>
+               <v1:TCUID>?</v1:TCUID>
+               <v1:VIN>?</v1:VIN>
+               <!--Optional:-->
+               <v1:UserId>?</v1:UserId>
+            </v1:Data>
+         </InvokeFlashLights>
+      </hon:InvokeFlashLightsSync>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="InvokeFlashLightsSync"/></con:call></con:operation>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="AddressServiceV5_0SoapBinding TestSuite" id="96c4e7db-bb62-4ec3-8cc2-329b6717b8a4" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="96c4e7db-bb62-4ec3-8cc2-329b6717b8a4fileName">AddressServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

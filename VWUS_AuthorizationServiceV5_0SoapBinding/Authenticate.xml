@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="Authenticate" name="Authenticate" bindingOperationName="Authenticate" type="Request-Response" outputName="AuthenticateResponse" inputName="Authenticate" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="8f49e031-40f4-4c7e-996a-d4215dadf3e9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="8f49e031-40f4-4c7e-996a-d4215dadf3e9fileName">Authenticate</con:setting></con:settings><con:call name="Request 1" id="01373d8a-9397-401c-975e-cfdbff3a7282" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VWUS_AuthorizationServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/VWUS_AuthorizationServiceV5_0/V1_0" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Security/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:Authenticate>
+         <!--Optional:-->
+         <AuthenticateRequestType>
+            <v11:Data>
+               <v11:Type>primary</v11:Type>
+               <!--Optional:-->
+               <v11:ExternalUserName>Vishnu</v11:ExternalUserName>
+               <!--Optional:-->
+               <v11:ExternalUserId>?</v11:ExternalUserId>
+               <!--Optional:-->
+               <v11:Email>?</v11:Email>
+               <!--Optional:-->
+               <v11:Version>?</v11:Version>
+               <v11:SourceName>?</v11:SourceName>
+            </v11:Data>
+         </AuthenticateRequestType>
+      </v1:Authenticate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="Authenticate"/><con:wsrmConfig version="1.2"/></con:call></con:operation>

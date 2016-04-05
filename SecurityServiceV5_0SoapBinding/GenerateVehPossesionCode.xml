@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GenerateVehPossesionCode" name="GenerateVehPossesionCode" bindingOperationName="GenerateVehPossesionCode" type="Request-Response" outputName="GenerateVehPossesionCodeResponse" inputName="GenerateVehPossesionCode" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="00c797f2-b215-494e-8c25-d8d298140840" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="00c797f2-b215-494e-8c25-d8d298140840fileName">GenerateVehPossesionCode</con:setting></con:settings><con:call name="Request 1" id="a573edb3-e0ec-4767-b2db-c5e71fc1c2b8" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/SecurityServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://ns.hughestelematics.com/v5.0/service/SecurityServiceV5_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sec:GenerateVehPossesionCode>
+         <!--Optional:-->
+         <CreatePossessionPinRequestType>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:vin>?</v1:vin>
+               <v1:exp_duration>?</v1:exp_duration>
+               <!--Optional:-->
+               <v1:deviceType>?</v1:deviceType>
+            </v1:Data>
+         </CreatePossessionPinRequestType>
+      </sec:GenerateVehPossesionCode>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GenerateVehPossesionCode"/></con:call></con:operation>

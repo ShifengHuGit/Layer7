@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetDeliveryMethods" name="GetDeliveryMethods" bindingOperationName="GetDeliveryMethods" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="3e817cf9-e8cb-4e2c-9261-87ad85f8ee75" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="3e817cf9-e8cb-4e2c-9261-87ad85f8ee75fileName">GetDeliveryMethods</con:setting></con:settings><con:call name="Request 1" id="3bcfb16d-3d8f-4053-b6a5-6eca30986ee2" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>REPLACE_WITH_ACTUAL_URL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v5="http://xmlns.vzt.com/APIGateway/AUDIUS_UserInfoService/V5_0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v5:GetDeliveryMethods>
+         <!--Optional:-->
+         <GetDeliveryMethodsRequest>
+            <v5:Data>
+               <!--Optional:-->
+               <v5:AccountID>?</v5:AccountID>
+               <v5:TraceID>?</v5:TraceID>
+               <v5:TraceTimestamp>?</v5:TraceTimestamp>
+            </v5:Data>
+         </GetDeliveryMethodsRequest>
+      </v5:GetDeliveryMethods>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetDeliveryMethods"/></con:call></con:operation>

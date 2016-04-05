@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="VehicleAlertHistoryMethodV5_0SoapBinding TestSuite" id="cbbeef4a-de65-4527-8bec-1638ae1b44e3" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="cbbeef4a-de65-4527-8bec-1638ae1b44e3fileName">VehicleAlertHistoryMethodV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

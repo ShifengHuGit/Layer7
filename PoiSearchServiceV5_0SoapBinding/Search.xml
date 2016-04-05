@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="Search" name="Search" bindingOperationName="Search" type="Request-Response" outputName="SearchResponse" inputName="Search" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="9890760f-c51a-48f0-bbb8-f6e24db32bc7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="9890760f-c51a-48f0-bbb8-f6e24db32bc7fileName">Search</con:setting></con:settings><con:call name="Request 1" id="0a6b111c-874c-426e-8d0e-7241374546a2" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PoiSearchServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pois="http://ns.hughestelematics.com/Gateway/service/PoiSearchServiceV5" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/poiSearch/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/POISearch/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+  <soapenv:Header>
+      <api_key>3621300632c69958e643c034a9ffe1ea</api_key>
+<wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Timestamp><wsu:Created>2015-04-10T08:03:57.360626835Z</wsu:Created><wsu:Expires>2015-04-10T08:08:57.360Z</wsu:Expires></wsu:Timestamp><saml2:Assertion ID="SamlAssertion-0da2e737675c957f46744f097eb54c5c" IssueInstant="2015-04-10T08:03:56.502Z" Version="2.0" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"><saml2:Issuer>api-test.vtitel.com</saml2:Issuer><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><ds:Reference URI="#SamlAssertion-0da2e737675c957f46744f097eb54c5c"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>XzS+0snYJ2fvCEwuLSNCygMGrwA=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>QxicEmJKgmVefgTxvc8WlAG6ysYPIS9A6H7GdsJyCjAnM7BChP3BHIbVO5p9jzjTS1JhdYi2rHKcAa44Mq6ToscuCVMPkCW27KHffNo1ca3pQ42X8jtW7Qosd28tMsgklaNLNf92lX2PJP2x14g64Rm1c6EzqoTW9qzZK2FPvukyCnhOmk2pFLgyeXKPlbUQ79W5QtrZ3X3WH49eHiMo5cv4tEBA6hhkn0geTkCIxPvuQSoO9zu/4ngxm9KZ21oB86apVCXb+gBmhMeIVAf5P98A+7qrIFamJctsklWq9GzWYGqvi/d6qS/Y0HXGtewaCLPqygn7DCzUaXFm9bARGA==</ds:SignatureValue><KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><X509Data><X509SubjectName>CN=api-test.vtitel.com,OU=Domain Control Validated</X509SubjectName><X509Certificate>MIIFOjCCBCKgAwIBAgIJAJNkLMDkzt2pMA0GCSqGSIb3DQEBCwUAMIG0MQswCQYDVQQGEwJVUzEQMA4GA1UECBMHQXJpem9uYTETMBEGA1UEBxMKU2NvdHRzZGFsZTEaMBgGA1UEChMRR29EYWRkeS5jb20sIEluYy4xLTArBgNVBAsTJGh0dHA6Ly9jZXJ0cy5nb2RhZGR5LmNvbS9yZXBvc2l0b3J5LzEzMDEGA1UEAxMqR28gRGFkZHkgU2VjdXJlIENlcnRpZmljYXRlIEF1dGhvcml0eSAtIEcyMB4XDTE1MDMyNjE1NDczOFoXDTE4MDMyNjE1NDczOFowQTEhMB8GA1UECxMYRG9tYWluIENvbnRyb2wgVmFsaWRhdGVkMRwwGgYDVQQDExNhcGktdGVzdC52dGl0ZWwuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzJYIk0AP0KtD5VcOREoJJHM+d4zq30OR1YvDj8cstFvMsDm3mmG7fDFmVgypUr6giWza9r1mxcs9haYp+tZxliuTFEbaXz3RZ+onDysmgX/ej7ga+iddkcYu1dnrUEUBBj9TyCQ0GJfLnf984c6lcRt8K4YTxcRbVg2VheB6f4wtkAUbk/LFgjMy0iii5u4jIvZRq/QCEp/jPNLpXtOIL/w4MrUZ3VK4rkT7tZlg3ljxyLV2JNHQ530OtktPlUATQ6g34NMZzap/IeCFQCMRUVBRn+MWgM6zPuaHTVlz4RUo5Oh/xo8YP8qB1uzVp36cJFdKNeYjmoALVFAQedyXrQIDAQABo4IBvzCCAbswDAYDVR0TAQH/BAIwADAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgWgMDYGA1UdHwQvMC0wK6ApoCeGJWh0dHA6Ly9jcmwuZ29kYWRkeS5jb20vZ2RpZzJzMS04Ny5jcmwwUwYDVR0gBEwwSjBIBgtghkgBhv1tAQcXATA5MDcGCCsGAQUFBwIBFitodHRwOi8vY2VydGlmaWNhdGVzLmdvZGFkZHkuY29tL3JlcG9zaXRvcnkvMHYGCCsGAQUFBwEBBGowaDAkBggrBgEFBQcwAYYYaHR0cDovL29jc3AuZ29kYWRkeS5jb20vMEAGCCsGAQUFBzAChjRodHRwOi8vY2VydGlmaWNhdGVzLmdvZGFkZHkuY29tL3JlcG9zaXRvcnkvZ2RpZzIuY3J0MB8GA1UdIwQYMBaAFEDCvSeOzDSDMKIz1/tss/C0LIDOMDcGA1UdEQQwMC6CE2FwaS10ZXN0LnZ0aXRlbC5jb22CF3d3dy5hcGktdGVzdC52dGl0ZWwuY29tMB0GA1UdDgQWBBT31z1eeBS5J5PFyEmyL1GxSdEW1zANBgkqhkiG9w0BAQsFAAOCAQEAiKLTSKxqtGG2mq/V/JzRFl8UqI+R34cG1FLD5d6giOhLBz7WbKcSLmmfQshzqEimUjf0oao7hxcyUyOfqcEJyzRww7yDefJNav/At0KshUfTKvXjgtrkHuBHTTVo3gyNkzTBg7fRIsyAAGnk5W6SBhqG+C/FdLouu9COJ8EFaBm7Xp6hP6LN5jrwVOjCwoA9sEOvMy6Y4/OoAYHUkQDh8QGThzwUytdzvs8njE+2wmbLJPdhOBJ2LBX+mARhBfFPwu6yNQqG5S7sSc2N0TLIuAn+QFP9p+ujYZUywCW1KMgEfCbNoHv/u/200LgBbngbu9mnFzGXm1GTXpE6wLVLYQ==</X509Certificate></X509Data></KeyInfo></ds:Signature><saml2:Subject><saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" NameQualifier="">100084259</saml2:NameID></saml2:Subject><saml2:Conditions NotBefore="2015-04-10T08:01:57.008Z" NotOnOrAfter="2015-04-10T08:08:57.008Z"/><saml2:AttributeStatement><saml2:Attribute Name="token" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"><saml2:AttributeValue>uGHTjqcS1KirtQfAx95GhXvLPc6Xt88RSXnDDvPta2OF24xDNAUjM0vE0eEQPII1NsnhucOsHzwC&#xd;
+dEdv+4L6V2/Q1bd6zLaofAz9aE9x1v9MJ8JWMIalQYDKDlgXJPtubPawDpGlrKzNKhO32vBPVoNT&#xd;
+5809UZG1ZT1IEGUcz4MllXb7pC7v+w1FQf07FHtffZT/d3ZBjq60sdSIUwRcoqbhEXPsKK1qZi1W&#xd;
+Swv5uVs+CDw7q05kvHpyRbKQR+R3ICS544XmZJubfVa5F9XmATUT0p114UYjcWb7MbFvtxcTTyeE&#xd;
+eCxE3NWAEt0C80rZk7MDp9nEGAInclC5AlvM/Q49KHI/kuIppMXUs4ppTj97c19/Dyvdw5mKPhzc&#xd;
+3iJtaPeOoG6v9WMWS/VONgt2ztBWxDGie57nVZZB4t9kG3UF0UncW7TT5FT33PW7RgFRSHj1ca2l&#xd;
+TrHZwAPofZY8vHMNed1iHb6eXO3NwjzFDVvWcbUE0405gf7CiT4PSARESptUSWd56VFOaUaweDb/&#xd;
+HKSrI2A+3jaMpKR0RrtwgAuxT/p/dJRgpg5PNDODLrwlweDuFYuDva2PPu15RfzMXAN31k0LhURI&#xd;
+ZhkocxSRWTM14j6UhEnYp35V6G0N95VBRDUzTwiuqFSK643nvRmkOw==</saml2:AttributeValue></saml2:Attribute></saml2:AttributeStatement></saml2:Assertion><wsse:SecurityTokenReference wsu:Id="id-0-ea8107f0f34ab5f4eae4e38e5d9983d7"><wsse:KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">SamlAssertion-0da2e737675c957f46744f097eb54c5c</wsse:KeyIdentifier></wsse:SecurityTokenReference><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><ds:Reference URI="#id-0-ea8107f0f34ab5f4eae4e38e5d9983d7"><ds:Transforms><ds:Transform Algorithm="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#STR-Transform"><wsse:TransformationParameters xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"/></wsse:TransformationParameters></ds:Transform></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>2MrPJk8R7Zb6gWBr8xcIOCyV0Tw=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>ExTSSNqBduUPu3X/RZ8gvWr/FWOmix5F5BitiuTBfHI/K3v7EKZ36452yFD3CmylYAbmhKh2ZuzTMU+d89k2uxaNf+5U7dgVuIsqa2P9ZcWRiaslRvm4MMWljF0Tmg9k/oJLhsh9CodkFIst4FH4VySg8h9433V0HpPTh+xTBBnpgR5QL0mikxTxJQNCIZMMHy1VlQmWPOw+waDzHhmu7gpXWSQX0JcNNT3KSE0IBgF8sMyq5NY+DZIVSi/7eTpHB35SnZ9RfW2L8DAgky58S2NwjfAkx8EY4HMhTtCMhFbFu5JtzL6yz9EA1TxEKDkhRfLYSrcjvA6fwJd9zlpOKg==</ds:SignatureValue><ds:KeyInfo><wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">SamlAssertion-0da2e737675c957f46744f097eb54c5c</wsse:KeyIdentifier></wsse:SecurityTokenReference></ds:KeyInfo></ds:Signature></wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <pois:Search>
+         <!--Optional:-->
+         <v1:SearchPOIRequest>
+            <v11:context>
+               <v12:SourceName>WEB</v12:SourceName>
+               <v12:TransactionId>anjitest5466</v12:TransactionId>
+               <v12:Timestamp>2015-04-02T13:03:35.432Z</v12:Timestamp>
+               <v12:Organization>VW</v12:Organization>
+               <v12:Region>US</v12:Region>
+               <v12:ApplicationName>CWP</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:SearchRequest>
+                  <v11:Parameters>
+                     <!--Optional:-->
+                     <v11:Market>en-US</v11:Market>
+                     <!--Optional:-->
+                     <v11:UILanguage>en</v11:UILanguage>
+                     <v11:SearchTerm>pizza</v11:SearchTerm>
+                     <!--Optional:-->
+                     <v11:City>Atlanta</v11:City>
+                     <!--Optional:-->
+                     <v11:State>GA</v11:State>
+                     <!--Optional:-->
+                     <v11:ZipCode>30319</v11:ZipCode>
+                     <!--Optional:-->
+                     <v11:Latitude/>
+                     <!--Optional:-->
+                     <v11:Longitude/>
+                     <!--Optional:-->
+                     <v11:Radius>20</v11:Radius>
+                     <!--Optional:-->
+                     <v11:SearchOptions>
+                        <!--Zero or more repetitions:-->
+                        <v11:SearchOption>DisableLocationDetection</v11:SearchOption>
+                     </v11:SearchOptions>
+                     <!--Optional:-->
+                     <v11:ListingParameters>
+                        <!--Optional:-->
+                        <v11:Offset>0</v11:Offset>
+                        <!--Optional:-->
+                        <v11:Count/>
+                        <!--Optional:-->
+                        <v11:FileType/>
+                        <!--Optional:-->
+                        <v11:SortBy>Distance</v11:SortBy>
+                        <!--Optional:-->
+                        <v11:LocId/>
+                        <!--Optional:-->
+                        <v11:Category/>
+                     </v11:ListingParameters>
+                  </v11:Parameters>
+               </v11:SearchRequest>
+            </v11:Data>
+         </v1:SearchPOIRequest>
+      </pois:Search>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="Search"/><con:wsrmConfig version="1.2"/></con:call></con:operation>

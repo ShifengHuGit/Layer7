@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="UnpairingV2" name="UnpairingV2" bindingOperationName="UnpairingV2" type="Request-Response" outputName="UnpairingV2Response" inputName="UnpairingV2" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="aca9d45c-1ec8-4f55-8ca5-5afc8d030db0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="aca9d45c-1ec8-4f55-8ca5-5afc8d030db0fileName">UnpairingV2</con:setting></con:settings><con:call name="Request 1" id="5118ed78-61cc-4154-b68e-ccc076080fa5" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://Domain/SOAP/MobileDeviceRegisterPairingServiceV5_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/service/MobileDevicePairing/V1" xmlns:v5="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V5_1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:UnpairingV2>
+         <!--Optional:-->
+         <v5:UnpairingRequestV2>
+            <v11:context>
+               <v12:SourceName>?</v12:SourceName>
+               <v12:TransactionId>?</v12:TransactionId>
+               <v12:Timestamp>?</v12:Timestamp>
+               <v12:Organization>?</v12:Organization>
+               <v12:Region>?</v12:Region>
+               <v12:ApplicationName>?</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:userId>?</v11:userId>
+               <!--1 or more repetitions:-->
+               <v11:unPairDeviceDetails>
+                  <v11:deviceName>?</v11:deviceName>
+                  <!--Optional:-->
+                  <v11:pairingTime>?</v11:pairingTime>
+                  <v11:uniqueDeviceId>?</v11:uniqueDeviceId>
+               </v11:unPairDeviceDetails>
+            </v11:Data>
+         </v5:UnpairingRequestV2>
+      </v1:UnpairingV2>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="UnpairingV2"/></con:call></con:operation>

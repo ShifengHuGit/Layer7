@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="GeofenceServiceV5_0SoapBinding" type="wsdl" bindingName="{http://ns.hughestelematics.com/Gateway/service/GeofenceServiceV5_0}GeofenceServiceV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Layer%207/L7%20My%20files/WSDL_VW_US_1/GeofenceServiceV5_0.wsdl" id="a100218b-ee9f-492c-84b2-a5d59586befb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="a100218b-ee9f-492c-84b2-a5d59586befbfileName">GeofenceServiceV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\GeofenceServiceV5_0.wsdl"><con:part><con:url>file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\GeofenceServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="GeofenceServiceV5_0" targetNamespace="http://ns.hughestelematics.com/Gateway/service/GeofenceServiceV5_0" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ns.hughestelematics.com/Gateway/service/GeofenceServiceV5_0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Geofence/V1" xmlns="http://xmlns.hughestelematics.com/Gateway/Geofence/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Core/Geofence/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/Geofence/V1"/>
+      <xs:element name="CreateGeofenceResponse" type="ns1:CreateGeofenceResponseTypeV50"/>
+      <xs:element name="DeleteGeofenceRecordsResponse" type="ns1:DeleteGeofenceRecordsResponseTypeV50"/>
+      <xs:element name="GetGeofenceRecordsResponse" type="ns1:GetGeofenceRecordsResponseV50"/>
+      <xs:element name="GetViolationHistoryResponse" type="ns1:GetViolationHistoryResponseTypeV50"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Core/Geofence/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1" xmlns:ns4="http://xmlns.hughestelematics.com/Gateway/Common/AlertPreference/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Core/Geofence/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/AlertPreference/V1"/>
+      <xs:element name="CreateGeofence" type="tns:CreateGeofenceType"/>
+      <xs:element name="CreateGeofenceConfig" type="tns:CreateGeofenceConfigType"/>
+      <xs:element name="CreateGeofenceResponse" type="tns:CreateGeofenceResponseType"/>
+      <xs:element name="CreateGeofenceResponseV50" type="tns:CreateGeofenceResponseTypeV50"/>
+      <xs:element name="CreateGeofenceV50" type="tns:CreateGeofenceTypeV50"/>
+      <xs:element name="DeleteGeofenceRecordsRequest" type="tns:DeleteGeofenceRecordsRequestType"/>
+      <xs:element name="DeleteGeofenceRecordsRequestV50" type="tns:DeleteGeofenceRecordsRequestTypeV50"/>
+      <xs:element name="DeleteGeofenceRecordsResponse" type="tns:DeleteGeofenceRecordsResponseType"/>
+      <xs:element name="DeleteGeofenceRecordsResponseV50" type="tns:DeleteGeofenceRecordsResponseTypeV50"/>
+      <xs:element name="UpdateGeofence" type="tns:UpdateGeofenceType"/>
+      <xs:element name="UpdateGeofenceResponse" type="tns:UpdateGeofenceResponseType"/>
+      <xs:complexType name="GetViolationHistoryRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetViolationHistoryRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetViolationHistoryRequestDataType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="tcuid" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserId" type="xs:string"/>
+          <xs:element name="startRecordNo" type="xs:int"/>
+          <xs:element name="maxNoOfRecords" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetViolationHistoryResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="Data" type="tns:ViolationHistoryRecords"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ViolationHistoryRecords">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ViolationHistory" type="tns:ViolationHistoryDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ViolationHistoryDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="Name" type="xs:string"/>
+          <xs:element minOccurs="0" name="VialationDirection" type="tns:VialationDirectionType"/>
+          <xs:element minOccurs="0" name="Shape" type="tns:GeofenceTypeType"/>
+          <xs:element minOccurs="0" name="ZoneType" type="tns:GeofenceZoneType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteGeofenceRecordsRequestTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:DeleteGeofenceRecordsRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteGeofenceRecordsRequestDataType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="rowId" type="xs:string"/>
+          <xs:element minOccurs="0" name="fenceId" type="xs:int"/>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="tcuid" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteGeofenceRecordsResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateGeofenceTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:InputGeofenceDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputGeofenceDataType">
+        <xs:sequence>
+          <xs:element name="CreateGeofenceConfig" type="tns:CreateGeofenceConfigType"/>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="TcuId" type="xs:string"/>
+          <xs:element name="Vin" type="xs:string"/>
+          <xs:element name="WebSite" type="xs:string"/>
+          <xs:element default="ACTIVATE" name="Operation" type="tns:OperationT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateGeofenceConfigType">
+        <xs:sequence>
+          <xs:element name="GeofenceCommand" type="tns:GeofenceCommandType"/>
+          <xs:element minOccurs="0" name="GeofenceData" type="tns:GeofenceDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeofenceDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AliasName" type="xs:string"/>
+          <xs:element minOccurs="0" name="FenceId" type="xs:int"/>
+          <xs:element minOccurs="0" name="AlertType" type="tns:AlertTypeT"/>
+          <xs:element minOccurs="0" name="popupFlag" type="xs:boolean"/>
+          <xs:element name="ArmStatus" type="tns:GeofenceArmStatusType"/>
+          <xs:element name="GeofenceType" type="tns:GeofenceTypeType"/>
+          <xs:element name="BoundaryType" type="tns:GeofenceBoundaryType"/>
+          <xs:element default="Bidirectional" name="GeofenceNotificationPreference" type="tns:GeofenceNotificationPreferenceType"/>
+          <xs:element minOccurs="0" name="RearmType" type="tns:GeofenceRearmType"/>
+          <xs:element minOccurs="0" name="IgnitionTrigger" type="tns:GeofenceIgnitionType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="VerticesPosition" type="tns:GPSPositionType"/>
+          <xs:element minOccurs="0" name="CircleCenter" type="tns:GPSPositionType"/>
+          <xs:element minOccurs="0" name="Radius" type="xs:int"/>
+          <xs:element minOccurs="0" name="ellipseCenter" type="tns:GPSPositionType"/>
+          <xs:element minOccurs="0" name="firstEllipseRadius" type="xs:long"/>
+          <xs:element minOccurs="0" name="secondEllipseRadius" type="xs:long"/>
+          <xs:element minOccurs="0" name="rectangleCenter" type="tns:GPSPositionType"/>
+          <xs:element minOccurs="0" name="rectangleWidth" type="xs:long"/>
+          <xs:element minOccurs="0" name="rectangleHeight" type="xs:long"/>
+          <xs:element minOccurs="0" name="rotationAngle" type="xs:int"/>
+          <xs:element minOccurs="0" name="scheduledStartTime" type="xs:long"/>
+          <xs:element minOccurs="0" name="scheduledEndTime" type="xs:long"/>
+          <xs:element minOccurs="0" name="Schedule" type="ns3:Schedule"/>
+          <xs:element minOccurs="0" name="SuspendUntilDate" type="xs:long"/>
+          <xs:element minOccurs="0" name="alertPreference" type="ns4:alertPreference"/>
+          <xs:element name="dbRowId" type="xs:string"/>
+          <xs:element name="enabled" type="xs:boolean"/>
+          <xs:element name="deleted" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GPSPositionType">
+        <xs:sequence>
+          <xs:element name="latitude" type="xs:double"/>
+          <xs:element name="longitude" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateGeofenceResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetGeofenceRecordsV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetGeofenceRecordsDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetGeofenceRecordsDataType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="TcuId" type="xs:string"/>
+          <xs:element name="Vin" type="xs:string"/>
+          <xs:element name="startRecordNo" type="xs:int"/>
+          <xs:element name="maxNoOfRecords" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetGeofenceRecordsResponseV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GeofenceRecordsType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeofenceRecordsType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="GeofenceRecordsData" type="tns:GeofenceDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LocationPrecisionType">
+        <xs:sequence>
+          <xs:element name="precisionInMeters" type="xs:int"/>
+          <xs:element name="precisionTrueness" type="tns:PrecisionTruenessType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteGeofenceRecordsRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:DeleteGeofenceRecordsRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteGeofenceRecordsResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateGeofenceResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateGeofenceResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateGeofenceType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InputGeofenceDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateGeofenceType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InputGeofenceDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ActiveFenceReportType">
+        <xs:sequence>
+          <xs:element name="FenceID" type="xs:int"/>
+          <xs:element name="Trigger" type="tns:GeofenceTriggerType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetGeofenceRecordsResponse">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GeofenceRecordsType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeofenceAsyncResponseType">
+        <xs:sequence>
+          <xs:element name="GeofenceResponseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="GeofenceResponseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="GeofenceNotificationData" type="tns:GeofenceNotificationType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeofenceNotificationType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="Vin" type="xs:string"/>
+          <xs:element name="TimeStamp" type="xs:long"/>
+          <xs:element name="ResponseType" type="xs:string"/>
+          <xs:element name="ResponseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="ResponseDescription" type="xs:string"/>
+          <xs:element name="TriggerPosition" type="tns:GPSPositionType"/>
+          <xs:element minOccurs="0" name="triggerPositionPrecision" type="tns:LocationPrecisionType"/>
+          <xs:element minOccurs="0" name="triggerPositionAltitude" type="xs:int"/>
+          <xs:element name="VehSpeed" type="tns:VehicleSpeedFlagType"/>
+          <xs:element name="Heading" type="xs:float"/>
+          <xs:element maxOccurs="unbounded" name="ActiveFenceReport" type="tns:ActiveFenceReportType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetGeofenceRecords">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetGeofenceRecordsDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetViolationHistoryResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader"/>
+          <xs:element minOccurs="0" name="Data" type="tns:ViolationHistoryRecords"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetViolationHistoryRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetViolationHistoryRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="VialationDirectionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="On Exit"/>
+          <xs:enumeration value="Bidirectional"/>
+          <xs:enumeration value="InToOut"/>
+          <xs:enumeration value="OutToIn"/>
+          <xs:enumeration value="ignitionOff"/>
+          <xs:enumeration value="ignitionOn"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="GeofenceTypeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Circle"/>
+          <xs:enumeration value="Ellipse"/>
+          <xs:enumeration value="Polygon"/>
+          <xs:enumeration value="Rectangle"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="GeofenceZoneType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Green Zone"/>
+          <xs:enumeration value="Red Zone"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="GeofenceCommandType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="createGeofence"/>
+          <xs:enumeration value="updateGeofence"/>
+          <xs:enumeration value="updateArmStatus"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AlertTypeT">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="geofenceAlert"/>
+          <xs:enumeration value="valetAlert"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="GeofenceArmStatusType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="armed"/>
+          <xs:enumeration value="unarmed"/>
+          <xs:enumeration value="suspendedUntilDate"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="GeofenceBoundaryType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="InToOut"/>
+          <xs:enumeration value="OutToIn"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="GeofenceNotificationPreferenceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="OnExit"/>
+          <xs:enumeration value="OnEnter"/>
+          <xs:enumeration value="Bidirectional"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="GeofenceRearmType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Always"/>
+          <xs:enumeration value="AfterIgnition"/>
+          <xs:enumeration value="None"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="GeofenceIgnitionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="bothGeofenceIgnitionTriggers"/>
+          <xs:enumeration value="ignitionRunToOffTrigger"/>
+          <xs:enumeration value="ignitionOffToRunTrigger"/>
+          <xs:enumeration value="noGeofenceIgnitionTrigger"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OperationT">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SAVEONLY"/>
+          <xs:enumeration value="UPDATE"/>
+          <xs:enumeration value="DEACTIVATE"/>
+          <xs:enumeration value="ACTIVATE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PrecisionTruenessType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="none"/>
+          <xs:enumeration value="weak"/>
+          <xs:enumeration value="fair"/>
+          <xs:enumeration value="good"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="GeofenceTriggerType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="InToOut"/>
+          <xs:enumeration value="OutToIn"/>
+          <xs:enumeration value="ignitionOff"/>
+          <xs:enumeration value="ignitionOn"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="VehicleSpeedFlagType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="speedUnknown"/>
+          <xs:enumeration value="lessThan5Kmph"/>
+          <xs:enumeration value="moreThanOrEqualTo5Kmph"/>
+          <xs:enumeration value="lessThan5Mph"/>
+          <xs:enumeration value="moreThanOrEqualTo5Mph"/>
+          <xs:enumeration value="vehicleNotMoving"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Schedule">
+        <xs:sequence>
+          <xs:element name="ScheduleType" type="tns:ScheduleTypeT"/>
+          <xs:element minOccurs="0" name="DailySchedule" type="tns:DailyScheduleT"/>
+          <xs:element minOccurs="0" name="WeeklySchedule" type="tns:WeeklyScheduleT"/>
+          <xs:element minOccurs="0" name="MonthlySchedule" type="tns:MonthlyScheduleT"/>
+          <xs:element minOccurs="0" name="SingleSchedule" type="tns:SingleScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DailyScheduleT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DayInterval" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" name="DaySchedule" type="tns:DayScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DayScheduleT">
+        <xs:sequence>
+          <xs:element default="0" name="DayOfWeek" type="xs:int"/>
+          <xs:element name="MinutesFromMidnight" type="xs:int"/>
+          <xs:element name="Duration" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WeeklyScheduleT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WeekInterval" type="xs:int"/>
+          <xs:element name="WeekSchedule" type="tns:WeekScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WeekScheduleT">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="DaySchedule" type="tns:DayScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MonthlyScheduleT">
+        <xs:sequence>
+          <xs:element name="DayOfMonth" type="xs:int"/>
+          <xs:element minOccurs="0" name="monthInterval" type="xs:int"/>
+          <xs:element minOccurs="0" name="MinutesFromMidnight" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SingleScheduleT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DayInterval" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" name="DaySchedule" type="tns:DayScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ScheduleTypeT">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="none"/>
+          <xs:enumeration value="daily"/>
+          <xs:enumeration value="weekly"/>
+          <xs:enumeration value="monthly"/>
+          <xs:enumeration value="single"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="Mbrace"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/AlertPreference/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/AlertPreference/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="alertPreference">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="alertByEmail" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="emails" nillable="true" type="tns:preferenceType"/>
+          <xs:element minOccurs="0" name="alertBySms" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="smsTns" nillable="true" type="tns:preferenceType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="preferenceType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="emailOrSmsTn" type="xs:string"/>
+          <xs:element minOccurs="0" name="enable" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="aliasName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/Gateway/service/GeofenceServiceV5_0" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Core/Geofence/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Geofence/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/Geofence/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Geofence/V1"/>
+      <xs:element name="CreateGeofence" type="tns:CreateGeofence"/>
+      <xs:element name="CreateGeofenceResponse" type="tns:CreateGeofenceResponse"/>
+      <xs:element name="DeleteGeofenceRecords" type="tns:DeleteGeofenceRecords"/>
+      <xs:element name="DeleteGeofenceRecordsResponse" type="tns:DeleteGeofenceRecordsResponse"/>
+      <xs:element name="GetGeofenceRecords" type="tns:GetGeofenceRecords"/>
+      <xs:element name="GetGeofenceRecordsResponse" type="tns:GetGeofenceRecordsResponse"/>
+      <xs:element name="GetViolationHistory" type="tns:GetViolationHistory"/>
+      <xs:element name="GetViolationHistoryResponse" type="tns:GetViolationHistoryResponse"/>
+      <xs:complexType name="GetViolationHistory">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetViolationHistoryRequest" type="ns1:GetViolationHistoryRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetViolationHistoryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:GetViolationHistoryResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteGeofenceRecords">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeleteGeofenceRecordsRequest" type="ns1:DeleteGeofenceRecordsRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteGeofenceRecordsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:DeleteGeofenceRecordsResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateGeofence">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreateGeofenceRequest" type="ns1:CreateGeofenceTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateGeofenceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:CreateGeofenceResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetGeofenceRecords">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetGeofenceRecordsRequest" type="ns1:GetGeofenceRecordsV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetGeofenceRecordsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:GetGeofenceRecordsResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetGeofenceRecordsResponse">
+    <wsdl:part element="tns:GetGeofenceRecordsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetGeofenceRecords">
+    <wsdl:part element="tns:GetGeofenceRecords" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetViolationHistory">
+    <wsdl:part element="tns:GetViolationHistory" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateGeofence">
+    <wsdl:part element="tns:CreateGeofence" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetViolationHistoryResponse">
+    <wsdl:part element="tns:GetViolationHistoryResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteGeofenceRecordsResponse">
+    <wsdl:part element="tns:DeleteGeofenceRecordsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteGeofenceRecords">
+    <wsdl:part element="tns:DeleteGeofenceRecords" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateGeofenceResponse">
+    <wsdl:part element="tns:CreateGeofenceResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="GeofenceServiceV5_0">
+    <wsdl:operation name="GetViolationHistory">
+      <wsdl:input message="tns:GetViolationHistory" name="GetViolationHistory"></wsdl:input>
+      <wsdl:output message="tns:GetViolationHistoryResponse" name="GetViolationHistoryResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGeofenceRecords">
+      <wsdl:input message="tns:DeleteGeofenceRecords" name="DeleteGeofenceRecords"></wsdl:input>
+      <wsdl:output message="tns:DeleteGeofenceRecordsResponse" name="DeleteGeofenceRecordsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGeofence">
+      <wsdl:input message="tns:CreateGeofence" name="CreateGeofence"></wsdl:input>
+      <wsdl:output message="tns:CreateGeofenceResponse" name="CreateGeofenceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGeofenceRecords">
+      <wsdl:input message="tns:GetGeofenceRecords" name="GetGeofenceRecords"></wsdl:input>
+      <wsdl:output message="tns:GetGeofenceRecordsResponse" name="GetGeofenceRecordsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GeofenceServiceV5_0SoapBinding" type="tns:GeofenceServiceV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetViolationHistory">
+      <soap:operation soapAction="GetViolationHistory" style="document"/>
+      <wsdl:input name="GetViolationHistory">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetViolationHistoryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGeofenceRecords">
+      <soap:operation soapAction="DeleteGeofenceRecords" style="document"/>
+      <wsdl:input name="DeleteGeofenceRecords">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeleteGeofenceRecordsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGeofence">
+      <soap:operation soapAction="CreateGeofence" style="document"/>
+      <wsdl:input name="CreateGeofence">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CreateGeofenceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGeofenceRecords">
+      <soap:operation soapAction="GetGeofenceRecords" style="document"/>
+      <wsdl:input name="GetGeofenceRecords">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetGeofenceRecordsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeofenceServiceV5_0">
+    <wsdl:port binding="tns:GeofenceServiceV5_0SoapBinding" name="GeofenceServicePort">
+      <soap:address location="https://Domain/SOAP/GeofenceServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/GeofenceServiceV5_0</con:endpoint></con:endpoints></con:interface>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SubmitVHRRequest TestCase" searchProperties="true" id="a0c1f8c3-d627-4e9b-b53a-04149d3412bd" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="a0c1f8c3-d627-4e9b-b53a-04149d3412bdfileName">SubmitVHRRequest-TestCase</con:setting></con:settings><con:testStep type="request" name="SubmitVHRRequest" id="999191db-ba86-4555-a6f8-c59e0dc8ef10"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>VehicleHealthReportServiceV5_0SoapBinding</con:interface><con:operation>SubmitVHRRequest</con:operation><con:request name="SubmitVHRRequest" id="b5ca60f4-ce71-41d5-a887-5ccda770cc72" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VehicleHealthReportServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:veh="http://ns.hughestelematics.com/Gateway/service/vehicleHealthReportService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/VehicleHealthReport/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/AlertPreference/V1" xmlns:v13="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1">
+   <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+  ${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <veh:SubmitVHRRequest>
+         <!--Optional:-->
+         <SubmitVHRRequest>
+            <v1:context>
+             <v11:SourceName>WEB</v11:SourceName>
+              <v11:TransactionId>test5498465456</v11:TransactionId>
+               <v11:Timestamp>2015-03-23T22:14:02.001Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:accountId>${#Project#AccountId}</v1:accountId>
+               <v1:vin>${#Project#VIN}</v1:vin>
+               <v1:tcuId>${#Project#TCUID}</v1:tcuId>
+               <!--Optional:-->
+               <v1:enabled>true</v1:enabled>
+               <!--Optional:-->
+               <v1:alertRequestType>Onetime</v1:alertRequestType>
+               <!--Optional:-->
+               <v1:alertPreference>
+                  <!--Optional:-->
+                  <v12:alertByEmail>true</v12:alertByEmail>
+                  <!--Zero or more repetitions:-->
+                  <v12:emails>
+                     <!--Optional:-->
+                     <v12:emailOrSmsTn>ramesh.n@hughestelematics.com</v12:emailOrSmsTn>
+                     <!--Optional:-->
+                     <v12:enable>true</v12:enable>
+                   </v12:emails>
+                  <!--Optional:-->
+                  <v12:alertBySms>false</v12:alertBySms>
+                       
+               </v1:alertPreference>
+               <!--Optional:-->
+               <v1:schedule>
+                  <v13:ScheduleType>Monthly</v13:ScheduleType>
+                    <!--Optional:-->
+                  <v13:MonthlySchedule>
+                     <v13:DayOfMonth>17</v13:DayOfMonth>
+                     <!--Optional:-->
+                     <v13:monthInterval>1</v13:monthInterval>
+                     <!--Optional:-->
+                     <v13:MinutesFromMidnight>160</v13:MinutesFromMidnight>
+                  </v13:MonthlySchedule>          
+               </v1:schedule>
+            </v1:Data>
+         </SubmitVHRRequest>
+      </veh:SubmitVHRRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="SubmitVHRRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

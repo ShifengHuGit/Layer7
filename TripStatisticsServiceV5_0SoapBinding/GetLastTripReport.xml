@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetLastTripReport" name="GetLastTripReport" bindingOperationName="GetLastTripReport" type="Request-Response" outputName="GetLastTripReportResponse" inputName="GetLastTripReport" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="d4057196-4f11-4d11-9001-05f98e7ecc37" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="d4057196-4f11-4d11-9001-05f98e7ecc37fileName">GetLastTripReport</con:setting></con:settings><con:call name="Request 1" id="5d650c2e-5b6b-457f-8d81-83fc87bb45a0" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/TripStatisticsServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trip="http://ns.hughestelematics.com/Gateway/service/TripStatisticsService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/TripStatistics/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trip:GetLastTripReport>
+         <!--Optional:-->
+         <QueryTripDetails>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:AccountId>?</v1:AccountId>
+               <v1:TCUID>?</v1:TCUID>
+               <v1:VIN>?</v1:VIN>
+               <v1:TripType>LastTrip</v1:TripType>
+            </v1:Data>
+         </QueryTripDetails>
+      </trip:GetLastTripReport>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetLastTripReport"/></con:call></con:operation>

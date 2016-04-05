@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getPairedDevicesV2 TestCase" searchProperties="true" id="62565df8-0692-48ff-a79e-a13f936c8626" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="62565df8-0692-48ff-a79e-a13f936c8626fileName">getPairedDevicesV2-TestCase</con:setting></con:settings><con:testStep type="request" name="getPairedDevicesV2" id="9be67b4d-3b8c-4ac3-807a-6299d2fbeb75"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MobileDeviceRegisterPairingServiceV5_1SoapBinding</con:interface><con:operation>getPairedDevicesV2</con:operation><con:request name="getPairedDevicesV2" id="21b204ca-479f-4782-93de-77395e491c81" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/MobileDeviceRegisterPairingServiceV5_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/service/MobileDevicePairing/V1" xmlns:v5="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V5_1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+   ${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <v1:getPairedDevicesV2>
+         <!--Optional:-->
+         <v5:getPaiedDeviceListRequestV2>
+            <v11:context>
+               <v12:SourceName>WEB</v12:SourceName>
+               <v12:TransactionId>Vish8368376378</v12:TransactionId>
+               <v12:Timestamp>2015-03-04T22:14:02.001Z</v12:Timestamp>
+               <v12:Organization>${#Project#Organization}</v12:Organization>
+               <v12:Region>US</v12:Region>
+               <v12:ApplicationName>CWP</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:userId>${#Project#AccountId}</v11:userId>
+            </v11:Data>
+         </v5:getPaiedDeviceListRequestV2>
+      </v1:getPairedDevicesV2>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getPairedDevicesV2" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

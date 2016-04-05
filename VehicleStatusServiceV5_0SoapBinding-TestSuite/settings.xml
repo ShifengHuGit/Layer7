@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="VehicleStatusServiceV5_0SoapBinding TestSuite" id="53bdc998-769d-4fb0-86e3-3b9b1941f1e0" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="53bdc998-769d-4fb0-86e3-3b9b1941f1e0fileName">VehicleStatusServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

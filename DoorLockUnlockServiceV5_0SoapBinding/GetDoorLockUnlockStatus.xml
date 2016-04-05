@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetDoorLockUnlockStatus" name="GetDoorLockUnlockStatus" bindingOperationName="GetDoorLockUnlockStatus" type="Request-Response" outputName="GetDoorLockUnlockStatusResponse" inputName="GetDoorLockUnlockStatus" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="6167c983-050c-4a74-a8af-73ddf7788525" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="6167c983-050c-4a74-a8af-73ddf7788525fileName">GetDoorLockUnlockStatus</con:setting></con:settings><con:call name="Request 1" id="7534d56c-55ed-4fde-b509-9f7f01aab844" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/DoorLockUnlockServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:door="http://ns.hughestelematics.com/v1.0/service/doorLockUnlockServiceV2_0" xmlns:rdl="http://xmlns.hti.com/RDLUCmd" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <door:GetDoorLockUnlockStatus>
+         <!--Optional:-->
+         <GetRDLUStatusRequest>
+            <rdl:context>
+               <v1:SourceName>?</v1:SourceName>
+               <v1:TransactionId>?</v1:TransactionId>
+               <v1:Timestamp>?</v1:Timestamp>
+               <v1:Organization>?</v1:Organization>
+               <v1:Region>?</v1:Region>
+               <v1:ApplicationName>?</v1:ApplicationName>
+            </rdl:context>
+            <rdl:Data>
+               <!--Optional:-->
+               <rdl:RDLUEventTransactionId>?</rdl:RDLUEventTransactionId>
+               <rdl:serviceOperationCode>Door Unlock</rdl:serviceOperationCode>
+               <!--Optional:-->
+               <rdl:OEM>?</rdl:OEM>
+               <rdl:tcuId>?</rdl:tcuId>
+               <rdl:vin>?</rdl:vin>
+               <rdl:AccountId>?</rdl:AccountId>
+               <!--Optional:-->
+               <rdl:UserId>?</rdl:UserId>
+            </rdl:Data>
+         </GetRDLUStatusRequest>
+      </door:GetDoorLockUnlockStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetDoorLockUnlockStatus"/></con:call></con:operation>

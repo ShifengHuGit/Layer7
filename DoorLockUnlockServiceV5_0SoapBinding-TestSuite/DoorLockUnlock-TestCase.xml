@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="DoorLockUnlock TestCase" searchProperties="true" id="71dc20df-08a2-458d-a4f2-71f40fb807b3" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="71dc20df-08a2-458d-a4f2-71f40fb807b3fileName">DoorLockUnlock-TestCase</con:setting></con:settings><con:testStep type="request" name="DoorLockUnlock" id="dffa2303-f509-41f9-8b05-e7ab709545c5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DoorLockUnlockServiceV5_0SoapBinding</con:interface><con:operation>DoorLockUnlock</con:operation><con:request name="DoorLockUnlock" id="9db5ca6b-4a8a-45f7-b0ad-90636e0cee58" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/DoorLockUnlockServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:door="http://ns.hughestelematics.com/v1.0/service/doorLockUnlockServiceV2_0" xmlns:rdl="http://xmlns.hti.com/RDLUCmd" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+   ${#Project#SessionToken}
+ </soapenv:Header>
+    <soapenv:Body>
+      <door:DoorLockUnlock>
+         <!--Optional:-->
+         <RDLURequest>
+            <rdl:context>
+               <v1:SourceName>WEB</v1:SourceName>
+               <v1:TransactionId>test54646</v1:TransactionId>
+               <v1:Timestamp>2015-05-08T22:14:02.001Z</v1:Timestamp>
+               <v1:Organization>${#Project#Organization}</v1:Organization>
+               <v1:Region>US</v1:Region>
+               <v1:ApplicationName>CWP</v1:ApplicationName>
+            </rdl:context>
+            <rdl:Data>
+               <rdl:tcuId>${#Project#TCUID}</rdl:tcuId>
+               <rdl:tcuType>OCU</rdl:tcuType>
+               <rdl:vin>${#Project#VIN}</rdl:vin>
+               <rdl:AccountId>${#Project#AccountId}</rdl:AccountId>
+               <!--Optional:-->
+               <rdl:UserId>${#Project#AccountId}</rdl:UserId>
+               <rdl:doorTypeParam>Door Unlock</rdl:doorTypeParam>
+               <!--Optional:-->
+               <rdl:mode>UNVERIFIED</rdl:mode>
+               <!--Optional:-->
+               <rdl:timeToUnlock>5</rdl:timeToUnlock>
+               <!--Optional:-->
+               <rdl:courtesyCallFlag>N</rdl:courtesyCallFlag>
+            </rdl:Data>
+         </RDLURequest>
+      </door:DoorLockUnlock>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="DoorLockUnlock" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

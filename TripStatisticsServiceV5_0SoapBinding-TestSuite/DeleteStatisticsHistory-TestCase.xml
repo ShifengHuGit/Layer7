@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="DeleteStatisticsHistory TestCase" searchProperties="true" id="475798c5-37f1-4d75-b97f-c227d1fbe5df" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="475798c5-37f1-4d75-b97f-c227d1fbe5dffileName">DeleteStatisticsHistory-TestCase</con:setting></con:settings><con:testStep type="request" name="DeleteStatisticsHistory" id="75f5286a-7be1-4cea-825e-6648413be388"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TripStatisticsServiceV5_0SoapBinding</con:interface><con:operation>DeleteStatisticsHistory</con:operation><con:request name="DeleteStatisticsHistory" id="d0c5b6a1-341f-4df1-9981-dd66c0e826d1" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/TripStatisticsServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trip="http://ns.hughestelematics.com/Gateway/service/TripStatisticsService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/TripStatistics/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+    <api_key>${#Project#api_key}</api_key>
+   ${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <trip:DeleteStatisticsHistory>
+         <!--Optional:-->
+         <TripStatisDetails>
+            <v1:context>
+               <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>vwtestupdateminbat1234</v11:TransactionId>
+               <v11:Timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd").format(new Date())}T${=new java.text.SimpleDateFormat("HH:mm:ss.SSS").format(new Date())}Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+                <v1:AccountId>${#Project#AccountId}</v1:AccountId>
+               <v1:TCUID>${#Project#TCUID}</v1:TCUID>
+               <v1:VIN>${#Project#VIN}</v1:VIN>
+               <v1:TripType>LastTrip</v1:TripType>
+            </v1:Data>
+         </TripStatisDetails>
+      </trip:DeleteStatisticsHistory>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="DeleteStatisticsHistory" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

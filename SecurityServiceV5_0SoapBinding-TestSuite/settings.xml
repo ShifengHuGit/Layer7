@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="SecurityServiceV5_0SoapBinding TestSuite" id="402ba88b-2165-4ff5-bcad-e29d5bad4479" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="402ba88b-2165-4ff5-bcad-e29d5bad4479fileName">SecurityServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

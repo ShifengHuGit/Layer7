@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="GeofenceServiceV5_0SoapBinding TestSuite" id="bcb4aced-68d7-4193-a183-f9523d082e81" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="bcb4aced-68d7-4193-a183-f9523d082e81fileName">GeofenceServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

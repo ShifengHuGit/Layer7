@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetUnifiedVehicleStatusData" name="GetUnifiedVehicleStatusData" bindingOperationName="GetUnifiedVehicleStatusData" type="Request-Response" outputName="GetUnifiedVehicleStatusDataResponse" inputName="GetUnifiedVehicleStatusData" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="31f96038-292d-409c-b863-c30098206584" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="31f96038-292d-409c-b863-c30098206584fileName">GetUnifiedVehicleStatusData</con:setting></con:settings><con:call name="Request 1" id="5945eb46-d996-47a4-b59f-754eabac6dc7" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VehicleStatusServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:veh="http://ns.hughestelematics.com/Gateway/service/vehicleStatusServiceV3_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/UnifiedVehicleStatus/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <veh:GetUnifiedVehicleStatusData>
+         <!--Optional:-->
+         <GetUnifiedVehicleStatusDetails>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:AccountId>?</v1:AccountId>
+               <v1:TCUID>?</v1:TCUID>
+               <v1:VIN>?</v1:VIN>
+            </v1:Data>
+         </GetUnifiedVehicleStatusDetails>
+      </veh:GetUnifiedVehicleStatusData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetUnifiedVehicleStatusData"/></con:call></con:operation>

@@ -1,0 +1,1771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="VWUS_VehicleDetailServiceV5_0SoapBinding" type="wsdl" bindingName="{http://xmlns.hughestelematics.com/Gateway/service/VWUS_VehicleDetailServiceV5_0/V1}VWUS_VehicleDetailServiceV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Layer%207/L7%20My%20files/WSDL_VW_US_1/VWUS_VehicleDetailServiceV5_0.wsdl" id="e216f646-b5ae-47c9-8b24-73799810e22b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="e216f646-b5ae-47c9-8b24-73799810e22bfileName">VWUS_VehicleDetailServiceV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\VWUS_VehicleDetailServiceV5_0.wsdl"><con:part><con:url>file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\VWUS_VehicleDetailServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="VWUS_VehicleDetailServiceV5_0" targetNamespace="http://xmlns.hughestelematics.com/Gateway/service/VWUS_VehicleDetailServiceV5_0/V1" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/service/VWUS_VehicleDetailServiceV5_0/V1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/service/VWUS_VehicleDetailServiceV5_0/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/VWUS_VehicleDetailServiceV5_0/V1" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/VWEU_VehicleDetailServiceV5_0/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Security/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/VWUS_VehicleDetailServiceV5_0/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/VWEU_VehicleDetailServiceV5_0/V1"/>
+      <xs:element name="GetUserVehicles" type="tns:GetUserVehicles"/>
+      <xs:element name="GetUserVehiclesResponse" type="tns:GetUserVehiclesResponse"/>
+      <xs:element name="GetVehicleDetails" type="tns:GetVehicleDetails"/>
+      <xs:element name="GetVehicleDetailsResponse" type="tns:GetVehicleDetailsResponse"/>
+      <xs:complexType name="GetVehicleDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetVehicleDetailsRequest" type="ns1:GetVehicleDetailsRequestTypeV5"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleDetailsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:GetVehicleDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserVehicles">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetUserVehiclesRequest" type="ns1:GetUserVehiclesRequestTypeV5"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserVehiclesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns3:GetUserVehicles"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/VehicleManagement/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/VehicleManagement/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="EmailNotification">
+        <xs:sequence>
+          <xs:element name="EmailAddress" type="xs:string"/>
+          <xs:element name="NotificationIndicatorType" type="tns:NotificationIndicatorType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PhoneNotification">
+        <xs:sequence>
+          <xs:element name="Phone" type="xs:string"/>
+          <xs:element name="NotificationIndicatorType" type="tns:NotificationIndicatorType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NotificationSettingsType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="EmailNotification" type="tns:EmailNotification"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="PhoneNotification" type="tns:PhoneNotification"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="MobileAppNotification" type="tns:MobileAppNotification"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MobileAppNotification">
+        <xs:sequence>
+          <xs:element name="MobileApp" type="xs:string"/>
+          <xs:element name="NotificationIndicatorType" type="tns:NotificationIndicatorType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleSettingsResponseTypeV2">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Data" type="tns:VehicleSettingsDataTypeV2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VehicleSettingsDataTypeV2">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="Alias" type="xs:string"/>
+          <xs:element name="LastParkedPosition" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="UserNotification" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="AccountNotification" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="NotificationSettings" type="tns:NotificationSettingsType"/>
+          <xs:element minOccurs="0" name="LicensePlate" type="xs:string"/>
+          <xs:element minOccurs="0" name="AlertType" type="ns3:AlertType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveVehicleResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="Data" type="tns:RemoveVehicleResDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveVehicleResDataType">
+        <xs:sequence>
+          <xs:element name="SRNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateVehicleSettingsRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:VehicleSettingsDataTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element minOccurs="0" name="Data" type="tns:GetAuthorizedUsersRespDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersRespDataType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="AuthorizedUser" type="tns:AuthorizedUserType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthorizedUserType">
+        <xs:sequence>
+          <xs:element name="AuthorizedEmail" type="xs:string"/>
+          <xs:element name="FirstName" type="xs:string"/>
+          <xs:element name="LastName" type="xs:string"/>
+          <xs:element name="UserStatus" type="tns:UserStatusType"/>
+          <xs:element name="ActivationDate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersForVehicleRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:GetAuthorizedUsersForVehicleReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersForVehicleReqDataType">
+        <xs:sequence>
+          <xs:element name="PrimaryUserId" type="xs:string"/>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InviteAuthorizedUserResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAuthorizedUsersForVehicleRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:DeleteAuthorizedUsersForVehicleReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAuthorizedUsersForVehicleReqDataType">
+        <xs:sequence>
+          <xs:element name="PrimaryUserId" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="AuthorizedUserId" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="InvitationToken" type="xs:string"/>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VehicleSettingsDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="Alias" type="xs:string"/>
+          <xs:element name="LastParkedPosition" type="xs:boolean"/>
+          <xs:element name="Notification" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="NotificationSettings" type="tns:NotificationSettingsType"/>
+          <xs:element minOccurs="0" name="LicensePlate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleSettingsReqDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="AccountID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InviteAuthorizedUserReqDataType">
+        <xs:sequence>
+          <xs:element name="PrimaryUserId" type="xs:string"/>
+          <xs:element name="AuthorizedEmail" type="xs:string"/>
+          <xs:element name="AuthorizedFirstName" type="xs:string"/>
+          <xs:element name="AuthorizedLastName" type="xs:string"/>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="URL" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAuthorizedUserRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:DeleteAuthorizedUserReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAuthorizedUserReqDataType">
+        <xs:sequence>
+          <xs:element name="PrimaryUserId" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" name="AuthorizedEmail" type="xs:string"/>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersForVehicleResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element minOccurs="0" name="Data" type="tns:GetAuthorizedUsersForVehicleRespDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersForVehicleRespDataType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ExistingUser" type="tns:ExistingUserUserInfoType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="InvitedUser" type="tns:InvitedUserInfoType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ExistingUserUserInfoType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="FirstName" type="xs:string"/>
+          <xs:element name="LastName" type="xs:string"/>
+          <xs:element name="EmailAddress" type="xs:string"/>
+          <xs:element name="ActivationDate" type="xs:dateTime"/>
+          <xs:element name="UserStatus" type="tns:UserStatusType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InvitedUserInfoType">
+        <xs:sequence>
+          <xs:element name="InvitationEmail" type="xs:string"/>
+          <xs:element name="FirstName" type="xs:string"/>
+          <xs:element name="LastName" type="xs:string"/>
+          <xs:element name="InvitationToken" type="xs:string"/>
+          <xs:element name="UserStatus" type="tns:UserStatusType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleSettingsRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetVehicleSettingsReqDataTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleSettingsReqDataTypeV2">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element minOccurs="0" name="AlertType" type="ns3:AlertType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAuthorizedUsersForVehicleResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveVehicleReqDataType">
+        <xs:sequence>
+          <xs:element name="IdentifierType" type="ns3:CommonIdentifierType"/>
+          <xs:element name="userId" type="xs:string"/>
+          <xs:element name="CancelRequestType" type="tns:CancelRequestType"/>
+          <xs:element name="CancelReason" type="tns:CancelReasonType"/>
+          <xs:element name="WhenToCancel" type="tns:WhenToCancelType"/>
+          <xs:element minOccurs="0" name="RequestedCancelDate" type="xs:date"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InviteAuthorizedUserRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:InviteAuthorizedUserReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAuthorizedUserRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:DeleteAuthorizedUserReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersReqDataType">
+        <xs:sequence>
+          <xs:element name="PrimaryUserId" type="xs:string"/>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InviteAuthorizedUserResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="Data" type="tns:GetAuthorizedUsersRespDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveVehicleRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:RemoveVehicleReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleSettingsRequestTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:GetVehicleSettingsReqDataTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleSettingsResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Data" type="tns:VehicleSettingsDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateVehicleSettingsResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateVehicleSettingsResponseTypeV2">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveVehicleRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:RemoveVehicleReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersForVehicleRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetAuthorizedUsersForVehicleReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InviteAuthorizedUserRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:InviteAuthorizedUserReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateVehicleSettingsResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveVehicleResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element minOccurs="0" name="Data" type="tns:RemoveVehicleResDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersForVehicleResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="Data" type="tns:GetAuthorizedUsersForVehicleRespDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAuthorizedUsersForVehicleRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:DeleteAuthorizedUsersForVehicleReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAuthorizedUsersForVehicleResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:GetAuthorizedUsersReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAuthorizedUserResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateVehicleSettingsRequestTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:VehicleSettingsDataTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleSettingsRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:GetVehicleSettingsReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAuthorizedUsersRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetAuthorizedUsersReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleSettingsResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Data" type="tns:VehicleSettingsDataTypeV2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateVehicleSettingsRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:VehicleSettingsDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAuthorizedUserResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="UserStatusType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Primary"/>
+          <xs:enumeration value="Secondary"/>
+          <xs:enumeration value="Invitee"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="NotificationIndicatorType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="On"/>
+          <xs:enumeration value="Off"/>
+          <xs:enumeration value="Remove"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CancelRequestType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Account Cancellation"/>
+          <xs:enumeration value="Account Inactivation"/>
+          <xs:enumeration value="Account Unwind"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CancelReasonType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Customer Requested"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="WhenToCancelType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Cancel Now"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/VWUS_VehicleDetailServiceV5_0/V1" xmlns="http://xmlns.hughestelematics.com/Gateway/VWUS_VehicleDetailServiceV5_0/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Security/V1"/>
+      <xs:element name="GetVehicleDetails" type="ns1:GetVehicleDetailsResponseTypeV5"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/VWEU_VehicleDetailServiceV5_0/V1" xmlns="http://xmlns.hughestelematics.com/Gateway/VWEU_VehicleDetailServiceV5_0/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Security/V1"/>
+      <xs:element name="GetUserVehicles" type="ns1:GetUserVehiclesResponseTypeV5"/>
+    </xs:schema>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/UserEnrollment/V1" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="UserActionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Registration"/>
+          <xs:enumeration value="ChangePin"/>
+          <xs:enumeration value="ChangePassword"/>
+          <xs:enumeration value="Invitation"/>
+          <xs:enumeration value="Default"/>
+          <xs:enumeration value="SessionToken"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Security/Vehicle/V1" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="VehicleType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountID" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCUID" type="xs:string"/>
+          <xs:element minOccurs="0" name="VehicleLicencePlate" type="xs:string"/>
+          <xs:element minOccurs="0" name="OEM" type="xs:string"/>
+          <xs:element minOccurs="0" name="Make" type="xs:string"/>
+          <xs:element minOccurs="0" name="Model" type="xs:string"/>
+          <xs:element minOccurs="0" name="HeadUnit" type="xs:string"/>
+          <xs:element minOccurs="0" name="BodyStyle" type="xs:string"/>
+          <xs:element minOccurs="0" name="ModelYear" type="xs:string"/>
+          <xs:element minOccurs="0" name="ExteriorColor" type="xs:string"/>
+          <xs:element minOccurs="0" name="Trim" type="xs:string"/>
+          <xs:element minOccurs="0" name="DoorStyle" type="xs:string"/>
+          <xs:element minOccurs="0" name="Transmission" type="xs:string"/>
+          <xs:element minOccurs="0" name="Fuel" type="xs:string"/>
+          <xs:element minOccurs="0" name="Engine" type="xs:string"/>
+          <xs:element minOccurs="0" name="ShippedDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="FactoryFeedDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="OTARDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="GraphicConsole" type="xs:string"/>
+          <xs:element minOccurs="0" name="TextConsole" type="xs:string"/>
+          <xs:element minOccurs="0" name="POISupport" type="xs:string"/>
+          <xs:element minOccurs="0" name="TheftAlarm" type="xs:string"/>
+          <xs:element minOccurs="0" name="ABSInstalled" type="xs:string"/>
+          <xs:element minOccurs="0" name="PowerDoorLocks" type="xs:string"/>
+          <xs:element minOccurs="0" name="HandsFreePhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="TrunkButtonPresent" type="xs:string"/>
+          <xs:element minOccurs="0" name="AssetID" type="xs:string"/>
+          <xs:element minOccurs="0" name="CurrencyCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceID" type="xs:string"/>
+          <xs:element minOccurs="0" name="TransactionTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="SalesStartDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceType" type="xs:string"/>
+          <xs:element minOccurs="0" name="VehicleLine" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VehicleLocationDataType">
+        <xs:sequence>
+          <xs:element name="mdn" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VehicleLocationResponseDataType">
+        <xs:sequence>
+          <xs:element name="CallIdNumber" type="xs:string"/>
+          <xs:element name="CallDate" type="xs:string"/>
+          <xs:element name="CallTime" type="xs:string"/>
+          <xs:element name="CustomerFirstName" type="xs:string"/>
+          <xs:element name="CustomerLastName" type="xs:string"/>
+          <xs:element name="VehicleYear" type="xs:string"/>
+          <xs:element minOccurs="0" name="Make" type="xs:string"/>
+          <xs:element minOccurs="0" name="Model" type="xs:string"/>
+          <xs:element minOccurs="0" name="ExteriorColor" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="FromLocationAddress" type="xs:string"/>
+          <xs:element name="FromLocationCity" type="xs:string"/>
+          <xs:element name="FromLocationState" type="xs:string"/>
+          <xs:element name="FromLocationZip" type="xs:string"/>
+          <xs:element name="FromLocationCountry" type="xs:string"/>
+          <xs:element name="FromLocationLatitude" type="xs:string"/>
+          <xs:element name="FromLocationLongitude" type="xs:string"/>
+          <xs:element name="FromLocationPhoneNo" type="xs:string"/>
+          <xs:element name="SRNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/Security/Vehicle/V1" xmlns:ns4="http://xmlns.hughestelematics.com/Gateway/Security/Device/V1" xmlns:ns5="http://xmlns.hughestelematics.com/Gateway/VehicleManagement/V1" xmlns:ns6="http://xmlns.hughestelematics.com/Gateway/Core/Subscription/V1" xmlns:ns7="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:ns8="http://xmlns.hughestelematics.com/Gateway/UserEnrollment/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Security/Vehicle/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Security/Device/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/VehicleManagement/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/Subscription/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/UserEnrollment/V1"/>
+      <xs:element name="AcceptTermsAndConditionsRequest" type="tns:AcceptTermsAndConditionsRequestType"/>
+      <xs:element name="AcceptTermsAndConditionsRequestV5" type="tns:AcceptTermsAndConditionsRequestTypeV5"/>
+      <xs:element name="AcceptTermsAndConditionsResponse" type="tns:AcceptTermsAndConditionsResponseType"/>
+      <xs:element name="AcceptTermsAndConditionsResponseV5" type="tns:AcceptTermsAndConditionsResponseTypeV5"/>
+      <xs:element name="CreatePossessionPinRequest" type="tns:CreatePossessionPinRequestType"/>
+      <xs:element name="CreatePossessionPinRequestV5" type="tns:CreatePossessionPinRequestTypeV5"/>
+      <xs:element name="CreatePossessionPinResponse" type="tns:CreatePossessionPinResponseType"/>
+      <xs:element name="CreatePossessionPinResponseV5" type="tns:CreatePossessionPinResponseTypeV5"/>
+      <xs:element name="UpdatePossessionPinRequest" type="tns:UpdatePossessionPinRequestType"/>
+      <xs:element name="UpdatePossessionPinRequestV5" type="tns:UpdatePossessionPinRequestTypeV5"/>
+      <xs:element name="UpdatePossessionPinResponse" type="tns:UpdatePossessionPinResponseType"/>
+      <xs:element name="UpdatePossessionPinResponseV5" type="tns:UpdatePossessionPinResponseTypeV5"/>
+      <xs:complexType name="GetVehicleDetailsRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetVehicleDetailsReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleDetailsReqDataType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleDetailsResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:VehicleDetailesType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VehicleDetailesType">
+        <xs:sequence>
+          <xs:element name="Vehicle" type="ns3:VehicleType"/>
+          <xs:element name="Device" type="ns4:DeviceType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserVehiclesRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetUserVehiclesReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserVehiclesReqDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element default="VehDetails" minOccurs="0" name="OperationType" type="tns:OperationType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserVehiclesResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:UserVehicleRespDataTypeV2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UserVehicleRespDataTypeV2">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Account" type="tns:UserVehicleDetailsTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UserVehicleDetailsTypeV2">
+        <xs:sequence>
+          <xs:element name="AccountInfo" type="tns:AccountInfoType"/>
+          <xs:element name="VehicleDetails" type="tns:VehicleDetailInfoType"/>
+          <xs:element maxOccurs="unbounded" name="UserSubscriptionDetails" type="tns:SubscriptionTypeList"/>
+          <xs:element name="ConfigurableVehicleFeaturesList" type="tns:ConfigurableVehicleFeaturesType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccountInfoType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountID" type="xs:string"/>
+          <xs:element name="OwnerType" type="ns5:UserStatusType"/>
+          <xs:element minOccurs="0" name="LastAccessTimestamp" type="xs:dateTime"/>
+          <xs:element name="CreateTimestamp" type="xs:dateTime"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element minOccurs="0" name="Alias" type="xs:string"/>
+          <xs:element minOccurs="0" name="termsSignedFlag" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VehicleDetailInfoType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Make" type="xs:string"/>
+          <xs:element minOccurs="0" name="Model" type="xs:string"/>
+          <xs:element minOccurs="0" name="ModelYear" type="xs:string"/>
+          <xs:element minOccurs="0" name="POISupport" type="xs:string"/>
+          <xs:element minOccurs="0" name="VehicleLicencePlate" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceType" type="xs:string"/>
+          <xs:element minOccurs="0" name="Color" type="xs:string"/>
+          <xs:element minOccurs="0" name="BodyStyle" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SubscriptionTypeList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="UserSubscriptionDetails" type="ns6:SubscriptionType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigurableVehicleFeaturesType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Feature" type="tns:FeatureType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FeatureType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:FeatureNameType"/>
+          <xs:element name="Value" type="tns:FeatureValueType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AcceptTermsAndConditionsResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AcceptTermsAndConditionsRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:AcceptTermsAndConditionsInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AcceptTermsAndConditionsInputDataAreaType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdatePossessionPinRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:UpdatePossessionPinInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdatePossessionPinInputDataAreaType">
+        <xs:sequence>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="veh_possession_code" type="xs:string"/>
+          <xs:element name="StatusType" type="tns:StatusType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreatePossessionPinResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element minOccurs="0" name="DataArea" type="tns:CreatePossessionPinResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreatePossessionPinResponseDataAreaType">
+        <xs:sequence>
+          <xs:element name="veh_possession_code" type="xs:string"/>
+          <xs:element name="expiry_time" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreatePossessionPinRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:CreatePossessionPinInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreatePossessionPinInputDataAreaType">
+        <xs:sequence>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="exp_duration" type="xs:string"/>
+          <xs:element minOccurs="0" name="deviceType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdatePossessionPinRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:UpdatePossessionPinInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AcceptTermsAndConditionsResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AcceptTermsAndConditionsRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:AcceptTermsAndConditionsInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreatePossessionPinRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:CreatePossessionPinInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdatePossessionPinResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdatePossessionPinResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreatePossessionPinResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="DataArea" type="tns:CreatePossessionPinResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountNumbersRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetAccountNumbersRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountNumbersRequestDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="Oem" type="xs:string"/>
+          <xs:element name="Region" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleDetailsMBResponseDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Account_Name" type="xs:string"/>
+          <xs:element minOccurs="0" name="Account_Number" type="xs:string"/>
+          <xs:element minOccurs="0" name="Device_Type" type="xs:string"/>
+          <xs:element minOccurs="0" name="Device_ID" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="OEM" type="xs:string"/>
+          <xs:element minOccurs="0" name="Subscriber_Product" type="xs:string"/>
+          <xs:element minOccurs="0" name="DoorLockCapability" type="xs:string"/>
+          <xs:element minOccurs="0" name="isPOICapable" type="xs:string"/>
+          <xs:element minOccurs="0" name="isRemoteStartCapable" type="xs:string"/>
+          <xs:element minOccurs="0" name="MBCustomerContact" type="xs:string"/>
+          <xs:element minOccurs="0" name="MBRoadSideContact" type="xs:string"/>
+          <xs:element minOccurs="0" name="MBFinancialContact" type="xs:string"/>
+          <xs:element minOccurs="0" name="MBConciergeContact" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderStatusInfoType">
+        <xs:sequence>
+          <xs:element name="Vin" type="xs:string"/>
+          <xs:element name="Veh_Possession_Code" type="xs:string"/>
+          <xs:element name="Veh_Possession_Code_Status" type="xs:string"/>
+          <xs:element name="Veh_Possession_Code_Exp_Time" type="xs:dateTime"/>
+          <xs:element name="OrderStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserOIDStatusResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountSubscriptionsResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element minOccurs="0" name="DataArea" type="tns:GetAccountSubscriptionsResDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountSubscriptionsResDataType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="AccountSubscriptionData" type="tns:AccountSubscriptionData"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccountSubscriptionData">
+        <xs:sequence>
+          <xs:element name="AccountInformation" type="ns7:CommonIdentifierType"/>
+          <xs:element name="SubscriptionData" type="tns:SubscriptionTypeList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreatePinRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:CreatePinReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreatePinReqDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="FirstName" type="xs:string"/>
+          <xs:element name="LastName" type="xs:string"/>
+          <xs:element name="PIN" type="xs:string"/>
+          <xs:element name="Type" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountID" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="Email" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreatePinResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserVehiclesResponseTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:UserVehicleRespDataTypeV2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountSubscriptionsRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:GetAccountSubscriptionsReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountSubscriptionsReqDataType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="AccountInformation" type="ns7:CommonIdentifierType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateResponseDataAreaType">
+        <xs:sequence>
+          <xs:element name="UserVehicleDetailesList" type="tns:UserVehicleDetailesListType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="email" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="phone" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="termsSignedFlag" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UserVehicleDetailesListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="VehicleDetailes" type="tns:VehicleDetailesType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:AuthenticateRequestDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateRequestDataAreaType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountID" type="xs:string"/>
+          <xs:element name="PIN" type="xs:string"/>
+          <xs:element name="OEM" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="Email" type="xs:string"/>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="Type" type="xs:string"/>
+          <xs:element minOccurs="0" name="HTDID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccountNumbersType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="AccountNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResetForgotPinRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:ResetForgotPinReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResetForgotPinReqDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteProfileRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:DeleteProfileReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteProfileReqDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleDetailsMBRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetVehicleDetailsMBDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleDetailsMBDataType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VerifyTokenForUserRequestType">
+        <xs:sequence>
+          <xs:element name="userId" type="xs:string"/>
+          <xs:element name="token" type="xs:string"/>
+          <xs:element name="UserAction" type="ns8:UserActionType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VerificationRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:VerificationRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VerificationRequestDataType">
+        <xs:sequence>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element name="pin" type="xs:string"/>
+          <xs:element name="OEM" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DisableUserResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteProfileRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:DeleteProfileReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderStatusTypeList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="OrderStatusInfo" type="tns:OrderStatusInfoType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserVehiclesRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:GetUserVehiclesReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetCertIdResponseType">
+        <xs:sequence>
+          <xs:element name="CertId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResetForgotPinResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResetPinResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DisableUserResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeUserIdRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:ChangeUserIdReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeUserIdReqDataType">
+        <xs:sequence>
+          <xs:element name="OldUserId" type="xs:string"/>
+          <xs:element name="NewUserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="PIN" type="xs:string"/>
+          <xs:element name="Type" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetCertIdRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResetForgotPinRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:ResetForgotPinReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetVehicleDetailsMBResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetVehicleDetailsMBResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DisableUserReqDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateL7ResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element minOccurs="0" name="DataArea" type="tns:AuthenticateL7ResponseDataAreaTypeV2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateL7ResponseDataAreaTypeV2">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="email" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="phone" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ClientUserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateL7ResponseTypeV5">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" type="tns:AuthenticateL7ResponseDataAreaTypeV2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VerificationResponseDataType">
+        <xs:sequence>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="OEM" type="xs:string"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element name="pin" type="xs:string"/>
+          <xs:element name="deviceType" type="xs:string"/>
+          <xs:element name="deviceId" type="xs:string"/>
+          <xs:element name="accountName" type="xs:string"/>
+          <xs:element name="accountNumber" type="xs:string"/>
+          <xs:element name="subscriberProduct" type="xs:string"/>
+          <xs:element name="doorLockCapability" type="xs:string"/>
+          <xs:element name="isPoiCapable" type="xs:string"/>
+          <xs:element name="isRemoteStartCapable" type="xs:string"/>
+          <xs:element name="mbCustomerContact" type="xs:string"/>
+          <xs:element name="mbRoadSideContact" type="xs:string"/>
+          <xs:element name="mbFinancialContact" type="xs:string"/>
+          <xs:element name="mbConciergeContact" type="xs:string"/>
+          <xs:element name="model" type="xs:string"/>
+          <xs:element name="modelYear" type="xs:string"/>
+          <xs:element minOccurs="0" name="exteriorColor" type="xs:string"/>
+          <xs:element minOccurs="0" name="doorStyle" type="xs:string"/>
+          <xs:element minOccurs="0" name="transmission" type="xs:string"/>
+          <xs:element minOccurs="0" name="fuel" type="xs:string"/>
+          <xs:element minOccurs="0" name="engine" type="xs:string"/>
+          <xs:element minOccurs="0" name="shippedDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="factoryFeedDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="oTARDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="graphicConsole" type="xs:string"/>
+          <xs:element minOccurs="0" name="textConsole" type="xs:string"/>
+          <xs:element minOccurs="0" name="pOISupport" type="xs:string"/>
+          <xs:element minOccurs="0" name="theftAlarm" type="xs:string"/>
+          <xs:element minOccurs="0" name="aBSInstalled" type="xs:string"/>
+          <xs:element minOccurs="0" name="powerDoorLocks" type="xs:string"/>
+          <xs:element minOccurs="0" name="handsFreePhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="trunkButtonPresent" type="xs:string"/>
+          <xs:element minOccurs="0" name="assetID" type="xs:string"/>
+          <xs:element minOccurs="0" name="currencyCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="VehicleLine" type="xs:string"/>
+          <xs:element minOccurs="0" name="vehicleLicencePlate" type="xs:string"/>
+          <xs:element minOccurs="0" name="bodyStyle" type="xs:string"/>
+          <xs:element minOccurs="0" name="trim" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element minOccurs="0" name="DataArea" type="tns:AuthenticateResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DisableUserRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:DisableUserReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VerifyTokenForUserResponseDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="FirstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="LastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="Vin" type="xs:string"/>
+          <xs:element minOccurs="0" name="Mileage" type="xs:string"/>
+          <xs:element minOccurs="0" name="Alias" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdatePossessionPinResponseDataAreaType">
+        <xs:sequence>
+          <xs:element name="veh_possession_code" type="xs:string"/>
+          <xs:element name="status" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountNumbersRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="Oem" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdatePinRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:UpdatePinReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdatePinReqDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="NewPin" type="xs:string"/>
+          <xs:element name="OldPin" type="xs:string"/>
+          <xs:element name="Type" type="xs:string"/>
+          <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="Email" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UserSubscriptionListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="UserSubscriptions" type="tns:UserSubscriptionType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UserSubscriptionType">
+        <xs:sequence>
+          <xs:element name="SubscriptionStartDate" type="xs:dateTime"/>
+          <xs:element name="SubscriptionEndtDate" type="xs:dateTime"/>
+          <xs:element name="SubscriptionType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VerifyTokenForUserResponse">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="DataArea" type="tns:VerifyTokenForUserResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserOIDStatusRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetUserOIDStatusReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserOIDStatusReqDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeUserIdResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserOIDStatusResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeUserIdRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:ChangeUserIdReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountSubscriptionsResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="Data" type="tns:GetAccountSubscriptionsResDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResetPinRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:ResetPinReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResetPinReqDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="Token" type="xs:string"/>
+          <xs:element name="Pin" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreatePinRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:CreatePinReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateResponseTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element minOccurs="0" name="DataArea" type="tns:AuthenticateResponseDataAreaTypeV2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateResponseDataAreaTypeV2">
+        <xs:sequence>
+          <xs:element name="UserVehicleDetailesList" type="tns:UserVehicleDetailesListType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="email" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="phone" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="termsSignedFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="ClientUserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateL7RequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="DataArea" type="tns:AuthenticateL7RequestDataAreaTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateL7RequestDataAreaTypeV2">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element default="primary" name="Type" type="xs:string"/>
+          <xs:element minOccurs="0" name="ExternalUserName" type="xs:string"/>
+          <xs:element minOccurs="0" name="ExternalUserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="Email" type="xs:string"/>
+          <xs:element minOccurs="0" name="Version" type="xs:string"/>
+          <xs:element name="SourceName" type="ns1:SourceType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DisableUserRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:DisableUserReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateRequestSimplifiedTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="DataArea" type="tns:AuthenticateRequestDataAreaSimplifiedTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateRequestDataAreaSimplifiedTypeV2">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element default="primary" name="Type" type="xs:string"/>
+          <xs:element minOccurs="0" name="ExternalUserName" type="xs:string"/>
+          <xs:element minOccurs="0" name="ExternalUserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="Email" type="xs:string"/>
+          <xs:element minOccurs="0" name="Version" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UserVehicleDetailsType">
+        <xs:sequence>
+          <xs:element name="AccountInfo" type="tns:AccountInfoType"/>
+          <xs:element name="VehicleDetails" type="tns:VehicleDetailInfoType"/>
+          <xs:element maxOccurs="unbounded" name="UserSubscriptionDetails" type="tns:SubscriptionTypeList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountNumbersResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element minOccurs="0" name="AccountsNumbers" type="tns:AccountNumbersType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteProfileResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdatePinRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:UpdatePinReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VerificationResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:VerificationResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateRequestTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="DataArea" type="tns:AuthenticateRequestDataAreaTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateRequestDataAreaTypeV2">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+          <xs:element name="PIN" type="xs:string"/>
+          <xs:element default="primary" name="Type" type="xs:string"/>
+          <xs:element minOccurs="0" name="ExternalUserName" type="xs:string"/>
+          <xs:element minOccurs="0" name="ExternalUserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="Email" type="xs:string"/>
+          <xs:element minOccurs="0" name="HTDID" type="xs:string"/>
+          <xs:element minOccurs="0" name="Version" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VerifyTokenForUserRequest">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="DataArea" type="tns:VerifyTokenForUserRequestType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateL7RequestTypeV5">
+        <xs:sequence>
+          <xs:element name="Data" type="tns:AuthenticateL7RequestDataAreaTypeV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteProfileResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserOIDStatusRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:GetUserOIDStatusReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdatePinResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UserVehicleRespDataType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Account" type="tns:UserVehicleDetailsType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetCertIdResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="CertId" type="xs:string"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeUserIdResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUserVehiclesResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:UserVehicleRespDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountNumbersResponseDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountsNumbers" type="tns:AccountNumbersType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreatePinResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountNumbersResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetAccountNumbersResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResetForgotPinResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResetPinRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:ResetPinReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountSubscriptionsRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetAccountSubscriptionsReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdatePinResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResetPinResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OperationType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="All"/>
+          <xs:enumeration value="VehDetails"/>
+          <xs:enumeration value="VehDetailsFromSeibel"/>
+          <xs:enumeration value="SubDetails"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="FeatureNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EV_SERVICES"/>
+          <xs:enumeration value="STD_SERVICES"/>
+          <xs:enumeration value="RDT"/>
+          <xs:enumeration value="WINDOWHEATING"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="FeatureValueType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ENABLE"/>
+          <xs:enumeration value="DISABLE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="StatusType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Success"/>
+          <xs:enumeration value="Created"/>
+          <xs:enumeration value="TimeOut"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Security/Device/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Security/Device/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="DeviceType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceId" type="xs:string"/>
+          <xs:element minOccurs="0" name="OEM" type="xs:string"/>
+          <xs:element minOccurs="0" name="MDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="MIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="MEID" type="xs:string"/>
+          <xs:element minOccurs="0" name="ICCID" type="xs:string"/>
+          <xs:element minOccurs="0" name="IMSI" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountID" type="xs:string"/>
+          <xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="StockType" type="xs:string"/>
+          <xs:element minOccurs="0" name="WirelessCarrier" type="xs:string"/>
+          <xs:element minOccurs="0" name="AssetType" type="xs:string"/>
+          <xs:element minOccurs="0" name="Parts" type="tns:PartsType"/>
+          <xs:element minOccurs="0" name="ActivationStatus" type="xs:string"/>
+          <xs:element minOccurs="0" name="BatchID" type="xs:string"/>
+          <xs:element minOccurs="0" name="ReasonCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="Description" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartsType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Part" type="tns:PartType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PartName" type="xs:string"/>
+          <xs:element minOccurs="0" name="PartNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="PartSerialNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Core/Subscription/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Core/Subscription/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="SubscriptionType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgreementId" type="xs:string"/>
+          <xs:element minOccurs="0" name="AgreementNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="AgreementType" type="xs:string"/>
+          <xs:element minOccurs="0" name="SubscriptionStartDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="SubscriptionEndDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="AgreementStatus" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountId" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="SubscriptionCreatedDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountStatus" type="xs:string"/>
+          <xs:element minOccurs="0" name="Name" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderID" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="ItemList" type="tns:ItemListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ItemListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Item" type="tns:ItemType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ItemType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LineNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProductName" type="xs:string"/>
+          <xs:element minOccurs="0" name="PartNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="Mbrace"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AlertType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="geofenceAlert"/>
+          <xs:enumeration value="speedAlert"/>
+          <xs:enumeration value="vhrAlert"/>
+          <xs:enumeration value="batteryChargingAlert"/>
+          <xs:enumeration value="climatizationAlert"/>
+          <xs:enumeration value="tripDepartureAlert"/>
+          <xs:enumeration value="valetAlert"/>
+          <xs:enumeration value="curfewAlert"/>
+          <xs:enumeration value="all"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetVehicleDetailsResponse">
+    <wsdl:part element="tns:GetVehicleDetailsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetVehicleDetails">
+    <wsdl:part element="tns:GetVehicleDetails" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetUserVehicles">
+    <wsdl:part element="tns:GetUserVehicles" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetUserVehiclesResponse">
+    <wsdl:part element="tns:GetUserVehiclesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="VWUS_VehicleDetailServiceV5_0">
+    <wsdl:operation name="GetVehicleDetails">
+      <wsdl:input message="tns:GetVehicleDetails" name="GetVehicleDetails"></wsdl:input>
+      <wsdl:output message="tns:GetVehicleDetailsResponse" name="GetVehicleDetailsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserVehicles">
+      <wsdl:input message="tns:GetUserVehicles" name="GetUserVehicles"></wsdl:input>
+      <wsdl:output message="tns:GetUserVehiclesResponse" name="GetUserVehiclesResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VWUS_VehicleDetailServiceV5_0SoapBinding" type="tns:VWUS_VehicleDetailServiceV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetVehicleDetails">
+      <soap:operation soapAction="GetVehicleDetails" style="document"/>
+      <wsdl:input name="GetVehicleDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetVehicleDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserVehicles">
+      <soap:operation soapAction="GetUserVehicles" style="document"/>
+      <wsdl:input name="GetUserVehicles">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetUserVehiclesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VWUS_VehicleDetailServiceV5_0">
+    <wsdl:port binding="tns:VWUS_VehicleDetailServiceV5_0SoapBinding" name="VehicleDetailServiceVWUSV5_0Port">
+      <soap:address location="https://Domain/SOAP/VWUS_VehicleDetailServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VWUS_VehicleDetailServiceV5_0</con:endpoint></con:endpoints></con:interface>

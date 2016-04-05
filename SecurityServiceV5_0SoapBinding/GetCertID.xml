@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetCertID" name="GetCertID" bindingOperationName="GetCertID" type="Request-Response" outputName="GetCertIDResponse" inputName="GetCertID" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="3aa24624-6ab0-4d92-b73c-c18cb7a7b1a0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="3aa24624-6ab0-4d92-b73c-c18cb7a7b1a0fileName">GetCertID</con:setting></con:settings><con:call name="Request 1" id="15e8e793-5c05-4f2e-b20c-97a3e7bfbdcb" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/SecurityServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://ns.hughestelematics.com/v5.0/service/SecurityServiceV5_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sec:GetCertID>
+         <!--Optional:-->
+         <CreateCertIdRequest>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+         </CreateCertIdRequest>
+      </sec:GetCertID>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetCertID"/></con:call></con:operation>

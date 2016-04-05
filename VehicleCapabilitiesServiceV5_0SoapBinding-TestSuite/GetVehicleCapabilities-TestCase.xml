@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetVehicleCapabilities TestCase" searchProperties="true" id="d176a529-f2bd-4d5e-9e08-4271878780c2" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="d176a529-f2bd-4d5e-9e08-4271878780c2fileName">GetVehicleCapabilities-TestCase</con:setting></con:settings><con:testStep type="request" name="GetVehicleCapabilities" id="ec650564-f2b8-4314-b016-76b9cc5619f7"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>VehicleCapabilitiesServiceV5_0SoapBinding</con:interface><con:operation>GetVehicleCapabilities</con:operation><con:request name="GetVehicleCapabilities" id="dbc8f336-3ddd-477b-b551-a2d259f4113e" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VehicleCapabilitiesServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/service/VehicleCapabilities/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/VehicleCapabilities/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:v13="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1">
+    <soapenv:Header>
+    <api_key>${#Project#api_key}</api_key>
+  ${#Project#SessionToken}
+</soapenv:Header>
+   <soapenv:Body>
+      <v1:GetVehicleCapabilities>
+         <!--Optional:-->
+         <GetVehicleCapabilitiesRequest>
+            <v11:context>
+               <v12:SourceName>WEB</v12:SourceName>
+               <v12:TransactionId>Vishnu7386383</v12:TransactionId>
+               <v12:Timestamp>2015-04-10T07:45:02.001Z</v12:Timestamp>
+               <v12:Organization>${#Project#Organization}</v12:Organization>
+               <v12:Region>US</v12:Region>
+               <v12:ApplicationName>CWP</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:AccountInformation>
+                  <v13:AccountID>${#Project#AccountId}</v13:AccountID>
+                  <v13:VIN>${#Project#VIN}</v13:VIN>
+                  <v13:TCUID>${#Project#TCUID}</v13:TCUID>
+               </v11:AccountInformation>
+            </v11:Data>
+         </GetVehicleCapabilitiesRequest>
+      </v1:GetVehicleCapabilities>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetVehicleCapabilities" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

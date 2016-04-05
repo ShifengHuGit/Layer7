@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetUserVehicles" name="GetUserVehicles" bindingOperationName="GetUserVehicles" type="Request-Response" outputName="GetUserVehiclesResponse" inputName="GetUserVehicles" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="71000209-3f68-4732-a72e-fa0800b5d5c5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="71000209-3f68-4732-a72e-fa0800b5d5c5fileName">GetUserVehicles</con:setting></con:settings><con:call name="Request 1" id="8b6df932-a1b3-45b2-99e7-e7d220b45d3b" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VWUS_VehicleDetailServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/service/VWUS_VehicleDetailServiceV5_0/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:GetUserVehicles>
+         <!--Optional:-->
+         <GetUserVehiclesRequest>
+            <v11:context>
+               <v12:SourceName>?</v12:SourceName>
+               <v12:TransactionId>?</v12:TransactionId>
+               <v12:Timestamp>?</v12:Timestamp>
+               <v12:Organization>?</v12:Organization>
+               <v12:Region>?</v12:Region>
+               <v12:ApplicationName>?</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:UserId>?</v11:UserId>
+               <!--Optional:-->
+               <v11:OperationType>VehDetails</v11:OperationType>
+            </v11:Data>
+         </GetUserVehiclesRequest>
+      </v1:GetUserVehicles>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetUserVehicles"/></con:call></con:operation>

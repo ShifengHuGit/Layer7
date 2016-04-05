@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="RemoteDepartureTimeServiceV5_0SoapBinding" type="wsdl" bindingName="{http://ns.hughestelematics.com/Gateway/service/RemoteDepartureTimeServiceV2_0}RemoteDepartureTimeServiceV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Layer%207/L7%20My%20files/WSDL_VW_US_1/RemoteDepartureTimeServiceV5_0.wsdl" id="8804b924-7c54-41e2-a405-3c3961576d95" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="8804b924-7c54-41e2-a405-3c3961576d95fileName">RemoteDepartureTimeServiceV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\RemoteDepartureTimeServiceV5_0.wsdl"><con:part><con:url>file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\RemoteDepartureTimeServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="RemoteDepartureTimeServiceV5_0" targetNamespace="http://ns.hughestelematics.com/Gateway/service/RemoteDepartureTimeServiceV2_0" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ns.hughestelematics.com/Gateway/service/RemoteDepartureTimeServiceV2_0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/RemoteDepartureTimeService/V1" xmlns="http://xmlns.hughestelematics.com/Gateway/RemoteDepartureTimeService/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Core/DepartureTime/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/DepartureTime/V1"/>
+      <xs:element name="ConfigureRemoteDepartureProfileResponse" type="ns1:ConfigureDepartureProfileResponseTypeV50"/>
+      <xs:element name="ConfigureRemoteDepartureTimeRespons" type="ns1:ConfigureRemoteDepartureTimeResponsTypeV50"/>
+      <xs:element name="ConfigureRemoteDepartureTimerResponse" type="ns1:ConfigureDepartureTimerResponseTypeV50"/>
+      <xs:element name="GetJobStatus" type="ns1:GetJobStatusResponseTypeV50"/>
+      <xs:element name="GetMinBatteryChargingResponseV2" type="ns1:ReceiveMinBatteryChargingRespTypeV50"/>
+      <xs:element name="GetRemoteDepartureTimeResponse" type="ns1:ReceiveDepartureTimeRespTypeV50"/>
+      <xs:element name="UpdateMinBatteryChargingResponse" type="ns1:UpdateMinBatteryChargingRespTypeV50"/>
+      <xs:element name="UpdateRdtSettingRespons" type="ns1:UpdateRdtSettingRespTypeV50"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Core/DepartureTime/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Core/DepartureTime/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:element name="ConfigureDepartureProfile" type="tns:ConfigureDepartureProfileType"/>
+      <xs:element name="ConfigureDepartureProfileResponse" type="tns:ConfigureDepartureProfileResponseType"/>
+      <xs:element name="ConfigureDepartureProfileResponseV50" type="tns:ConfigureDepartureProfileResponseTypeV50"/>
+      <xs:element name="ConfigureDepartureProfileV50" type="tns:ConfigureDepartureProfileTypeV50"/>
+      <xs:element name="ConfigureDepartureTimer" type="tns:ConfigureDepartureTimerType"/>
+      <xs:element name="ConfigureDepartureTimerResponse" type="tns:ConfigureDepartureTimerResponseType"/>
+      <xs:element name="ConfigureDepartureTimerResponseV50" type="tns:ConfigureDepartureTimerResponseTypeV50"/>
+      <xs:element name="ConfigureDepartureTimerV50" type="tns:ConfigureDepartureTimerTypeV50"/>
+      <xs:element name="ConfigureRemoteDepartureTime" type="tns:ConfigureRemoteDepartureTimeType"/>
+      <xs:element name="ConfigureRemoteDepartureTimeResponse" type="tns:ConfigureRemoteDepartureTimeResponsType"/>
+      <xs:element name="ConfigureRemoteDepartureTimeResponseV50" type="tns:ConfigureRemoteDepartureTimeResponsTypeV50"/>
+      <xs:element name="ConfigureRemoteDepartureTimeV50" type="tns:ConfigureRemoteDepartureTimeTypeV50"/>
+      <xs:element name="DepartureTimeConfig" type="tns:DepartureTimeDataType"/>
+      <xs:element name="GetJobStatusRequest" type="tns:GetJobStatusRequestType"/>
+      <xs:element name="GetJobStatusRequestV50" type="tns:GetJobStatusRequestTypeV50"/>
+      <xs:element name="GetJobStatusResponse" type="tns:GetJobStatusResponseType"/>
+      <xs:element name="GetJobStatusResponseV50" type="tns:GetJobStatusResponseTypeV50"/>
+      <xs:element name="ReceiveDepartureTimeNotificationRequest" type="tns:ReceiveDepartureTimeRequestType"/>
+      <xs:element name="ReceiveDepartureTimeNotificationRequestV50" type="tns:ReceiveDepartureTimeRequestTypeV50"/>
+      <xs:element name="ReceiveDepartureTimeNotificationResponse" type="tns:ReceiveDepartureTimeRespType"/>
+      <xs:element name="ReceiveDepartureTimeNotificationResponseV2" type="tns:ReceiveDepartureTimeRespTypeV2"/>
+      <xs:element name="ReceiveDepartureTimeNotificationResponseV50" type="tns:ReceiveDepartureTimeRespTypeV50"/>
+      <xs:element name="ReceiveMinBatteryChargingRequest" type="tns:ReceiveMinBatteryChargingRequestType"/>
+      <xs:element name="ReceiveMinBatteryChargingRequestV50" type="tns:ReceiveMinBatteryChargingRequestTypeV50"/>
+      <xs:element name="ReceiveMinBatteryChargingResp" type="tns:ReceiveMinBatteryChargingRespType"/>
+      <xs:element name="ReceiveMinBatteryChargingRespV2" type="tns:ReceiveMinBatteryChargingRespTypeV2"/>
+      <xs:element name="ReceiveMinBatteryChargingRespV50" type="tns:ReceiveMinBatteryChargingRespTypeV50"/>
+      <xs:element name="UpdateBatteryChargingReq" type="tns:UpdateMinBatteryChargingReqType"/>
+      <xs:element name="UpdateBatteryChargingReqV50" type="tns:UpdateMinBatteryChargingReqTypeV50"/>
+      <xs:element name="UpdateMinBatteryChargingRes" type="tns:UpdateMinBatteryChargingRespType"/>
+      <xs:element name="UpdateMinBatteryChargingResV50" type="tns:UpdateMinBatteryChargingRespTypeV50"/>
+      <xs:element name="UpdateRdtSettingReq" type="tns:UpdateRdtSettingReqType"/>
+      <xs:element name="UpdateRdtSettingReqV50" type="tns:UpdateRdtSettingReqTypeV50"/>
+      <xs:element name="UpdateRdtSettingRes" type="tns:UpdateRdtSettingRespType"/>
+      <xs:element name="UpdateRdtSettingResV50" type="tns:UpdateRdtSettingRespTypeV50"/>
+      <xs:element name="timeZone" type="xs:string"/>
+      <xs:complexType name="GetJobStatusRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetJobStatusReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusReqDataType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="EventTransId" type="xs:string"/>
+          <xs:element name="requestType" type="tns:RdtRequestType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetJobStatusResDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusResDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseStatusCode" type="tns:ResponseStatusCodeType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureDepartureTimerTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:DepartureTimerDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DepartureTimerDataType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+          <xs:element name="Operation" type="tns:TimerOperationType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="departureTimer" nillable="true" type="tns:DepartureTimerType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DepartureTimerType">
+        <xs:sequence>
+          <xs:element name="timerExpiredStatus" type="tns:TimerExpiredStatusType"/>
+          <xs:element name="timerProgrammedStatus" type="tns:TimerProgrammedStatusType"/>
+          <xs:element name="timerID" type="xs:int"/>
+          <xs:element name="timerType" type="tns:TimerType"/>
+          <xs:element name="singleTimer" type="tns:SingleTimerType"/>
+          <xs:element name="cyclicTimer" type="tns:CyclicTimerType"/>
+          <xs:element minOccurs="0" name="profileID" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SingleTimerType">
+        <xs:sequence>
+          <xs:element name="departureTime" type="xs:long"/>
+          <xs:element name="startTime" type="xs:string"/>
+          <xs:element name="timeZone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CyclicTimerType">
+        <xs:sequence>
+          <xs:element name="weekdayBitMask" type="xs:string"/>
+          <xs:element name="startTime" type="xs:string"/>
+          <xs:element name="timeZone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureDepartureTimerResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveMinBatteryChargingRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:ReceiveMinBatteryChargingReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveMinBatteryChargingReqDataType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveMinBatteryChargingRespTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:ReceiveMinBatteryChargingResDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveMinBatteryChargingResDataType">
+        <xs:sequence>
+          <xs:element name="minBatteryChargingPct" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateMinBatteryChargingReqTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:UpdateClimatizationReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateClimatizationReqDataType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+          <xs:element name="minBatteryChargingPct" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateMinBatteryChargingRespTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateRdtSettingReqTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:UpdateRdtSettingReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateRdtSettingReqDataType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+          <xs:element name="minBatteryChargingPct" type="xs:string"/>
+          <xs:element name="climatisationWithoutHVPower" type="xs:boolean"/>
+          <xs:element name="targetTemperature" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateRdtSettingRespTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveDepartureTimeRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:ReceiveDepartureTimeReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveDepartureTimeReqDataType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveDepartureTimeRespTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:DepartureTimeResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DepartureTimeResponseDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="rdtSettingsReport" type="tns:RdtSettingsReport"/>
+          <xs:element minOccurs="0" name="rdtProfilesReport" type="tns:RdtProfilesType"/>
+          <xs:element name="responseCode" type="tns:RDTResponseCode"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RdtSettingsReport">
+        <xs:sequence>
+          <xs:element name="chargeMinLimit" type="xs:int"/>
+          <xs:element name="climatisationLeadTime" type="xs:int"/>
+          <xs:element name="climatisationSettings" type="tns:ClimatisationSettings"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ClimatisationSettings">
+        <xs:sequence>
+          <xs:element name="climatisationDuration" type="xs:int"/>
+          <xs:element name="climatisationFollowupTime" type="xs:int"/>
+          <xs:element name="climatisationFollowupTimeBattery" type="xs:int"/>
+          <xs:element name="climatisationWithoutHVPower" type="xs:boolean"/>
+          <xs:element name="windowHeatingFront" type="xs:boolean"/>
+          <xs:element name="windowHeatingRear" type="xs:boolean"/>
+          <xs:element name="targetTemperature" type="tns:TemperatureType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TemperatureType">
+        <xs:sequence>
+          <xs:element name="measurementState" type="tns:MeasurementStateType"/>
+          <xs:element name="measurementValue" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RdtProfilesType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="departureTimer" nillable="true" type="tns:DepartureTimerType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="departureProfile" nillable="true" type="tns:DepartureProfileType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DepartureProfileType">
+        <xs:sequence>
+          <xs:element name="nightTariff" type="tns:NightTariffType"/>
+          <xs:element name="operation" type="tns:OperationType"/>
+          <xs:element name="chargeMaxCurrent" type="xs:int"/>
+          <xs:element minOccurs="0" name="profileID" type="xs:int"/>
+          <xs:element name="profileName" type="xs:string"/>
+          <xs:element name="targetChargeLevel" type="xs:int"/>
+          <xs:element name="ProfileOperation" type="tns:ProfileOperationType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NightTariffType">
+        <xs:sequence>
+          <xs:element name="startTime" type="xs:string"/>
+          <xs:element name="endTime" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OperationType">
+        <xs:sequence>
+          <xs:element name="charge" type="xs:boolean"/>
+          <xs:element name="climate" type="xs:boolean"/>
+          <xs:element name="windowHeating" type="xs:boolean"/>
+          <xs:element name="nightTariffFlag" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureDepartureProfileTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:DepartureProfileDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DepartureProfileDataType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="departureProfile" nillable="true" type="tns:DepartureProfileType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureDepartureProfileResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureRemoteDepartureTimeTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:RemoteDepartureTimeType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoteDepartureTimeType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="departureProfile" nillable="true" type="tns:DepartureProfileType"/>
+          <xs:element name="TimerOperation" type="tns:TimerOperationType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="departureTimer" nillable="true" type="tns:DepartureTimerType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureRemoteDepartureTimeResponsTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetJobStatusReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetJobStatusResDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureDepartureTimerResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveDepartureTimeRespTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:DepartureTimeResponseDataTypeV2"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DepartureTimeResponseDataTypeV2">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="rdtSettingsReport" type="tns:RdtSettingsReport"/>
+          <xs:element minOccurs="0" name="rdtProfilesReport" type="tns:RdtProfilesType"/>
+          <xs:element name="responseCode" type="tns:RDTResponseCode"/>
+          <xs:element name="lastupdateTimeStamp" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateMinBatteryChargingReqType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:UpdateClimatizationReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveMinBatteryChargingRespType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:ReceiveMinBatteryChargingResDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateMinBatteryChargingRespType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveMinBatteryChargingRespTypeV2">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:ReceiveMinBatteryChargingResDataTypeV2"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveMinBatteryChargingResDataTypeV2">
+        <xs:sequence>
+          <xs:element name="minBatteryChargingPct" type="xs:int"/>
+          <xs:element name="lastupdateTimeStamp" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureRemoteDepartureTimeResponsType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveDepartureTimeRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:ReceiveDepartureTimeReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureDepartureProfileResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateRdtSettingRespType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureRemoteDepartureTimeType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:RemoteDepartureTimeType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateRdtSettingReqType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:UpdateRdtSettingReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveDepartureTimeRespType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:DepartureTimeResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiveMinBatteryChargingRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:ReceiveMinBatteryChargingReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DepartureTimeDataType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+          <xs:element minOccurs="0" name="setRdt" type="tns:SetRdt"/>
+          <xs:element minOccurs="0" name="setRdtProfiles" type="tns:RdtProfilesType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SetRdt">
+        <xs:sequence>
+          <xs:element name="chargeMinLimit" type="xs:int"/>
+          <xs:element name="climatisationLeadTime" type="xs:int"/>
+          <xs:element name="climatisationSettings" type="tns:ClimatisationSettings"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureDepartureTimerType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:DepartureTimerDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureDepartureProfileType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:DepartureProfileDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TimeOfDay">
+        <xs:sequence>
+          <xs:element name="hour" type="xs:long"/>
+          <xs:element name="minute" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="RdtRequestType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="setRDT"/>
+          <xs:enumeration value="setRDTProfiles"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ResponseStatusCodeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ChangeTimerProfileFailed"/>
+          <xs:enumeration value="ChangeTimerProfileFailedLMError"/>
+          <xs:enumeration value="opFailed"/>
+          <xs:enumeration value="ChangeSettingsOK"/>
+          <xs:enumeration value="ChangeSettingsFailed"/>
+          <xs:enumeration value="ChangeSettingsFailedLMError"/>
+          <xs:enumeration value="SettingsChanged"/>
+          <xs:enumeration value="ChangeTimerProfileOK"/>
+          <xs:enumeration value="TimerProfileChanged"/>
+          <xs:enumeration value="opSuccess"/>
+          <xs:enumeration value="timedout"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TimerOperationType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="UPDATE_TIMER"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TimerExpiredStatusType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Expired"/>
+          <xs:enumeration value="NotExpired"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TimerProgrammedStatusType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="programmed"/>
+          <xs:enumeration value="not_programmed"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TimerType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Single"/>
+          <xs:enumeration value="Cyclic"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="MeasurementStateType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="valid"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="unsupported"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ProfileOperationType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ADD_PROFILE"/>
+          <xs:enumeration value="UPDATE_PROFILE"/>
+          <xs:enumeration value="DELETE_PROFILE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RDTResponseCode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ChangeSettingsOK"/>
+          <xs:enumeration value="ChangeSettingsFailed"/>
+          <xs:enumeration value="ChangeSettingsFailedLMError"/>
+          <xs:enumeration value="SettingsChanged"/>
+          <xs:enumeration value="ChangeTimerProfileOK"/>
+          <xs:enumeration value="ChangeTimerProfileFailed"/>
+          <xs:enumeration value="ChangeTimerProfileFailedLMError"/>
+          <xs:enumeration value="TimerProfileChanged"/>
+          <xs:enumeration value="opSuccess"/>
+          <xs:enumeration value="opFailed"/>
+          <xs:enumeration value="timedout"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="Mbrace"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/Gateway/service/RemoteDepartureTimeServiceV2_0" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Core/DepartureTime/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/RemoteDepartureTimeService/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/DepartureTime/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/RemoteDepartureTimeService/V1"/>
+      <xs:element name="ConfigureRemoteDepartureProfile" type="tns:ConfigureRemoteDepartureProfile"/>
+      <xs:element name="ConfigureRemoteDepartureProfileResponse" type="tns:ConfigureRemoteDepartureProfileResponse"/>
+      <xs:element name="ConfigureRemoteDepartureTime" type="tns:ConfigureRemoteDepartureTime"/>
+      <xs:element name="ConfigureRemoteDepartureTimeResponse" type="tns:ConfigureRemoteDepartureTimeResponse"/>
+      <xs:element name="ConfigureRemoteDepartureTimer" type="tns:ConfigureRemoteDepartureTimer"/>
+      <xs:element name="ConfigureRemoteDepartureTimerResponse" type="tns:ConfigureRemoteDepartureTimerResponse"/>
+      <xs:element name="GetJobStatus" type="tns:GetJobStatus"/>
+      <xs:element name="GetJobStatusResponse" type="tns:GetJobStatusResponse"/>
+      <xs:element name="GetMinBatteryCharging" type="tns:GetMinBatteryCharging"/>
+      <xs:element name="GetMinBatteryChargingResponse" type="tns:GetMinBatteryChargingResponse"/>
+      <xs:element name="GetRemoteDepartureTime" type="tns:GetRemoteDepartureTime"/>
+      <xs:element name="GetRemoteDepartureTimeResponse" type="tns:GetRemoteDepartureTimeResponse"/>
+      <xs:element name="UpdateMinBatteryCharging" type="tns:UpdateMinBatteryCharging"/>
+      <xs:element name="UpdateMinBatteryChargingResponse" type="tns:UpdateMinBatteryChargingResponse"/>
+      <xs:element name="UpdateRdtSetting" type="tns:UpdateRdtSetting"/>
+      <xs:element name="UpdateRdtSettingResponse" type="tns:UpdateRdtSettingResponse"/>
+      <xs:complexType name="GetJobStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetJobStatusRequest" type="ns1:GetJobStatusRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:GetJobStatus"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureRemoteDepartureTimer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConfigureRemoteDepartureTimerRequest" type="ns1:ConfigureDepartureTimerTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureRemoteDepartureTimerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:ConfigureRemoteDepartureTimerResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMinBatteryCharging">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetMinBatteryChargingRequest" type="ns1:ReceiveMinBatteryChargingRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMinBatteryChargingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:GetMinBatteryChargingResponseV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateMinBatteryCharging">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UpdateMinBatteryChargingRequest" type="ns1:UpdateMinBatteryChargingReqTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateMinBatteryChargingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:UpdateMinBatteryChargingResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateRdtSetting">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UpdateRdtSettingRequest" type="ns1:UpdateRdtSettingReqTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateRdtSettingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:UpdateRdtSettingRespons"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetRemoteDepartureTime">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetRemoteDepartureTimeRequest" type="ns1:ReceiveDepartureTimeRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetRemoteDepartureTimeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:GetRemoteDepartureTimeResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureRemoteDepartureProfile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConfigureRemoteDepartureProfileRequest" type="ns1:ConfigureDepartureProfileTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureRemoteDepartureProfileResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:ConfigureRemoteDepartureProfileResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureRemoteDepartureTime">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConfigureRemoteDepartureTimeRequest" type="ns1:ConfigureRemoteDepartureTimeTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureRemoteDepartureTimeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:ConfigureRemoteDepartureTimeRespons"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ConfigureRemoteDepartureTimeResponse">
+    <wsdl:part element="tns:ConfigureRemoteDepartureTimeResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateMinBatteryChargingResponse">
+    <wsdl:part element="tns:UpdateMinBatteryChargingResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureRemoteDepartureProfile">
+    <wsdl:part element="tns:ConfigureRemoteDepartureProfile" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetMinBatteryChargingResponse">
+    <wsdl:part element="tns:GetMinBatteryChargingResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureRemoteDepartureProfileResponse">
+    <wsdl:part element="tns:ConfigureRemoteDepartureProfileResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateRdtSetting">
+    <wsdl:part element="tns:UpdateRdtSetting" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetJobStatus">
+    <wsdl:part element="tns:GetJobStatus" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureRemoteDepartureTime">
+    <wsdl:part element="tns:ConfigureRemoteDepartureTime" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateRdtSettingResponse">
+    <wsdl:part element="tns:UpdateRdtSettingResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetRemoteDepartureTimeResponse">
+    <wsdl:part element="tns:GetRemoteDepartureTimeResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureRemoteDepartureTimer">
+    <wsdl:part element="tns:ConfigureRemoteDepartureTimer" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetJobStatusResponse">
+    <wsdl:part element="tns:GetJobStatusResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetRemoteDepartureTime">
+    <wsdl:part element="tns:GetRemoteDepartureTime" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetMinBatteryCharging">
+    <wsdl:part element="tns:GetMinBatteryCharging" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateMinBatteryCharging">
+    <wsdl:part element="tns:UpdateMinBatteryCharging" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureRemoteDepartureTimerResponse">
+    <wsdl:part element="tns:ConfigureRemoteDepartureTimerResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="RemoteDepartureTimeServiceV5_0">
+    <wsdl:operation name="GetJobStatus">
+      <wsdl:input message="tns:GetJobStatus" name="GetJobStatus"></wsdl:input>
+      <wsdl:output message="tns:GetJobStatusResponse" name="GetJobStatusResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureRemoteDepartureTimer">
+      <wsdl:input message="tns:ConfigureRemoteDepartureTimer" name="ConfigureRemoteDepartureTimer"></wsdl:input>
+      <wsdl:output message="tns:ConfigureRemoteDepartureTimerResponse" name="ConfigureRemoteDepartureTimerResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinBatteryCharging">
+      <wsdl:input message="tns:GetMinBatteryCharging" name="GetMinBatteryCharging"></wsdl:input>
+      <wsdl:output message="tns:GetMinBatteryChargingResponse" name="GetMinBatteryChargingResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMinBatteryCharging">
+      <wsdl:input message="tns:UpdateMinBatteryCharging" name="UpdateMinBatteryCharging"></wsdl:input>
+      <wsdl:output message="tns:UpdateMinBatteryChargingResponse" name="UpdateMinBatteryChargingResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRdtSetting">
+      <wsdl:input message="tns:UpdateRdtSetting" name="UpdateRdtSetting"></wsdl:input>
+      <wsdl:output message="tns:UpdateRdtSettingResponse" name="UpdateRdtSettingResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteDepartureTime">
+      <wsdl:input message="tns:GetRemoteDepartureTime" name="GetRemoteDepartureTime"></wsdl:input>
+      <wsdl:output message="tns:GetRemoteDepartureTimeResponse" name="GetRemoteDepartureTimeResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureRemoteDepartureProfile">
+      <wsdl:input message="tns:ConfigureRemoteDepartureProfile" name="ConfigureRemoteDepartureProfile"></wsdl:input>
+      <wsdl:output message="tns:ConfigureRemoteDepartureProfileResponse" name="ConfigureRemoteDepartureProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureRemoteDepartureTime">
+      <wsdl:input message="tns:ConfigureRemoteDepartureTime" name="ConfigureRemoteDepartureTime"></wsdl:input>
+      <wsdl:output message="tns:ConfigureRemoteDepartureTimeResponse" name="ConfigureRemoteDepartureTimeResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RemoteDepartureTimeServiceV5_0SoapBinding" type="tns:RemoteDepartureTimeServiceV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConfigureRemoteDepartureTimer">
+      <soap:operation soapAction="ConfigureRemoteDepartureTimer" style="document"/>
+      <wsdl:input name="ConfigureRemoteDepartureTimer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConfigureRemoteDepartureTimerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatus">
+      <soap:operation soapAction="GetJobStatus" style="document"/>
+      <wsdl:input name="GetJobStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetJobStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinBatteryCharging">
+      <soap:operation soapAction="GetMinBatteryCharging" style="document"/>
+      <wsdl:input name="GetMinBatteryCharging">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetMinBatteryChargingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMinBatteryCharging">
+      <soap:operation soapAction="UpdateMinBatteryCharging" style="document"/>
+      <wsdl:input name="UpdateMinBatteryCharging">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateMinBatteryChargingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRdtSetting">
+      <soap:operation soapAction="UpdateRdtSetting" style="document"/>
+      <wsdl:input name="UpdateRdtSetting">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateRdtSettingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteDepartureTime">
+      <soap:operation soapAction="GetRemoteDepartureTime" style="document"/>
+      <wsdl:input name="GetRemoteDepartureTime">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetRemoteDepartureTimeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureRemoteDepartureProfile">
+      <soap:operation soapAction="ConfigureRemoteDepartureProfile" style="document"/>
+      <wsdl:input name="ConfigureRemoteDepartureProfile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConfigureRemoteDepartureProfileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureRemoteDepartureTime">
+      <soap:operation soapAction="ConfigureRemoteDepartureTime" style="document"/>
+      <wsdl:input name="ConfigureRemoteDepartureTime">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConfigureRemoteDepartureTimeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RemoteDepartureTimeServiceV5_0">
+    <wsdl:port binding="tns:RemoteDepartureTimeServiceV5_0SoapBinding" name="RemoteDepartureTimeServicePortV2_0">
+      <soap:address location="https://Domain/SOAP/RemoteDepartureTimeServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/RemoteDepartureTimeServiceV5_0</con:endpoint></con:endpoints></con:interface>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetAssetDetails TestCase" searchProperties="true" id="20b0efab-7a5e-4af5-b072-43fea158fbd1" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="20b0efab-7a5e-4af5-b072-43fea158fbd1fileName">GetAssetDetails-TestCase</con:setting></con:settings><con:testStep type="request" name="GetAssetDetails" id="969958d6-66a4-43c4-83ae-0f51236d1d49"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserInfoServiceAUDIUSV5_0PortBinding</con:interface><con:operation>GetAssetDetails</con:operation><con:request name="GetAssetDetails" id="f6681fb4-9d11-4c21-91fe-594886dd1748" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://api-test.vtitel.net/SOAP/AUDIUS_UserInfoServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v5="http://xmlns.vzt.com/APIGateway/AUDIUS_UserInfoService/V5_0">
+   <soapenv:Header>
+       <api_key>${#Project#api_key}</api_key>
+       ${#Project#SessionToken}
+    </soapenv:Header>
+   <soapenv:Body>
+      <v5:GetAssetDetails>
+         <!--Optional:-->
+         <GetAssetDetailsRequest>
+            <v5:Data>
+               <!--Optional:-->
+               <v5:AccountID>${#Project#AccountId}</v5:AccountID>
+               <v5:TraceID>AUDI9272US001778927987247</v5:TraceID>
+               <v5:TraceTimestamp>2015-03-24T22:14:02.001Z</v5:TraceTimestamp>
+            </v5:Data>
+         </GetAssetDetailsRequest>
+      </v5:GetAssetDetails>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetAssetDetails" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

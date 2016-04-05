@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ConfigurePreTripClimatisation TestCase" searchProperties="true" id="ecc757ca-ee22-4ebb-9182-268ca9d6396a" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ecc757ca-ee22-4ebb-9182-268ca9d6396afileName">ConfigurePreTripClimatisation-TestCase</con:setting></con:settings><con:testStep type="request" name="ConfigurePreTripClimatisation" id="e4ff5f7e-960a-4fc9-83ad-9fdd3414dd65"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PreTripClimatisationServiceV5_0SoapBinding</con:interface><con:operation>ConfigurePreTripClimatisation</con:operation><con:request name="ConfigurePreTripClimatisation" id="f5a3e2a3-90f2-4688-a8e0-75fa785f3100" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PreTripClimatisationServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pret="http://ns.hughestelematics.com/Gateway/service/PreTripClimatisationService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/PreTripClimatisation/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+  ${#Project#SessionToken}
+  </soapenv:Header>
+   <soapenv:Body>
+      <pret:ConfigurePreTripClimatisation>
+         <!--Optional:-->
+         <PreTripClimatisationConfig>
+            <v1:context>
+             <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>test5498465456</v11:TransactionId>
+               <v11:Timestamp>2015-03-23T22:14:02.001Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:AccountId>${#Project#AccountId}</v1:AccountId>
+               <v1:TCUID>${#Project#TCUID}</v1:TCUID>
+               <v1:VIN>${#Project#VIN}</v1:VIN>
+               <v1:requestType>startWindowHeating</v1:requestType>
+               <!--Optional:-->
+               <v1:climatisationSettings>
+                  <v1:climatisationDuration>0</v1:climatisationDuration>
+                  <v1:climatisationFollowupTime>20</v1:climatisationFollowupTime>
+                  <v1:climatisationFollowupTimeBattery>10</v1:climatisationFollowupTimeBattery>
+                  <v1:climatisationWithoutHVPower>true</v1:climatisationWithoutHVPower>
+                  <v1:windowHeatingFront>false</v1:windowHeatingFront>
+                  <v1:windowHeatingRear>false</v1:windowHeatingRear>
+                  <v1:targetTemperature>
+                     <v1:measurementState>valid</v1:measurementState>
+                     <v1:measurementValue>70</v1:measurementValue>
+                  </v1:targetTemperature>
+               </v1:climatisationSettings>
+            </v1:Data>
+         </PreTripClimatisationConfig>
+      </pret:ConfigurePreTripClimatisation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="ConfigurePreTripClimatisation" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

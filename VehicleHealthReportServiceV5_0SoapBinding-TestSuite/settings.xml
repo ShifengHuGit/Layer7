@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="VehicleHealthReportServiceV5_0SoapBinding TestSuite" id="23642445-7918-49c9-a882-56a08222c91c" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="23642445-7918-49c9-a882-56a08222c91cfileName">VehicleHealthReportServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

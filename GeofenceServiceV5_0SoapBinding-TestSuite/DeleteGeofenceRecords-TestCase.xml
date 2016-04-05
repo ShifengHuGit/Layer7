@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="DeleteGeofenceRecords TestCase" searchProperties="true" id="dde92916-c4e0-4af3-b700-8faa8e1f5f28" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="dde92916-c4e0-4af3-b700-8faa8e1f5f28fileName">DeleteGeofenceRecords-TestCase</con:setting></con:settings><con:testStep type="request" name="DeleteGeofenceRecords" id="0f0aae60-1d29-4390-b53f-1a85974b70ba"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GeofenceServiceV5_0SoapBinding</con:interface><con:operation>DeleteGeofenceRecords</con:operation><con:request name="DeleteGeofenceRecords" id="a90e72c1-c9f1-4fbc-a87a-0b7d3e590206" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/GeofenceServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:geof="http://ns.hughestelematics.com/Gateway/service/GeofenceServiceV5_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Core/Geofence/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+    <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+   ${#Project#SessionToken}
+ </soapenv:Header>
+   <soapenv:Body>
+      <geof:DeleteGeofenceRecords>
+         <!--Optional:-->
+         <DeleteGeofenceRecordsRequest>
+            <!--Optional:-->
+            <v1:context>
+              <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>test5646513168</v11:TransactionId>
+               <v11:Timestamp>2015-05-08T22:14:02.001Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <!--1 or more repetitions:-->
+               <v1:rowId>8899</v1:rowId>
+               <!--Optional:-->
+               <v1:fenceId>1</v1:fenceId>
+               <v1:AccountId>${#Project#AccountId}</v1:AccountId>
+               <v1:VIN>${#Project#VIN}</v1:VIN>
+               <v1:tcuid>${#Project#TCUID}</v1:tcuid>
+               <!--Optional:-->
+               <v1:UserId>${#Project#AccountId}</v1:UserId>
+            </v1:Data>
+         </DeleteGeofenceRecordsRequest>
+      </geof:DeleteGeofenceRecords>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="DeleteGeofenceRecords" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

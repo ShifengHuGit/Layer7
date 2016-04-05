@@ -1,0 +1,7 @@
+ConfigureRemoteDepartureProfile-TestCase.xml
+ConfigureRemoteDepartureTime-TestCase.xml
+ConfigureRemoteDepartureTimer-TestCase.xml
+GetJobStatus-TestCase.xml
+GetMinBatteryCharging-TestCase.xml
+GetRemoteDepartureTime-TestCase.xml
+UpdateMinBatteryCharging-TestCase.xml

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="VerifyTokenForUser" name="VerifyTokenForUser" bindingOperationName="VerifyTokenForUser" type="Request-Response" outputName="VerifyTokenForUserResponse" inputName="VerifyTokenForUser" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="d583a8bc-26ae-4cf9-ba2e-773e76e1a6ef" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="d583a8bc-26ae-4cf9-ba2e-773e76e1a6effileName">VerifyTokenForUser</con:setting></con:settings><con:call name="Request 1" id="9447fdf1-7300-4024-9f46-cc7a5533a662" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/SecurityServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://ns.hughestelematics.com/v5.0/service/SecurityServiceV5_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sec:VerifyTokenForUser>
+         <!--Optional:-->
+         <VerifyTokenForUserRequestType>
+            <v1:Header>
+               <v11:SourceName>?</v11:SourceName>
+               <!--Optional:-->
+               <v11:TargetName>?</v11:TargetName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:Header>
+            <v1:DataArea>
+               <v1:userId>?</v1:userId>
+               <v1:token>?</v1:token>
+               <v1:UserAction>?</v1:UserAction>
+            </v1:DataArea>
+         </VerifyTokenForUserRequestType>
+      </sec:VerifyTokenForUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="VerifyTokenForUser"/></con:call></con:operation>

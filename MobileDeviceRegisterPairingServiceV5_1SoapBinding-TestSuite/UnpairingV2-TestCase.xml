@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="UnpairingV2 TestCase" searchProperties="true" id="bac81df1-43fc-4dcd-9d83-b47c43b8d666" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="bac81df1-43fc-4dcd-9d83-b47c43b8d666fileName">UnpairingV2-TestCase</con:setting></con:settings><con:testStep type="request" name="UnpairingV2" id="afe4130d-5d78-43fb-8adc-669ea711f805"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MobileDeviceRegisterPairingServiceV5_1SoapBinding</con:interface><con:operation>UnpairingV2</con:operation><con:request name="UnpairingV2" id="19f790fb-9f0b-4c71-8b73-aff886f7c266" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/MobileDeviceRegisterPairingServiceV5_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/service/MobileDevicePairing/V1" xmlns:v5="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V5_1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+   ${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <v1:UnpairingV2>
+         <!--Optional:-->
+         <v5:UnpairingRequestV2>
+            <v11:context>
+               <v12:SourceName>WEB</v12:SourceName>
+               <v12:TransactionId>Vish8368376378</v12:TransactionId>
+               <v12:Timestamp>2015-03-04T22:14:02.001Z</v12:Timestamp>
+               <v12:Organization>${#Project#Organization}</v12:Organization>
+               <v12:Region>US</v12:Region>
+               <v12:ApplicationName>CWP</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:userId>100145246</v11:userId>
+               <!--1 or more repetitions:-->
+               <v11:unPairDeviceDetails>
+                  <v11:deviceName>VWAndroid</v11:deviceName>
+                  <!--Optional:-->
+                  <v11:pairingTime>07092015</v11:pairingTime>
+                  <v11:uniqueDeviceId>327742</v11:uniqueDeviceId>
+               </v11:unPairDeviceDetails>
+            </v11:Data>
+         </v5:UnpairingRequestV2>
+      </v1:UnpairingV2>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="UnpairingV2" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

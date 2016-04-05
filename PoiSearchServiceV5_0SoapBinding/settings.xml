@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="PoiSearchServiceV5_0SoapBinding" type="wsdl" bindingName="{http://ns.hughestelematics.com/Gateway/service/PoiSearchServiceV5}PoiSearchServiceV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Layer%207/L7%20My%20files/WSDL_VW_US_1/PoiSearchServiceV5_0.wsdl" id="130fa7ad-2277-4b7a-b469-0a62843d6036" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="130fa7ad-2277-4b7a-b469-0a62843d6036fileName">PoiSearchServiceV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\PoiSearchServiceV5_0.wsdl"><con:part><con:url>file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\PoiSearchServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PoiSearchServiceV5_0" targetNamespace="http://ns.hughestelematics.com/Gateway/service/PoiSearchServiceV5" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ns.hughestelematics.com/Gateway/service/PoiSearchServiceV5" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/poiSearch/V1" xmlns="http://xmlns.hughestelematics.com/Gateway/poiSearch/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/POISearch/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/POISearch/V1"/>
+      <xs:element name="SearchPOIRequest" type="ns1:SearchPOIRequestTypeV50"/>
+      <xs:element name="SearchPOIResponse" type="ns1:SearchPOIResponseTypeV50"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/poiSearch/POI/V1" xmlns="http://xmlns.hughestelematics.com/Gateway/poiSearch/POI/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/POISearch/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/POISearch/V1"/>
+      <xs:element name="NavInfoSearchPOIRequest" type="ns1:NavInfoSearchPOIRequestTypeV50"/>
+      <xs:element name="NavInfoSearchPOIResponse" type="ns1:NavInfoSearchPOIResponseTypeV50"/>
+    </xs:schema>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/POISearch/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/POISearch/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:element name="NavInfoSearchPOIRequest" type="tns:NavInfoSearchPOIRequestType"/>
+      <xs:element name="NavInfoSearchPOIRequestV50" type="tns:NavInfoSearchPOIRequestTypeV50"/>
+      <xs:element name="NavInfoSearchPOIResponse" type="tns:NavInfoSearchPOIResponseType"/>
+      <xs:element name="NavInfoSearchPOIResponseV50" type="tns:NavInfoSearchPOIResponseTypeV50"/>
+      <xs:element name="NavInfoSearchRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Parameters" type="tns:NavInfoSearchRequestType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NavInfoSearchResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Parameters" type="tns:NavInfoSearchResponseType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="POI" type="tns:POIDetail"/>
+      <xs:element name="POISet" type="tns:ListOfPOIType"/>
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:element name="SearchPOIRequest" type="tns:SearchPOIRequestType"/>
+      <xs:element name="SearchPOIRequestV50" type="tns:SearchPOIRequestTypeV50"/>
+      <xs:element name="SearchPOIResponse" type="tns:SearchPOIResponseType"/>
+      <xs:element name="SearchPOIResponseV50" type="tns:SearchPOIResponseTypeV50"/>
+      <xs:element name="SearchRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Parameters" type="tns:SearchRequestType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SearchResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Parameters" type="tns:SearchResponseType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendSetOfPOI" type="tns:SendSetOfPOIType"/>
+      <xs:element name="SendSetOfPOIResponse" type="tns:SendSetOfPOIResponseType"/>
+      <xs:complexType name="SearchPOIRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:InputPOIDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputPOIDataType">
+        <xs:sequence>
+          <xs:element ref="tns:SearchRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchRequestType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Market" type="xs:string"/>
+          <xs:element minOccurs="0" name="UILanguage" type="xs:string"/>
+          <xs:element name="SearchTerm" type="xs:string"/>
+          <xs:element minOccurs="0" name="City" type="xs:string"/>
+          <xs:element minOccurs="0" name="State" type="xs:string"/>
+          <xs:element minOccurs="0" name="ZipCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="Latitude" type="xs:double"/>
+          <xs:element minOccurs="0" name="Longitude" type="xs:double"/>
+          <xs:element minOccurs="0" name="Radius" type="xs:double"/>
+          <xs:element minOccurs="0" name="SearchOptions" type="tns:ArrayOfSearchOptionType"/>
+          <xs:element minOccurs="0" name="ListingParameters" type="tns:listingParametersType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfSearchOptionType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="SearchOption" type="tns:SearchOption"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listingParametersType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Offset" type="xs:unsignedInt"/>
+          <xs:element minOccurs="0" name="Count" type="xs:unsignedInt"/>
+          <xs:element minOccurs="0" name="FileType" type="xs:string"/>
+          <xs:element minOccurs="0" name="SortBy" type="tns:SortOptionType"/>
+          <xs:element minOccurs="0" name="LocId" type="xs:string"/>
+          <xs:element minOccurs="0" name="Category" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchPOIResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:OutputPOIDataType"/>
+          <xs:element name="Response" type="tns:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputPOIDataType">
+        <xs:sequence>
+          <xs:element ref="tns:SearchResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SearchTerm" type="xs:string"/>
+          <xs:element minOccurs="0" name="SearchTotal" type="xs:string"/>
+          <xs:element minOccurs="0" name="ListingOffset" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="SearchResults" type="tns:resultsType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultsType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Title" type="xs:string"/>
+          <xs:element minOccurs="0" name="Business" type="xs:string"/>
+          <xs:element minOccurs="0" name="PhoneNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="Address" type="xs:string"/>
+          <xs:element minOccurs="0" name="City" type="xs:string"/>
+          <xs:element minOccurs="0" name="StateOrProvince" type="xs:string"/>
+          <xs:element minOccurs="0" name="CountryOrRegion" type="xs:string"/>
+          <xs:element minOccurs="0" name="PostalCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="Latitude" type="xs:double"/>
+          <xs:element minOccurs="0" name="Longitude" type="xs:double"/>
+          <xs:element minOccurs="0" name="UniqueId" type="xs:string"/>
+          <xs:element minOccurs="0" name="BusinessUrl" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseCode" type="tns:ResponseCodeType"/>
+          <xs:element minOccurs="0" name="ResponseStatus" type="tns:ResponseStatusType"/>
+          <xs:element minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NavInfoSearchPOIRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:InputNavInfoPOIDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputNavInfoPOIDataType">
+        <xs:sequence>
+          <xs:element ref="tns:NavInfoSearchRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NavInfoSearchRequestType">
+        <xs:sequence>
+          <xs:element name="keyword" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NavInfoSearchPOIResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:OutputNavInfoPOIDataType"/>
+          <xs:element name="Response" type="tns:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputNavInfoPOIDataType">
+        <xs:sequence>
+          <xs:element ref="tns:NavInfoSearchResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NavInfoSearchResponseType">
+        <xs:sequence>
+          <xs:element name="result">
+            <xs:complexType>
+              <xs:all>
+                <xs:element name="status" type="xs:int"/>
+                <xs:element name="time" type="xs:long"/>
+                <xs:element name="total" type="xs:long"/>
+                <xs:element name="pois">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element maxOccurs="unbounded" minOccurs="0" name="poi" nillable="true" type="tns:poi"/>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:all>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="poi">
+        <xs:all>
+          <xs:element name="id" type="xs:string"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="py" type="xs:string"/>
+          <xs:element minOccurs="0" name="alias" type="xs:string"/>
+          <xs:element minOccurs="0" name="address" type="xs:string"/>
+          <xs:element minOccurs="0" name="postcode" type="xs:string"/>
+          <xs:element minOccurs="0" name="distance" type="xs:string"/>
+          <xs:element minOccurs="0" name="telphone" type="xs:string"/>
+          <xs:element minOccurs="0" name="chaincode" type="xs:string"/>
+          <xs:element name="kind" type="tns:kind"/>
+          <xs:element name="geo" type="tns:geo"/>
+          <xs:element name="adminregion" type="tns:adminregion"/>
+          <xs:element name="rpst" type="xs:string"/>
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="kind">
+        <xs:sequence>
+          <xs:element name="code" type="xs:string"/>
+          <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="geo">
+        <xs:sequence>
+          <xs:element name="type" type="xs:string"/>
+          <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="adminregion">
+        <xs:all>
+          <xs:element name="proadcode" type="xs:string"/>
+          <xs:element name="proadname" type="xs:string"/>
+          <xs:element name="citycode" type="xs:string"/>
+          <xs:element name="cityname" type="xs:string"/>
+          <xs:element name="code" type="xs:string"/>
+          <xs:element name="name" type="xs:string"/>
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="SendSetOfPOIResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="tns:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendSetOfPOIType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InputSendSetOfPOIDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputSendSetOfPOIDataType">
+        <xs:sequence>
+          <xs:element name="POISet" type="tns:ListOfPOIType"/>
+          <xs:element name="EmailId" type="xs:string"/>
+          <xs:element name="WebSite" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerID" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="POIID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListOfPOIType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="POI" type="tns:POIDetail"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="POIDetail">
+        <xs:sequence>
+          <xs:element name="POIName" type="xs:string"/>
+          <xs:element name="Latitude" type="xs:double"/>
+          <xs:element name="Longitude" type="xs:double"/>
+          <xs:element minOccurs="0" name="POIAddress" type="tns:POIAddressType"/>
+          <xs:element minOccurs="0" name="POIType" type="tns:POIType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="POIAddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StreetNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="StreetName" type="xs:string"/>
+          <xs:element minOccurs="0" name="City" type="xs:string"/>
+          <xs:element minOccurs="0" name="State" type="xs:string"/>
+          <xs:element minOccurs="0" name="ZipCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="Country" type="xs:string"/>
+          <xs:element name="PhoneNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchPOIRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InputPOIDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NavInfoSearchPOIRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InputNavInfoPOIDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NavInfoSearchPOIResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:OutputNavInfoPOIDataType"/>
+          <xs:element name="Response" type="tns:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchPOIResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:OutputPOIDataType"/>
+          <xs:element name="Response" type="tns:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfSourceType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="sourceType" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SearchOption">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DisableLocationDetection"/>
+          <xs:enumeration value="EnableHighlighting"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SortOptionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Default"/>
+          <xs:enumeration value="Relevance"/>
+          <xs:enumeration value="Distance"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ResponseCodeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="poiUnknown"/>
+          <xs:enumeration value="poiSuccess"/>
+          <xs:enumeration value="poiFailed"/>
+          <xs:enumeration value="poiNotCapable"/>
+          <xs:enumeration value="poiDownloadFailed"/>
+          <xs:enumeration value="poiQueueFailed"/>
+          <xs:enumeration value="poiNotAuthorized"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ResponseStatusType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Success"/>
+          <xs:enumeration value="Failed"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="POIType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="RouteHeaderInformation"/>
+          <xs:enumeration value="RouteStopover"/>
+          <xs:enumeration value="RouteVia"/>
+          <xs:enumeration value="SinglePointOfInterest"/>
+          <xs:enumeration value="RouteMainDestination"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="Mbrace"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/Gateway/service/PoiSearchServiceV5" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/POISearch/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/poiSearch/V1" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/poiSearch/POI/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/POISearch/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/poiSearch/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/poiSearch/POI/V1"/>
+      <xs:element name="Search" type="tns:Search"/>
+      <xs:element name="SearchNavInfo" type="tns:SearchNavInfo"/>
+      <xs:element name="SearchNavInfoResponse" type="tns:SearchNavInfoResponse"/>
+      <xs:element name="SearchResponse" type="tns:SearchResponse"/>
+      <xs:complexType name="Search">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:SearchPOIRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:SearchPOIResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchNavInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns3:NavInfoSearchPOIRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchNavInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns3:NavInfoSearchPOIResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Search">
+    <wsdl:part element="tns:Search" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SearchNavInfoResponse">
+    <wsdl:part element="tns:SearchNavInfoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SearchResponse">
+    <wsdl:part element="tns:SearchResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SearchNavInfo">
+    <wsdl:part element="tns:SearchNavInfo" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="POIEBSV5_0">
+    <wsdl:operation name="Search">
+      <wsdl:input message="tns:Search" name="Search"></wsdl:input>
+      <wsdl:output message="tns:SearchResponse" name="SearchResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchNavInfo">
+      <wsdl:input message="tns:SearchNavInfo" name="SearchNavInfo"></wsdl:input>
+      <wsdl:output message="tns:SearchNavInfoResponse" name="SearchNavInfoResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PoiSearchServiceV5_0SoapBinding" type="tns:POIEBSV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="Search" style="document"/>
+      <wsdl:input name="Search">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SearchResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchNavInfo">
+      <soap:operation soapAction="SearchNavInfo" style="document"/>
+      <wsdl:input name="SearchNavInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SearchNavInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PoiSearchServiceV5_0">
+    <wsdl:port binding="tns:PoiSearchServiceV5_0SoapBinding" name="PoiSearchServicePort">
+      <soap:address location="https://Domain/SOAP/PoiSearchServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PoiSearchServiceV5_0</con:endpoint></con:endpoints></con:interface>

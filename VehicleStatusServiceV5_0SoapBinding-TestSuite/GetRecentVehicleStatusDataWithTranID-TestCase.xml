@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetRecentVehicleStatusDataWithTranID TestCase" searchProperties="true" id="b4025872-393f-40fd-b01d-4c6233a8da6c" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="b4025872-393f-40fd-b01d-4c6233a8da6cfileName">GetRecentVehicleStatusDataWithTranID-TestCase</con:setting></con:settings><con:testStep type="request" name="GetRecentVehicleStatusDataWithTranID" id="f46d3f24-27d9-4607-a58a-81f16d059967"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>VehicleStatusServiceV5_0SoapBinding</con:interface><con:operation>GetRecentVehicleStatusDataWithTranID</con:operation><con:request name="GetRecentVehicleStatusDataWithTranID" id="5c5a36be-c1f8-412b-9915-1f9685203f86" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VehicleStatusServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:veh="http://ns.hughestelematics.com/Gateway/service/vehicleStatusServiceV3_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/VehicleStatus/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+ <soapenv:Header>
+       <api_key>${#Project#api_key}</api_key>
+       ${#Project#SessionToken}
+</soapenv:Header>
+   <soapenv:Body>
+      <veh:GetRecentVehicleStatusDataWithTranID>
+         <!--Optional:-->
+         <GetRecentVehicleStatusDataWithTranID>
+            <v1:context>
+                <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>test5498465456</v11:TransactionId>
+               <v11:Timestamp>2015-03-23T22:14:02.001Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <!--Optional:-->
+               <v1:EventTransactionId>TOS-2198428</v1:EventTransactionId>
+               <v1:AccountId>${#Project#AccountId}</v1:AccountId>
+               <v1:TCUID>${#Project#TCUID}</v1:TCUID>
+               <v1:VIN>${#Project#VIN}</v1:VIN>
+               <!--Optional:-->
+               <v1:EmailId>anjaneyulu.desu@hughestelematics.com</v1:EmailId>
+            </v1:Data>
+         </GetRecentVehicleStatusDataWithTranID>
+      </veh:GetRecentVehicleStatusDataWithTranID>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetRecentVehicleStatusDataWithTranID" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

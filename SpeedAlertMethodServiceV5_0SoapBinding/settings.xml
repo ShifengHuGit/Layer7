@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="SpeedAlertMethodServiceV5_0SoapBinding" type="wsdl" bindingName="{http://ns.hughestelematics.com/v1.0/service/SpeedAlertMethodServiceV5_0}SpeedAlertMethodServiceV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Layer%207/L7%20My%20files/WSDL_VW_US_1/SpeedAlertServiceV5_0.wsdl" id="f68526e7-28db-41c6-9beb-cfe668417a6e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="f68526e7-28db-41c6-9beb-cfe668417a6efileName">SpeedAlertMethodServiceV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\SpeedAlertServiceV5_0.wsdl"><con:part><con:url>file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\SpeedAlertServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SpeedAlertMethodServiceV5_0" targetNamespace="http://ns.hughestelematics.com/v1.0/service/SpeedAlertMethodServiceV5_0" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ns.hughestelematics.com/v1.0/service/SpeedAlertMethodServiceV5_0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/SpeedAlert/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/SpeedAlert/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1"/>
+      <xs:element name="ConfigureSpeedAlert" type="tns:ConfigureSpeedAlertType"/>
+      <xs:element name="ConfigureSpeedAlertV50" type="tns:ConfigureSpeedAlertTypeV50"/>
+      <xs:element name="DeleteSpeedAlertRequestType" type="tns:ConfigureDeleteSpeedAlertType"/>
+      <xs:element name="DeleteSpeedAlertRequestTypeV50" type="tns:ConfigureDeleteSpeedAlertTypeV50"/>
+      <xs:element name="DeleteSpeedAlertResponse" type="tns:SpeedAlertResponseType"/>
+      <xs:element name="GetSpeedAlertRequest" type="tns:SpeedAlertRequestType"/>
+      <xs:element name="GetSpeedAlertRequestV50" type="tns:SpeedAlertRequestTypeV50"/>
+      <xs:element name="GetSpeedAlertResponse" type="tns:GetSpeedAlertResponseType"/>
+      <xs:element name="SpeedAlertConfig" type="tns:SpeedAlertDataType"/>
+      <xs:element name="SpeedAlertResponse" type="tns:SpeedAlertResponseType"/>
+      <xs:element name="SpeedAlertResponseV50" type="tns:SpeedAlertResponseTypeV50"/>
+      <xs:element name="speedAlert" type="tns:speedAlertType"/>
+      <xs:complexType name="SpeedAlertRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:InSpeedAlertDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InSpeedAlertDataType">
+        <xs:sequence>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="SpeedId" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SpeedAlertResponseTypeV50">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="speedAlert" type="tns:speedAlertType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="speedAlertType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="alertPreference" type="tns:alertPreference"/>
+          <xs:element name="maximumSpeed" type="xs:int"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="enabled" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="deleted" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="requestType" type="tns:RequestType"/>
+          <xs:element minOccurs="0" name="statusIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" name="speedId" type="xs:int"/>
+          <xs:element minOccurs="0" name="scheduledStartTime" type="xs:long"/>
+          <xs:element minOccurs="0" name="scheduledEndTime" type="xs:long"/>
+          <xs:element minOccurs="0" name="schedule" type="ns3:Schedule"/>
+          <xs:element minOccurs="0" name="popupFlag" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="alertPreference">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="alertByEmail" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="emails" nillable="true" type="tns:preferenceType"/>
+          <xs:element minOccurs="0" name="alertBySms" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="smsTns" nillable="true" type="tns:preferenceType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="preferenceType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="emailOrSmsTn" type="xs:string"/>
+          <xs:element minOccurs="0" name="enable" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="aliasName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureSpeedAlertTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:InputSpeedAlertDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputSpeedAlertDataType">
+        <xs:sequence>
+          <xs:element name="SpeedAlertConfig" type="tns:SpeedAlertDataType"/>
+          <xs:element name="AccountId" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SpeedAlertDataType">
+        <xs:sequence>
+          <xs:element name="speedAlert" type="tns:speedAlertType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureDeleteSpeedAlertTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:InputSpeedAlertDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureDeleteSpeedAlertType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:InputSpeedAlertDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfigureSpeedAlertType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InputSpeedAlertDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SpeedAlertResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader"/>
+          <xs:element minOccurs="0" name="speedAlert" type="tns:speedAlertType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SpeedAlertRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InSpeedAlertDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetSpeedAlertResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" type="ns1:MessageHeader"/>
+          <xs:element minOccurs="0" name="speedAlert" type="tns:speedAlertType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="RequestType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SAVEONLY"/>
+          <xs:enumeration value="ACTIVATE"/>
+          <xs:enumeration value="DEACTIVATE"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Schedule/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Schedule">
+        <xs:sequence>
+          <xs:element name="ScheduleType" type="tns:ScheduleTypeT"/>
+          <xs:element minOccurs="0" name="DailySchedule" type="tns:DailyScheduleT"/>
+          <xs:element minOccurs="0" name="WeeklySchedule" type="tns:WeeklyScheduleT"/>
+          <xs:element minOccurs="0" name="MonthlySchedule" type="tns:MonthlyScheduleT"/>
+          <xs:element minOccurs="0" name="SingleSchedule" type="tns:SingleScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DailyScheduleT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DayInterval" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" name="DaySchedule" type="tns:DayScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DayScheduleT">
+        <xs:sequence>
+          <xs:element default="0" name="DayOfWeek" type="xs:int"/>
+          <xs:element name="MinutesFromMidnight" type="xs:int"/>
+          <xs:element name="Duration" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WeeklyScheduleT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WeekInterval" type="xs:int"/>
+          <xs:element name="WeekSchedule" type="tns:WeekScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WeekScheduleT">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="DaySchedule" type="tns:DayScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MonthlyScheduleT">
+        <xs:sequence>
+          <xs:element name="DayOfMonth" type="xs:int"/>
+          <xs:element minOccurs="0" name="monthInterval" type="xs:int"/>
+          <xs:element minOccurs="0" name="MinutesFromMidnight" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SingleScheduleT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DayInterval" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" name="DaySchedule" type="tns:DayScheduleT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ScheduleTypeT">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="none"/>
+          <xs:enumeration value="daily"/>
+          <xs:enumeration value="weekly"/>
+          <xs:enumeration value="monthly"/>
+          <xs:enumeration value="single"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="Mbrace"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/v1.0/service/SpeedAlertMethodServiceV5_0" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/SpeedAlert/V1" xmlns:ns2="http://ns.hughestelematics.com/v1.0/domain/SpeedAlertMethodServiceV5_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/SpeedAlert/V1"/>
+      <xs:import namespace="http://ns.hughestelematics.com/v1.0/domain/SpeedAlertMethodServiceV5_0"/>
+      <xs:element name="DeActivateSpeedAlertMethod" type="tns:DeActivateSpeedAlertMethod"/>
+      <xs:element name="DeActivateSpeedAlertMethodResponse" type="tns:DeActivateSpeedAlertMethodResponse"/>
+      <xs:element name="DeleteSpeedAlertMethod" type="tns:DeleteSpeedAlertMethod"/>
+      <xs:element name="DeleteSpeedAlertMethodResponse" type="tns:DeleteSpeedAlertMethodResponse"/>
+      <xs:element name="GetActiveSpeedAlertMethod" type="tns:GetActiveSpeedAlertMethod"/>
+      <xs:element name="GetActiveSpeedAlertMethodResponse" type="tns:GetActiveSpeedAlertMethodResponse"/>
+      <xs:element name="SaveOrUpdateActiveSpeedAlertMethod" type="tns:SaveOrUpdateActiveSpeedAlertMethod"/>
+      <xs:element name="SaveOrUpdateActiveSpeedAlertMethodResponse" type="tns:SaveOrUpdateActiveSpeedAlertMethodResponse"/>
+      <xs:complexType name="DeActivateSpeedAlertMethod">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SpeedAlertRequest" type="ns1:SpeedAlertRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeActivateSpeedAlertMethodResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SaveOrUpdateActiveSpeedAlertMethod">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SpeedAlertRequest" type="ns1:ConfigureSpeedAlertTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SaveOrUpdateActiveSpeedAlertMethodResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetActiveSpeedAlertMethod">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SpeedAlertRequest" type="ns1:SpeedAlertRequestTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetActiveSpeedAlertMethodResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:SpeedAlertType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteSpeedAlertMethod">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SpeedAlertRequest" type="ns1:ConfigureDeleteSpeedAlertTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteSpeedAlertMethodResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/v1.0/domain/SpeedAlertMethodServiceV5_0" xmlns="http://ns.hughestelematics.com/v1.0/domain/SpeedAlertMethodServiceV5_0" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/SpeedAlert/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/SpeedAlert/V1"/>
+      <xs:element name="ResponseType" type="ns1:SpeedAlertResponseTypeV50"/>
+      <xs:element name="SpeedAlertType" type="ns1:SpeedAlertResponseTypeV50"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SaveOrUpdateActiveSpeedAlertMethodResponse">
+    <wsdl:part element="tns:SaveOrUpdateActiveSpeedAlertMethodResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteSpeedAlertMethodResponse">
+    <wsdl:part element="tns:DeleteSpeedAlertMethodResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetActiveSpeedAlertMethodResponse">
+    <wsdl:part element="tns:GetActiveSpeedAlertMethodResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteSpeedAlertMethod">
+    <wsdl:part element="tns:DeleteSpeedAlertMethod" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SaveOrUpdateActiveSpeedAlertMethod">
+    <wsdl:part element="tns:SaveOrUpdateActiveSpeedAlertMethod" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeActivateSpeedAlertMethodResponse">
+    <wsdl:part element="tns:DeActivateSpeedAlertMethodResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeActivateSpeedAlertMethod">
+    <wsdl:part element="tns:DeActivateSpeedAlertMethod" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetActiveSpeedAlertMethod">
+    <wsdl:part element="tns:GetActiveSpeedAlertMethod" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SpeedAlertMethodServiceV5_0">
+    <wsdl:operation name="DeActivateSpeedAlertMethod">
+      <wsdl:input message="tns:DeActivateSpeedAlertMethod" name="DeActivateSpeedAlertMethod"></wsdl:input>
+      <wsdl:output message="tns:DeActivateSpeedAlertMethodResponse" name="DeActivateSpeedAlertMethodResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrUpdateActiveSpeedAlertMethod">
+      <wsdl:input message="tns:SaveOrUpdateActiveSpeedAlertMethod" name="SaveOrUpdateActiveSpeedAlertMethod"></wsdl:input>
+      <wsdl:output message="tns:SaveOrUpdateActiveSpeedAlertMethodResponse" name="SaveOrUpdateActiveSpeedAlertMethodResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveSpeedAlertMethod">
+      <wsdl:input message="tns:GetActiveSpeedAlertMethod" name="GetActiveSpeedAlertMethod"></wsdl:input>
+      <wsdl:output message="tns:GetActiveSpeedAlertMethodResponse" name="GetActiveSpeedAlertMethodResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSpeedAlertMethod">
+      <wsdl:input message="tns:DeleteSpeedAlertMethod" name="DeleteSpeedAlertMethod"></wsdl:input>
+      <wsdl:output message="tns:DeleteSpeedAlertMethodResponse" name="DeleteSpeedAlertMethodResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SpeedAlertMethodServiceV5_0SoapBinding" type="tns:SpeedAlertMethodServiceV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="DeActivateSpeedAlertMethod">
+      <soap:operation soapAction="DeActivateSpeedAlertMethod" style="document"/>
+      <wsdl:input name="DeActivateSpeedAlertMethod">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeActivateSpeedAlertMethodResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrUpdateActiveSpeedAlertMethod">
+      <soap:operation soapAction="SaveOrUpdateActiveSpeedAlertMethod" style="document"/>
+      <wsdl:input name="SaveOrUpdateActiveSpeedAlertMethod">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SaveOrUpdateActiveSpeedAlertMethodResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveSpeedAlertMethod">
+      <soap:operation soapAction="GetActiveSpeedAlertMethod" style="document"/>
+      <wsdl:input name="GetActiveSpeedAlertMethod">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetActiveSpeedAlertMethodResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSpeedAlertMethod">
+      <soap:operation soapAction="DeleteSpeedAlertMethod" style="document"/>
+      <wsdl:input name="DeleteSpeedAlertMethod">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeleteSpeedAlertMethodResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SpeedAlertMethodServiceV5_0">
+    <wsdl:port binding="tns:SpeedAlertMethodServiceV5_0SoapBinding" name="SpeedAlertMethodServicePort">
+      <soap:address location="https://Domain/SOAP/SpeedAlertMethodServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/SpeedAlertMethodServiceV5_0</con:endpoint></con:endpoints></con:interface>

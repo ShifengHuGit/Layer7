@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="getPairedDevicesV2" name="getPairedDevicesV2" bindingOperationName="getPairedDevicesV2" type="Request-Response" outputName="getPairedDevicesV2Response" inputName="getPairedDevicesV2" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="04fc8201-c7eb-485c-b228-0f7ec1e84773" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="04fc8201-c7eb-485c-b228-0f7ec1e84773fileName">getPairedDevicesV2</con:setting></con:settings><con:call name="Request 1" id="5aba6004-68e8-4c52-ba9b-05cfb847eebb" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://Domain/SOAP/MobileDeviceRegisterPairingServiceV5_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/service/MobileDevicePairing/V1" xmlns:v5="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V5_1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPairedDevicesV2>
+         <!--Optional:-->
+         <v5:getPaiedDeviceListRequestV2>
+            <v11:context>
+               <v12:SourceName>?</v12:SourceName>
+               <v12:TransactionId>?</v12:TransactionId>
+               <v12:Timestamp>?</v12:Timestamp>
+               <v12:Organization>?</v12:Organization>
+               <v12:Region>?</v12:Region>
+               <v12:ApplicationName>?</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:userId>?</v11:userId>
+            </v11:Data>
+         </v5:getPaiedDeviceListRequestV2>
+      </v1:getPairedDevicesV2>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getPairedDevicesV2"/><con:wsrmConfig version="1.2"/></con:call></con:operation>

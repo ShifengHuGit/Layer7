@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="UserInfoServiceAUDIUSV5_0PortBinding TestSuite" id="a83932a1-87da-4c95-b233-784b1c88ae05" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="a83932a1-87da-4c95-b233-784b1c88ae05fileName">UserInfoServiceAUDIUSV5_0PortBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

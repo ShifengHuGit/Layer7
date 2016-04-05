@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Search TestCase" searchProperties="true" id="bfa4be52-88e0-4ade-b07f-c6ef7f2e07b9" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="bfa4be52-88e0-4ade-b07f-c6ef7f2e07b9fileName">Search-TestCase</con:setting></con:settings><con:testStep type="request" name="Search" id="20cfca0a-3068-4c81-952f-7bafe2040a58"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PoiSearchServiceV5_0SoapBinding</con:interface><con:operation>Search</con:operation><con:request name="Search" id="b8c37b63-2eea-49ac-b295-9b426fe6d04a" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PoiSearchServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pois="http://ns.hughestelematics.com/Gateway/service/PoiSearchServiceV5" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/poiSearch/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/POISearch/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+  <soapenv:Header>
+      <api_key>${#Project#api_key}</api_key>
+     ${#Project#SessionToken}
+</soapenv:Header>
+   <soapenv:Body>
+      <pois:Search>
+         <!--Optional:-->
+         <v1:SearchPOIRequest>
+            <v11:context>
+               <v12:SourceName>WEB</v12:SourceName>
+               <v12:TransactionId>anjitest5466</v12:TransactionId>
+               <v12:Timestamp>2015-04-02T13:03:35.432Z</v12:Timestamp>
+               <v12:Organization>${#Project#Organization}</v12:Organization>
+               <v12:Region>US</v12:Region>
+               <v12:ApplicationName>CWP</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:SearchRequest>
+                  <v11:Parameters>
+                     <!--Optional:-->
+                     <v11:Market>en-US</v11:Market>
+                     <!--Optional:-->
+                     <v11:UILanguage>en</v11:UILanguage>
+                     <v11:SearchTerm>pizza</v11:SearchTerm>
+                     <!--Optional:-->
+                     <v11:City>Atlanta</v11:City>
+                     <!--Optional:-->
+                     <v11:State>GA</v11:State>
+                     <!--Optional:-->
+                     <v11:ZipCode>30319</v11:ZipCode>
+                     <!--Optional:-->
+                    
+                     <!--Optional:-->
+                     <v11:Radius>20</v11:Radius>
+                     <!--Optional:-->
+                     <v11:SearchOptions>
+                        <!--Zero or more repetitions:-->
+                        <v11:SearchOption>DisableLocationDetection</v11:SearchOption>
+                     </v11:SearchOptions>
+                     <!--Optional:-->
+                     <v11:ListingParameters>
+                        <!--Optional:-->
+                        <v11:Offset>0</v11:Offset>
+                        <!--Optional:-->
+                      
+                        <!--Optional:-->
+                      
+                        <!--Optional:-->
+                        <v11:SortBy>Distance</v11:SortBy>
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                       
+                     </v11:ListingParameters>
+                  </v11:Parameters>
+               </v11:SearchRequest>
+            </v11:Data>
+         </v1:SearchPOIRequest>
+      </pois:Search>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="Search" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetAssetDetails" name="GetAssetDetails" bindingOperationName="GetAssetDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="8405821c-4bd0-4524-ba37-577f5636681e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="8405821c-4bd0-4524-ba37-577f5636681efileName">GetAssetDetails</con:setting></con:settings><con:call name="Request 1" id="0350ad8c-00cd-4a03-a650-731e7007b494" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>REPLACE_WITH_ACTUAL_URL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v5="http://xmlns.vzt.com/APIGateway/AUDIUS_UserInfoService/V5_0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v5:GetAssetDetails>
+         <!--Optional:-->
+         <GetAssetDetailsRequest>
+            <v5:Data>
+               <!--Optional:-->
+               <v5:AccountID>?</v5:AccountID>
+               <v5:TraceID>?</v5:TraceID>
+               <v5:TraceTimestamp>?</v5:TraceTimestamp>
+            </v5:Data>
+         </GetAssetDetailsRequest>
+      </v5:GetAssetDetails>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetAssetDetails"/></con:call></con:operation>

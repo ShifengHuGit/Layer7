@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetAccountSubscriptions TestCase" searchProperties="true" id="6979beed-24f9-4b5f-8ae5-cf194a8c1787" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="6979beed-24f9-4b5f-8ae5-cf194a8c1787fileName">GetAccountSubscriptions-TestCase</con:setting></con:settings><con:testStep type="request" name="GetAccountSubscriptions" id="746916f6-9ac8-4834-b31c-eeb92a3f7176"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SecurityServiceV5_0SoapBinding</con:interface><con:operation>GetAccountSubscriptions</con:operation><con:request name="GetAccountSubscriptions" id="1cbc2a9c-92dc-4d9a-913f-126169342287" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/SecurityServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://ns.hughestelematics.com/v5.0/service/SecurityServiceV5_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1">
+   <soapenv:Header>
+      <api_key>${#Project#api_key}</api_key>
+${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <sec:GetAccountSubscriptions>
+         <!--Optional:-->
+         <GetAccountSubscriptionsRequestType>
+            <v1:context>
+               <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>test545465</v11:TransactionId>
+               <v11:Timestamp>2015-04-08T22:14:02.001Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <!--1 or more repetitions:-->
+               <v1:AccountInformation>
+                  <v12:AccountID>${#Project#AccountId}</v12:AccountID>
+                  <v12:VIN>${#Project#VIN}</v12:VIN>
+                  <v12:TCUID>${#Project#TCUID}</v12:TCUID>
+               </v1:AccountInformation>
+            </v1:Data>
+         </GetAccountSubscriptionsRequestType>
+      </sec:GetAccountSubscriptions>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetAccountSubscriptions" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

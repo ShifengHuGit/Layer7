@@ -1,0 +1,6 @@
+getPairedDevices-TestCase.xml
+getPairedDevicesV2-TestCase.xml
+Registration-TestCase.xml
+UnpairingV2-TestCase.xml
+UpdateDeviceName-TestCase.xml
+ValidateRegistration-TestCase.xml

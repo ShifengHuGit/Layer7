@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="HonkAndFlashServiceV5_0SoapBinding TestSuite" id="20c92a58-3b97-46dc-a0e7-dc6d7df01b9c" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="20c92a58-3b97-46dc-a0e7-dc6d7df01b9cfileName">HonkAndFlashServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

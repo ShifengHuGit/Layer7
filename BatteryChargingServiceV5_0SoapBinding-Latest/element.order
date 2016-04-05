@@ -1,0 +1,4 @@
+GetBatteryChargingDetails-TestCase.xml
+GetJobStatus-TestCase.xml
+GetMaxCurrent-TestCase.xml
+InvokeBatteryChargingJob-TestCase.xml

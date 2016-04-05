@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="SearchNavInfo" name="SearchNavInfo" bindingOperationName="SearchNavInfo" type="Request-Response" outputName="SearchNavInfoResponse" inputName="SearchNavInfo" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="df95c4cb-ce8f-45d3-93a5-c22dbd78cfa4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="df95c4cb-ce8f-45d3-93a5-c22dbd78cfa4fileName">SearchNavInfo</con:setting></con:settings><con:call name="Request 1" id="58efaacd-a594-4ce0-a7ba-30798e012ee3" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PoiSearchServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pois="http://ns.hughestelematics.com/Gateway/service/PoiSearchServiceV5" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/poiSearch/POI/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/POISearch/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pois:SearchNavInfo>
+         <!--Optional:-->
+         <v1:NavInfoSearchPOIRequest>
+            <v11:context>
+               <v12:SourceName>?</v12:SourceName>
+               <v12:TransactionId>?</v12:TransactionId>
+               <v12:Timestamp>?</v12:Timestamp>
+               <v12:Organization>?</v12:Organization>
+               <v12:Region>?</v12:Region>
+               <v12:ApplicationName>?</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:NavInfoSearchRequest>
+                  <v11:Parameters>
+                     <v11:keyword>?</v11:keyword>
+                  </v11:Parameters>
+               </v11:NavInfoSearchRequest>
+            </v11:Data>
+         </v1:NavInfoSearchPOIRequest>
+      </pois:SearchNavInfo>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="SearchNavInfo"/></con:call></con:operation>

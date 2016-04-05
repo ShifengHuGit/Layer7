@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetHonkFlashStatusWithOpenConnection" name="GetHonkFlashStatusWithOpenConnection" bindingOperationName="GetHonkFlashStatusWithOpenConnection" type="Request-Response" outputName="GetHonkFlashStatusWithOpenConnectionResponse" inputName="GetHonkFlashStatusWithOpenConnection" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="63ace69e-9fec-42e3-9283-4c1a7f9a270c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="63ace69e-9fec-42e3-9283-4c1a7f9a270cfileName">GetHonkFlashStatusWithOpenConnection</con:setting></con:settings><con:call name="Request 1" id="631f2343-38d6-47c3-9313-2311230dc783" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/HonkAndFlashServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hon="http://ns.hughestelematics.com/v1.0/service/honkAndFlashService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/FlashLights/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hon:GetHonkFlashStatusWithOpenConnection>
+         <!--Optional:-->
+         <HonkFlashStatusReq>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <!--Optional:-->
+               <v1:HonkFlashEventTransactionId>?</v1:HonkFlashEventTransactionId>
+               <v1:serviceOperationCode>HonkAndFlash</v1:serviceOperationCode>
+               <!--Optional:-->
+               <v1:OEM>?</v1:OEM>
+            </v1:Data>
+         </HonkFlashStatusReq>
+      </hon:GetHonkFlashStatusWithOpenConnection>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetHonkFlashStatusWithOpenConnection"/></con:call></con:operation>

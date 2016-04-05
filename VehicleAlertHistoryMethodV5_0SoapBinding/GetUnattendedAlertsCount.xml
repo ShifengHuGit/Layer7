@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetUnattendedAlertsCount" name="GetUnattendedAlertsCount" bindingOperationName="GetUnattendedAlertsCount" type="Request-Response" outputName="GetUnattendedAlertsCountResponse" inputName="GetUnattendedAlertsCount" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="80a286e1-760b-4eef-ba21-300a7dfc7759" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="80a286e1-760b-4eef-ba21-300a7dfc7759fileName">GetUnattendedAlertsCount</con:setting></con:settings><con:call name="Request 1" id="65e34642-67eb-4c2c-8944-2230e9005606" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VehicleAlertHistoryServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:veh="http://ns.hughestelematics.com/v1.0/service/vehicleAlertHistoryMethod" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/AlertHistory/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <veh:GetUnattendedAlertsCount>
+         <!--Optional:-->
+         <request>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:AccountId>?</v1:AccountId>
+               <v1:TCUID>?</v1:TCUID>
+               <v1:VIN>?</v1:VIN>
+            </v1:Data>
+         </request>
+      </veh:GetUnattendedAlertsCount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetUnattendedAlertsCount"/></con:call></con:operation>

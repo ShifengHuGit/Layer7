@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetAlertHistory TestCase" searchProperties="true" id="693dbbff-7a37-4e39-8cd4-136b2c439fab" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="693dbbff-7a37-4e39-8cd4-136b2c439fabfileName">GetAlertHistory-TestCase</con:setting></con:settings><con:testStep type="request" name="GetAlertHistory" id="bcfdd7f0-034b-4908-ba4f-00cce2498518"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>VehicleAlertHistoryMethodV5_0SoapBinding</con:interface><con:operation>GetAlertHistory</con:operation><con:request name="GetAlertHistory" id="be260ae8-d034-41fd-a7fc-ebe10757bc46" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VehicleAlertHistoryServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:veh="http://ns.hughestelematics.com/v1.0/service/vehicleAlertHistoryMethod" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/AlertHistory/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+  ${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <veh:GetAlertHistory>
+         <!--Optional:-->
+         <request>
+            <v1:context>
+               <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>test549846456</v11:TransactionId>
+               <v11:Timestamp>2015-03-16T22:14:02.001Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+              <v1:AccountId>${#Project#AccountId}</v1:AccountId>
+               <v1:TCUID>${#Project#TCUID}</v1:TCUID>
+               <v1:VIN>${#Project#VIN}</v1:VIN>
+               <!--Optional:-->
+               <v1:UserId>${#Project#AccountId}</v1:UserId>
+               <!--Optional:-->
+               <v1:AlertType>speedAlert</v1:AlertType>
+               <!--Optional:-->
+               <v1:numberOfDays>30</v1:numberOfDays>
+            </v1:Data>
+         </request>
+      </veh:GetAlertHistory>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetAlertHistory" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetMisuseProtectionCounter TestCase" searchProperties="true" id="702e1331-db6a-414b-b412-86531211db2f" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="702e1331-db6a-414b-b412-86531211db2ffileName">GetMisuseProtectionCounter-TestCase</con:setting></con:settings><con:testStep type="request" name="GetMisuseProtectionCounter" id="7ae90d2b-3f92-4309-bd27-72d24eac4998"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MisuseProtectionServiceV5_0SoapBinding</con:interface><con:operation>GetMisuseProtectionCounter</con:operation><con:request name="GetMisuseProtectionCounter" id="a692d5a4-e8fb-4fee-b370-ef6cf29e1209" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/MisuseProtectionServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mis="http://xmlns.hughestelematics.com/Gateway/MisuseProtection" xmlns:v5="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V5" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+      <api_key>${#Project#api_key}</api_key>
+${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <mis:GetMisuseProtectionCounter>
+         <!--Optional:-->
+         <v5:GetMisuseProtectionCounter>
+            <v1:context>
+                <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>testanjio859240</v11:TransactionId>
+               <v11:Timestamp>2015-03-24T22:14:02.001Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:accountId>${#Project#AccountId}</v1:accountId>
+               <v1:vin>${#Project#VIN}</v1:vin>
+               <v1:tcuId>${#Project#TCUID}</v1:tcuId>
+               <v1:serviceName>VehicleHealthReport</v1:serviceName>
+            </v1:Data>
+         </v5:GetMisuseProtectionCounter>
+      </mis:GetMisuseProtectionCounter>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetMisuseProtectionCounter" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

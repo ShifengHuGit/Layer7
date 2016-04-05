@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="MisuseProtectionServiceV5_0SoapBinding" type="wsdl" bindingName="{http://xmlns.hughestelematics.com/Gateway/MisuseProtection}MisuseProtectionServiceV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Layer%207/L7%20My%20files/WSDL_VW_US_1/MisuseProtectionServiceV5_0.wsdl" id="65a75dd6-0f89-435d-b66c-e1eb938414e3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="65a75dd6-0f89-435d-b66c-e1eb938414e3fileName">MisuseProtectionServiceV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\MisuseProtectionServiceV5_0.wsdl"><con:part><con:url>file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\MisuseProtectionServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="MisuseProtectionServiceV5_0" targetNamespace="http://xmlns.hughestelematics.com/Gateway/MisuseProtection" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/MisuseProtection" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/MisuseProtection" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V5" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V5"/>
+      <xs:element name="GetMisuseProtectionCounter" type="tns:GetMisuseProtectionCounter"/>
+      <xs:element name="GetMisuseProtectionCounterResponse" type="tns:GetMisuseProtectionCounterResponse"/>
+      <xs:complexType name="GetMisuseProtectionCounter">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:GetMisuseProtectionCounter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMisuseProtectionCounterResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:GetMisuseProtectionCounterResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V5" xmlns="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V5" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V1"/>
+      <xs:element name="GetMisuseProtectionCounter" type="ns1:GetMisuseProtectionCounterTypeV5"/>
+      <xs:element name="GetMisuseProtectionCounterResponse" type="ns1:GetMisuseProtectionCounterResponseTypeV5"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Core/MisuseProtection/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:element name="ValidateMisuseProtection" type="tns:ValidateMisuseProtectionType"/>
+      <xs:element name="ValidateMisuseProtectionResponse" type="tns:ValidateMisuseProtectionResponseType"/>
+      <xs:element name="ValidateMisuseProtectionResponseV5" type="tns:ValidateMisuseProtectionResponseTypeV5"/>
+      <xs:element name="ValidateMisuseProtectionV5" type="tns:ValidateMisuseProtectionTypeV5"/>
+      <xs:complexType name="GetMisuseProtectionCounterTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetMisuseProtectionCounterRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMisuseProtectionCounterRequestDataType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element name="serviceName" type="tns:serviceNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMisuseProtectionCounterResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetMisuseProtectionCounterResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMisuseProtectionCounterResponseDataType">
+        <xs:sequence>
+          <xs:element name="currentCount" type="xs:long"/>
+          <xs:element name="maxCount" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateMisuseProtectionResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateMisuseProtectionTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:InputMisuseProtectionDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputMisuseProtectionDataType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="vin" type="xs:string"/>
+          <xs:element name="tcuId" type="xs:string"/>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+          <xs:element name="serviceName" type="tns:serviceNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateMisuseProtectionType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:InputMisuseProtectionDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateMisuseProtectionResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="L7MisuseProtectionRequestDataType">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string"/>
+          <xs:element name="oem" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="L7IsAccountLockedResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:L7IsAccountLockedResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="L7IsAccountLockedResponseDataType">
+        <xs:sequence>
+          <xs:element name="isAccountLocked" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="L7IsAccountLockedResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:L7IsAccountLockedResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="L7MisuseProtectionRequestTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:L7MisuseProtectionRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="L7MisuseProtectionPostProcessResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMisuseProtectionCounterType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetMisuseProtectionCounterRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="L7MisuseProtectionRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:L7MisuseProtectionRequestDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMisuseProtectionCounterResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:GetMisuseProtectionCounterResponseDataType"/>
+          <xs:element ref="ns2:Response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="L7MisuseProtectionPostProcessResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="L7ResetMisuseCounterResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="L7ResetMisuseCounterResponseTypeV5">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="serviceNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Authentication"/>
+          <xs:enumeration value="RemoteDoorUnlock"/>
+          <xs:enumeration value="RemoteDoorLockUnlock"/>
+          <xs:enumeration value="RemoteHonkAndFlash"/>
+          <xs:enumeration value="RemoteVehicleStatus"/>
+          <xs:enumeration value="VehicleHealthReport"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="Mbrace"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMisuseProtectionCounterResponse">
+    <wsdl:part element="tns:GetMisuseProtectionCounterResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetMisuseProtectionCounter">
+    <wsdl:part element="tns:GetMisuseProtectionCounter" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MisuseProtectionServiceV5_0">
+    <wsdl:operation name="GetMisuseProtectionCounter">
+      <wsdl:input message="tns:GetMisuseProtectionCounter" name="GetMisuseProtectionCounter"></wsdl:input>
+      <wsdl:output message="tns:GetMisuseProtectionCounterResponse" name="GetMisuseProtectionCounterResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MisuseProtectionServiceV5_0SoapBinding" type="tns:MisuseProtectionServiceV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetMisuseProtectionCounter">
+      <soap:operation soapAction="GetMisuseProtectionCounter" style="document"/>
+      <wsdl:input name="GetMisuseProtectionCounter">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetMisuseProtectionCounterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MisuseProtectionServiceV5_0">
+    <wsdl:port binding="tns:MisuseProtectionServiceV5_0SoapBinding" name="MisuseProtectionServicePort">
+      <soap:address location="https://Domain/SOAP/MisuseProtectionServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/MisuseProtectionServiceV5_0</con:endpoint></con:endpoints></con:interface>

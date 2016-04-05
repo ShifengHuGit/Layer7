@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ValidateRegistration TestCase" searchProperties="true" id="de138bbc-969f-4b08-a183-82249b36537b" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="de138bbc-969f-4b08-a183-82249b36537bfileName">ValidateRegistration-TestCase</con:setting></con:settings><con:testStep type="request" name="ValidateRegistration" id="e1154a16-56cd-44e6-9f65-340b640f4703"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MobileDeviceRegisterPairingServiceV5_1SoapBinding</con:interface><con:operation>ValidateRegistration</con:operation><con:request name="ValidateRegistration" id="972cc899-3c49-4bc3-addb-e2c75e7a9a15" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://Domain/SOAP/MobileDeviceRegisterPairingServiceV5_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/service/MobileDevicePairing/V1" xmlns:v5="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairedList/V5_1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/MobileDevicePairing/V1" xmlns:v12="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:ValidateRegistration>
+         <!--Optional:-->
+         <v5:PairingRequest>
+            <v11:context>
+               <v12:SourceName>?</v12:SourceName>
+               <v12:TransactionId>?</v12:TransactionId>
+               <v12:Timestamp>?</v12:Timestamp>
+               <v12:Organization>?</v12:Organization>
+               <v12:Region>?</v12:Region>
+               <v12:ApplicationName>?</v12:ApplicationName>
+            </v11:context>
+            <v11:Data>
+               <v11:UserID>?</v11:UserID>
+               <v11:RegistrationCode>?</v11:RegistrationCode>
+               <v11:DeviceName>?</v11:DeviceName>
+               <v11:CSR>?</v11:CSR>
+            </v11:Data>
+         </v5:PairingRequest>
+      </v1:ValidateRegistration>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig action="ValidateRegistration" mustUnderstand="NONE" version="200508"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

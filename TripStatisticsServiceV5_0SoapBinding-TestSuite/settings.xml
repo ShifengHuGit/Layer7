@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="TripStatisticsServiceV5_0SoapBinding TestSuite" id="f6ade480-470f-4ab3-8545-037283aeaa09" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="f6ade480-470f-4ab3-8545-037283aeaa09fileName">TripStatisticsServiceV5_0SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

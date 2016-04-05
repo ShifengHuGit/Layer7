@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="BatteryChargingServiceV5_0SoapBinding Latest" id="4df8e212-0b7e-4840-990c-3a769234b1ae" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="4df8e212-0b7e-4840-990c-3a769234b1aefileName">BatteryChargingServiceV5_0SoapBinding-Latest</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

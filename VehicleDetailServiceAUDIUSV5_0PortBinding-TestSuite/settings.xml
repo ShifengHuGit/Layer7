@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="VehicleDetailServiceAUDIUSV5_0PortBinding TestSuite" id="27ac07d4-4a5a-4b02-96a3-de4ed8de0889" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="27ac07d4-4a5a-4b02-96a3-de4ed8de0889fileName">VehicleDetailServiceAUDIUSV5_0PortBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

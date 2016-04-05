@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetAverageListByDate TestCase" searchProperties="true" id="75824125-9ed2-44f8-b042-f04690b7a1ea" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="75824125-9ed2-44f8-b042-f04690b7a1eafileName">GetAverageListByDate-TestCase</con:setting></con:settings><con:testStep type="request" name="GetAverageListByDate" id="bbac1aa6-67c2-45bd-a206-50ca3d72a7f0"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PerformanceMonitorServiceV5_0SoapBinding</con:interface><con:operation>GetAverageListByDate</con:operation><con:request name="GetAverageListByDate" id="04087627-c1ac-4004-b0ed-8c4ed67f8bda" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PerformanceMonitorServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:per="http://ns.hughestelematics.com/Gateway/service/PerformanceMonitorService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/PerformanceMonitor/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+    <soapenv:Header>
+    <api_key>2d73b742f0eb68aa7eb1563ef3f8099e</api_key>
+ </soapenv:Header>
+   <soapenv:Body>
+      <per:GetAverageListByDate>
+         <!--Optional:-->
+         <v1:GetAverageListByDateRequest>
+            <v1:context>
+              <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>test54954656456</v11:TransactionId>
+               <v11:Timestamp>2015-04-10T07:45:02.001Z</v11:Timestamp>
+               <v11:Organization>VW</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+                <v1:System>FAL</v1:System>
+               <v1:DateFrom>2015-04-09T15:05:05</v1:DateFrom>
+               <v1:DateTo>2015-12-02T15:05:05</v1:DateTo>
+            </v1:Data>
+         </v1:GetAverageListByDateRequest>
+      </per:GetAverageListByDate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetAverageListByDate" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

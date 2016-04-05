@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetDeliveryMethods TestCase" searchProperties="true" id="5755b103-34af-4d56-a4b4-f2773dc2ffe5" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="5755b103-34af-4d56-a4b4-f2773dc2ffe5fileName">GetDeliveryMethods-TestCase</con:setting></con:settings><con:testStep type="request" name="GetDeliveryMethods" id="401f3f1b-cbb7-441f-a8d1-b5bdc9d34176"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UserInfoServiceAUDIUSV5_0PortBinding</con:interface><con:operation>GetDeliveryMethods</con:operation><con:request name="GetDeliveryMethods" id="06707fe1-7de7-4262-bf7f-7e9d46307b49" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://api-test.vtitel.net/SOAP/AUDIUS_UserInfoServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v5="http://xmlns.vzt.com/APIGateway/AUDIUS_UserInfoService/V5_0">
+   <soapenv:Header>
+       <api_key>${#Project#api_key}</api_key>
+       ${#Project#SessionToken}
+    </soapenv:Header>
+   <soapenv:Body>
+      <v5:GetDeliveryMethods>
+         <!--Optional:-->
+         <GetDeliveryMethodsRequest>
+            <v5:Data>
+               <!--Optional:-->
+               <v5:AccountID>${#Project#AccountId}</v5:AccountID>
+               <v5:TraceID>Vishnu3675363</v5:TraceID>
+               <v5:TraceTimestamp>2015-03-24T22:14:02.001Z</v5:TraceTimestamp>
+            </v5:Data>
+         </GetDeliveryMethodsRequest>
+      </v5:GetDeliveryMethods>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetDeliveryMethods" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="MobileDeviceRegisterPairingServiceV5_1SoapBinding TestSuite" id="730a7eaa-8665-443d-ade5-fdc804b46a6e" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="730a7eaa-8665-443d-ade5-fdc804b46a6efileName">MobileDeviceRegisterPairingServiceV5_1SoapBinding-TestSuite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>

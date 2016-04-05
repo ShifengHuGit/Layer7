@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="GetAlertHistory" name="GetAlertHistory" bindingOperationName="GetAlertHistory" type="Request-Response" outputName="GetAlertHistoryResponse" inputName="GetAlertHistory" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="c806c971-d0de-43e7-8ca5-22260ca05e0b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="c806c971-d0de-43e7-8ca5-22260ca05e0bfileName">GetAlertHistory</con:setting></con:settings><con:call name="Request 1" id="5a806821-07e8-4a4f-ae01-8694f744a906" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/VehicleAlertHistoryServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:veh="http://ns.hughestelematics.com/v1.0/service/vehicleAlertHistoryMethod" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/AlertHistory/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <veh:GetAlertHistory>
+         <!--Optional:-->
+         <request>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:AccountId>?</v1:AccountId>
+               <v1:TCUID>?</v1:TCUID>
+               <v1:VIN>?</v1:VIN>
+               <!--Optional:-->
+               <v1:UserId>?</v1:UserId>
+               <!--Optional:-->
+               <v1:AlertType>?</v1:AlertType>
+               <!--Optional:-->
+               <v1:numberOfDays>?</v1:numberOfDays>
+            </v1:Data>
+         </request>
+      </veh:GetAlertHistory>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetAlertHistory"/></con:call></con:operation>

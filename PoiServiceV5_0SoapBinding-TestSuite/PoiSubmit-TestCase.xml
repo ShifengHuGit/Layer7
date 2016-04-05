@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="PoiSubmit TestCase" searchProperties="true" id="1a3df8ad-45ed-46dd-8e65-cc9040f1d4db" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="1a3df8ad-45ed-46dd-8e65-cc9040f1d4dbfileName">PoiSubmit-TestCase</con:setting></con:settings><con:testStep type="request" name="PoiSubmit" id="b8eb7193-546d-4003-b263-086a33a1e1d6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PoiServiceV5_0SoapBinding</con:interface><con:operation>PoiSubmit</con:operation><con:request name="PoiSubmit" id="c2a329cc-3004-4cd9-a190-e669b5269795" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/PoiServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pois="http://ns.hughestelematics.com/Gateway/service/PoiServiceV2_0" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Core/Route/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+      <api_key>${#Project#api_key}</api_key>
+${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <pois:PoiSubmit>
+         <!--Optional:-->
+         <PoiSubmitRequest>
+            <v1:context>
+              <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>anjitest789454656</v11:TransactionId>
+               <v11:Timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd").format(new Date())}T${=new java.text.SimpleDateFormat("HH:mm:ss.SSS").format(new Date())}Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:RouteV2>
+                  <!--1 or more repetitions:-->
+                  <v1:POIV2>
+                     <v1:POIName>test456</v1:POIName>
+                     <v1:Latitude>33.9147624</v1:Latitude>
+                     <v1:Longitude>-84.3444953</v1:Longitude>
+                     <!--Optional:-->
+                     <v1:POIAddress>
+                        <!--Optional:-->
+                        <v1:StreetNumber>2002</v1:StreetNumber>
+                        <!--Optional:-->
+                        <v1:StreetName>Summit</v1:StreetName>
+                        <!--Optional:-->
+                        <v1:City>Atlanta</v1:City>
+                        <!--Optional:-->
+                        <v1:State>GA</v1:State>
+                        <!--Optional:-->
+                        <v1:ZipCode>30319</v1:ZipCode>
+                        <!--Optional:-->
+                        <v1:Country>US</v1:Country>
+                        <!--Optional:-->
+                        <v1:PhoneNumber>4047382392</v1:PhoneNumber>
+                     </v1:POIAddress>
+                     <v1:POIType>SinglePointOfInterest</v1:POIType>
+                     <v1:immediateDestination>false</v1:immediateDestination>
+                     <v1:UserID>${#Project#AccountId}</v1:UserID>
+                     <v1:vipCategory>NoCategory</v1:vipCategory>
+                     <!--Optional:-->
+                     <v1:poiDBRowId></v1:poiDBRowId>
+                     <!--Optional:-->
+                     <v1:ExternalPoiID></v1:ExternalPoiID>
+                  </v1:POIV2>
+               </v1:RouteV2>
+               <v1:WebSite>Google</v1:WebSite>
+               <v1:AccountId>${#Project#AccountId}</v1:AccountId>
+               <v1:VIN>${#Project#VIN}</v1:VIN>
+               <v1:tcuid>${#Project#TCUID}</v1:tcuid>
+               <!--Optional:-->
+               <v1:UserId>${#Project#AccountId}</v1:UserId>
+               <!--Optional:-->
+               <v1:RouteID></v1:RouteID>
+               <v1:OperationType>SAVEONLY</v1:OperationType>
+            </v1:Data>
+         </PoiSubmitRequest>
+      </pois:PoiSubmit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="PoiSubmit" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

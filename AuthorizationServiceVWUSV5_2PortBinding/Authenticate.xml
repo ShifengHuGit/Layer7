@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="Authenticate" name="Authenticate" bindingOperationName="Authenticate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="fe0f0c9d-f6a8-40f1-b4fc-2a9e581c807d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="fe0f0c9d-f6a8-40f1-b4fc-2a9e581c807dfileName">Authenticate</con:setting></con:settings><con:call name="Request 1" id="2bdbad5f-fe0f-4c31-9b5e-7af1e3dafea7" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://Domain/SOAP/VWUS_AuthorizationServiceV5_2</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vwus="http://xmlns.vzt.com/APIGateway/VWUS_AuthorizationServiceV5_2">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <vwus:Authenticate>\r
+         <AuthenticateRequestType>\r
+            <Data>\r
+               <SourceName>?</SourceName>\r
+               <ExternalUserName>?</ExternalUserName>\r
+               <ExternalUserID>?</ExternalUserID>\r
+               <Email>?</Email>\r
+               <TraceID>?</TraceID>\r
+               <TraceTimestamp>?</TraceTimestamp>\r
+            </Data>\r
+         </AuthenticateRequestType>\r
+      </vwus:Authenticate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="Authenticate"/></con:call></con:operation>
